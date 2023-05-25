@@ -17,16 +17,16 @@
             </div>
         </div>
                                                 <!-- in the *ngFor loop 'let i = index' is not needed anymore  -->
-        <div class="menus" *ngFor="let menu of menus;">    
+        <div class="menus" *ngFor="let menu of menus; let i = index">    
 
             <div class="menu_description">
                 <div class="menu_description_head">
-                    <div class="menu_description_food"><h3>{{menu}} {{menu.food}}</h3></div>
+                    <div class="menu_description_food"><h3>{{i+1}}) {{menu.food}}</h3></div>
                     <div class="menu_description_pic"><img src="../assets/{{menu.image}}"></div>
                 </div>
                 <span>{{menu.ingredients}}</span>
                 <div class="menu_description_price">€ {{menu.price.toFixed(2)}}</div>
-                <button onclick="addMenuToBasket(i)" class="order_button"><img src="../assets/img/plus4_icon_48x48.png"></button>
+                <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/plus4_icon_48x48.png"></button>
             </div>
 
         </div>
@@ -34,36 +34,38 @@
     </div>
 
     <div class="basket_supra" id="basket_supra">  <div class="basket_supra_head"><h2>Shopping Cart</h2></div>
-        <div id="basket" class="basket">
-            <!-- <div class="emptyBasket"> 
+        <div id="basket" class="basket" >
+            <div class="emptyBasket" *ngIf="this.basket.length == 0"> 
                 <img src="../assets/img/shopping car_lemon_CC00_svg.svg">
                 <span>Mmmmh....super delicious!!!</span>
                 <div class="basket_smiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
                 <span>Add your favourite menu to your shopping cart!!!</span>
-            </div> -->
+            </div>
+
+            <div id="sums" class="sums" *ngIf="this.basket.length > 0">
+
+                <div class="table_row_sum">
+                    <hr>  
+                    <div class="orders_subtotal_supra" id="orders_subtotal_supra">
+                        <div id="orders_subtotal_left">Subtotal</div>
+                        <div id="orders_subtotal_right">€ {{resultSubtotal.toFixed(2)}}</div>
+                    </div>
+                    <div class="orders_delivery_costs_supra" id="orders_delivery_costs_supra">
+                        <div id="orders_delivery_costs_left">Delivery Costs</div>
+                        <div id="orders_delivery_costs_right">€ 5.00</div>
+                    </div>
+                    <div class="orders_total_supra" id="orders_total_supra">
+                        <div id="orders_total_left">Total</div>
+                        <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div>
+                    </div>
+                    <div class="buy" id="buy"><button>Buy!</button></div>
+                  </div>
+    
+             </div>
+    
 
         </div>
-         <div id="sums" class="sums">
-
-            <div class="table_row_sum">
-                <hr>  
-                <div class="orders_subtotal_supra" id="orders_subtotal_supra">
-                    <div id="orders_subtotal_left">Subtotal</div>
-                    <div id="orders_subtotal_right">€ {{resultSubtotal.toFixed(2)}}</div>
-                </div>
-                <div class="orders_delivery_costs_supra" id="orders_delivery_costs_supra">
-                    <div id="orders_delivery_costs_left">Delivery Costs</div>
-                    <div id="orders_delivery_costs_right">€ 5.00</div>
-                </div>
-                <div class="orders_total_supra" id="orders_total_supra">
-                    <div id="orders_total_left">Total</div>
-                    <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div>
-                </div>
-                <div class="buy" id="buy"><button>Buy!</button></div>
-              </div>
-
-         </div>
-
+         
          
     </div>
 

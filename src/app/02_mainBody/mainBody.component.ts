@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class MainBodyComponent implements OnInit{
-  
-  menus = [{
+
+     // entry param type ' : any []' for the menus array 
+
+  menus : any [] = [{
     image: "img/pizza_salami_1280.jpg",
     restaurant: "Majster Pizza",
     food: "Pizza Salami",
@@ -53,7 +55,7 @@ export class MainBodyComponent implements OnInit{
   }];
 
     // entry param type ' : any []' for the basket array 
-  basket : any [] = [];  
+  basket : any[] = [];  
 
   ngOnInit(): void {
     // RenderMenu_description(), renderEmptyBasket()
@@ -67,18 +69,18 @@ constructor () {
   // in Typescript we not not need to put the tag 'function' in front of a function addMenutoBasket
 addMenuToBasket(menu_position_from_btn_onclick : number) {
   // Wie kann ich die Informationen zum Array menus an diese Funktion weiterreichen? Lediglich die Position des Onclick Elements wurde weitergereicht.
-let entry_menu = this.menus[menu_position_from_btn_onclick]["food"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
-let entry_price = this.menus[menu_position_from_btn_onclick]["price"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
-let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); //was muss hinter dem == stehen? Das hier ist die Filterfunktion...
+  let entry_menu = this.menus[menu_position_from_btn_onclick]["food"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
+  let entry_price = this.menus[menu_position_from_btn_onclick]["price"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
+  let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); //was muss hinter dem == stehen? Das hier ist die Filterfunktion...
             //was muss hinter dem == stehen? Das hier ist die Filterfunktion... Ist die price Variable nicht ohnehin überflüssig?
 
 if (mealIndex == -1) {
-this.pushtoBasket(entry_menu, entry_price);
-} else {
-this. basket[mealIndex]["amount"]++; // im JSON-Array basket wird an der Position mealIndex der Wert von amount ++ erhöht, was +1 bedeutet.
-console.log(this.basket); // an dieser Stelle soll console.log ausgeführt werden, mit dem Eingabefehl (basket)
-}
-this.calcSubtotal();
+  this.pushtoBasket(entry_menu, entry_price);
+  } else {
+  this.basket[mealIndex]["amount"]++; // im JSON-Array basket wird an der Position mealIndex der Wert von amount ++ erhöht, was +1 bedeutet.
+  console.log(this.basket); // an dieser Stelle soll console.log ausgeführt werden, mit dem Eingabefehl (basket)
+  }
+  this.calcSubtotal();
 // renderBasket(); //renderBasket(entry_menu, entry_price, menu_position_from_btn_onclick)
 }
 
@@ -94,7 +96,8 @@ pushtoBasket(entry_menu : string, entry_price : number) {
   this.basket.push(data);
 }
 
-resultSubtotal = 0;
+
+resultSubtotal : number = 0;
 
 calcSubtotal() {
   this.resultSubtotal = 0;
@@ -111,9 +114,9 @@ calcSubtotal() {
 }
 
 renderSums(resultSubtotal : number){
-  
-  let finalSum : number = this.resultSubtotal + 5;
-  
+  let finalSum : number;
+  finalSum = this.resultSubtotal + 5;
+  // let finalSum : number = this.resultSubtotal + 5;
 }
 
 }

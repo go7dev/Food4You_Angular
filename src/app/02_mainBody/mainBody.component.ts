@@ -119,4 +119,82 @@ renderSums(resultSubtotal : number){
   // let finalSum : number = this.resultSubtotal + 5;
 }
 
+
+
+
+basketMinus(Minus : any) {
+  if (this.basket[Minus]["amount"] >= 2) {
+    this.basket[Minus]["amount"]--;
+                                        // wenn man auf Minus klickt, dann werden Amount-Werte manchmal um 2 reduziert.
+      this.calcSubtotal();
+      // renderBasket();
+    
+  } else {
+    this.basket.splice(Minus, 1);
+
+    if (this.basket.length == 0) {
+      // renderEmptyBasket();
+      // renderButtonLine();
+    } else {
+      this.calcSubtotal();
+      // renderBasket();
+    }
+  }
+}
+
+basketPlus(Plus : any) {
+  this.basket[Plus]["amount"]++;
+
+  this.calcSubtotal();
+  // renderBasket();
+}
+
+
+deleteOrder(i : number) {
+  this.basket.splice(i, 1); 
+  console.log(this.basket);
+  if (this.basket.length == 0) {
+    // renderEmptyBasket();
+    // renderButtonLine();
+  } else {
+    this.calcSubtotal();
+    // renderBasket();
+  }         
+}
+
+// function shoppingCart() {
+//   let foodlist = document.getElementById('order_content');
+//   let shoppingCart = document.getElementById('basket_supra');
+
+//   foodlist.classList.toggle('order_content_d-none');
+//   shoppingCart.classList.toggle('basket_supra_display');
+  
+// }
+
+// function renderButtonLine(resultSubtotal) {
+//   let finalSum = resultSubtotal +5;
+//   let buttonLine = document.getElementById('mediaCart');
+//   buttonLine.innerHTML = '';
+  
+//   if (basket.length == 0) {
+    
+//     buttonLine.innerHTML += `
+//     <button onclick="shoppingCart()">
+//         <span>&#8679</span>
+//         <h2>Shopping Cart</h2>
+//         <span>&#8679</span>
+//     </button>`
+
+//   } else {
+    
+//   buttonLine.innerHTML += `
+//         <button onclick="shoppingCart()">
+//             <span>&#8679</span>
+//             <h2>Shopping Cart (€ ${finalSum.toFixed(2)} )</h2>
+//             <span>&#8679</span>
+//         </button>
+//   `;
+//   }
+// }
+
 }

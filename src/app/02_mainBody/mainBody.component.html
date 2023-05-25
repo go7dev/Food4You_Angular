@@ -42,6 +42,22 @@
                 <span>Add your favourite menu to your shopping cart!!!</span>
             </div>
 
+            <div class="basket_table" *ngIf="this.basket.length > 0">
+                <div class="table_td_1_menu_description" id="table_td_1_menu_description"
+                *ngFor="let order of basket; let i = index" >
+                      {{order.amount}} x {{order.food}}
+                </div>
+                <div class="table_td_2_basket_buttons" id="table_td_2_basket_buttons" *ngFor="let order of basket; let i = index">
+                    <button id="basket_minus" (click)="basketMinus(i)">-</button>
+                    <button id="basket_plus" (click)="basketPlus(i)">+</button>
+                </div>
+                <div class="table_td_3_delete_bin" id="table_td_3_delete_bin" *ngFor="let order of basket; let i = index">
+        
+                    <span>€ {{order.price.toFixed(2)}}</span>
+                    <button (click)="deleteOrder(i)"><img src="../assets/img/delete2_icon_blue_24x24.png"></button>
+                </div>
+            </div>
+
             <div id="sums" class="sums" *ngIf="this.basket.length > 0">
 
                 <div class="table_row_sum">
@@ -56,7 +72,7 @@
                     </div>
                     <div class="orders_total_supra" id="orders_total_supra">
                         <div id="orders_total_left">Total</div>
-                        <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div>
+                        <!-- <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div> -->
                     </div>
                     <div class="buy" id="buy"><button>Buy!</button></div>
                   </div>

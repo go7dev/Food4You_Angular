@@ -1,6 +1,6 @@
 import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-declare function renderEmptyBasket(): void;
+// declare function renderEmptyBasket(): void;
 
 @Component({
   selector: 'app-mainBody',
@@ -52,7 +52,8 @@ export class MainBodyComponent implements OnInit{
     amount: 1,
   }];
 
-  basket = [];
+    // entry param type ' : any []' for the basket array 
+  basket : any [] = [];  
 
   ngOnInit(): void {
     // RenderMenu_description(), renderEmptyBasket()
@@ -61,6 +62,58 @@ export class MainBodyComponent implements OnInit{
 
 constructor () {
   // renderEmptyBasket();
+}
+
+  // in Typescript we not not need to put the tag 'function' in front of a function addMenutoBasket
+addMenuToBasket(menu_position_from_btn_onclick : number) {
+  // Wie kann ich die Informationen zum Array menus an diese Funktion weiterreichen? Lediglich die Position des Onclick Elements wurde weitergereicht.
+let entry_menu = this.menus[menu_position_from_btn_onclick]["food"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
+let entry_price = this.menus[menu_position_from_btn_onclick]["price"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
+let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); //was muss hinter dem == stehen? Das hier ist die Filterfunktion...
+            //was muss hinter dem == stehen? Das hier ist die Filterfunktion... Ist die price Variable nicht ohnehin überflüssig?
+
+if (mealIndex == -1) {
+this.pushtoBasket(entry_menu, entry_price);
+} else {
+this. basket[mealIndex]["amount"]++; // im JSON-Array basket wird an der Position mealIndex der Wert von amount ++ erhöht, was +1 bedeutet.
+console.log(this.basket); // an dieser Stelle soll console.log ausgeführt werden, mit dem Eingabefehl (basket)
+}
+this.calcSubtotal();
+// renderBasket(); //renderBasket(entry_menu, entry_price, menu_position_from_btn_onclick)
+}
+
+
+pushtoBasket(entry_menu : string, entry_price : number) {
+  let amount = 1;
+  let data = {
+    food: entry_menu,
+    price: entry_price,
+    amount: amount,
+  };
+
+  this.basket.push(data);
+}
+
+resultSubtotal = 0;
+
+calcSubtotal() {
+  this.resultSubtotal = 0;
+
+  for (let i = 0; i < this.basket.length; i++) {
+                                                                                //  const resultSubtotal = menus[menu_position_from_btn_onclick]["price"]; (basket_infos, i));
+                                                                                // const [product, quantity] = cur;
+                                                                                    // return sum += products.find(p => p.name === product).price * quantity;
+    this.resultSubtotal += this.basket[i]["price"] * this.basket[i]["amount"]; // hier wird der price des Artikels/ Foods aus dem JSON-Array multipliziert mit dem Amount aus dem gelichen JSON-Array
+    
+  }
+  this.renderSums(this.resultSubtotal);
+  // this.renderButtonLine(this.resultSubtotal);
+}
+
+renderSums(resultSubtotal : number){
+  
+  let finalSum : number = this.resultSubtotal + 5;
+  
 }
 
 }

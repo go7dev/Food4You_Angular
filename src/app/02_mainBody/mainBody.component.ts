@@ -1,10 +1,13 @@
+import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+declare function renderEmptyBasket(): void;
 
 @Component({
   selector: 'app-mainBody',
   templateUrl: './mainBody.component.html',
   styleUrls: ['./mainBody.component.scss']
 })
+
 export class MainBodyComponent implements OnInit{
   
   menus = [{
@@ -53,8 +56,11 @@ export class MainBodyComponent implements OnInit{
 
   ngOnInit(): void {
     // RenderMenu_description(), renderEmptyBasket()
+    // renderEmptyBasket();
   }
 
-constructor () {}
+constructor () {
+  // renderEmptyBasket();
+}
 
 }

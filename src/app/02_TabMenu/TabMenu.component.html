@@ -1,8 +1,8 @@
 <p>TabMenu works!</p>
 
 <ul class="nav nav-tabs">
-    <li class="nav-item" *ngFor="let tab of tabCategories">
-      <a class="nav-link">{{tab}}</a>
+    <li class="nav-item" *ngFor="let tab of tabCategories | keyvalue">
+      <a class="nav-link">{{tab.key}}</a>
     </li>
 </ul>
 

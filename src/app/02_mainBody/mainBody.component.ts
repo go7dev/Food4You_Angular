@@ -117,7 +117,7 @@ finalSum : number = 0;
 
 renderSums(){
    this.finalSum = this.resultSubtotal + 5;
-  // let finalSum : number = this.resultSubtotal + 5;
+ 
 }
 
 

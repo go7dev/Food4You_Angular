@@ -1,25 +1,10 @@
 <p>TabMenu works!</p>
 
 <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pizza</a>
+    <li class="nav-item" *ngFor="let tab of tabCategories">
+      <a class="nav-link">{{tab}}</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Salads</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Asia</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">HermanTheGerman</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">India</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Pasta</a>
-    </li>
-  </ul>
+</ul>
 
   <!-- <ul class="nav nav-tabs">
     <li class="nav-item">

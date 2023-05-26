@@ -109,13 +109,14 @@ calcSubtotal() {
     this.resultSubtotal += this.basket[i]["price"] * this.basket[i]["amount"]; // hier wird der price des Artikels/ Foods aus dem JSON-Array multipliziert mit dem Amount aus dem gelichen JSON-Array
     
   }
-  this.renderSums(this.resultSubtotal);
+  this.renderSums();
   // this.renderButtonLine(this.resultSubtotal);
 }
 
-renderSums(resultSubtotal : number){
-  let finalSum : number;
-  finalSum = this.resultSubtotal + 5;
+finalSum : number = 0;
+
+renderSums(){
+   this.finalSum = this.resultSubtotal + 5;
   // let finalSum : number = this.resultSubtotal + 5;
 }
 

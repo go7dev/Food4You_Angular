@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './01_header/header.component';
-import { MenuofkitchensComponent } from './02_menuofkitchens/menuofkitchens.component';
+import { TabMenuComponent } from './02_TabMenu/TabMenu.component';
 import { MainBodyComponent } from './03_mainBody/mainBody.component';
 import { FooterComponent } from './04_footer/footer.component';
 
@@ -13,7 +13,7 @@ import { FooterComponent } from './04_footer/footer.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuofkitchensComponent,
+    TabMenuComponent,
     MainBodyComponent,
     FooterComponent
   ],

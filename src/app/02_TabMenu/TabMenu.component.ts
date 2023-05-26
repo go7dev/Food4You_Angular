@@ -1,11 +1,11 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-menuofkitchens',
-  templateUrl: './menuofkitchens.component.html',
-  styleUrls: ['./menuofkitchens.component.scss']
+  selector: 'app-TabMenu',
+  templateUrl: './TabMenu.component.html',
+  styleUrls: ['./TabMenu.component.scss']
 })
-export class MenuofkitchensComponent implements OnInit, AfterViewInit{
+export class TabMenuComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
 

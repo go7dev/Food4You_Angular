@@ -50,7 +50,7 @@ constructor(){
                                                       "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
                                                       "price": 8.5,
                                                       "amount": 1
-                                                      }],                                                  ,
+                                                      }],                                                  
                                           "Milano": [{
                                                         "img": "img/pizza_Milano2_1280 x 853.jpg",
                                                         "restaurant": "Majster Pizza",

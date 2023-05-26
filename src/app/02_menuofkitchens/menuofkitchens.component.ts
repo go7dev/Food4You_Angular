@@ -1,31 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-menuofkitchens',
   templateUrl: './menuofkitchens.component.html',
   styleUrls: ['./menuofkitchens.component.scss']
 })
-export class MenuofkitchensComponent implements OnInit{
+export class MenuofkitchensComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
 
   }
 
-    openCity(evt : any, cityName : string) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+  constructor(){}
+
+  ngAfterViewInit(): void {
+    // this.openCity('London');
   }
-  
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
+
+
+
+  //   openCity(cityName: string, evt?: any) {
+
+  //   var i, tabcontent, tablinks;
+
+  //   tabcontent = document.getElementsByClassName("tabcontent");
+  //   for (i = 0; i < tabcontent.length; i++) {
+      
+  //     const tabcontentElement = tabcontent[i] as HTMLElement;
+  //     if(tabcontentElement){
+  //       tabcontentElement.style.display = "none";
+  //     }  
+  //   }
+
+  //   tablinks = document.getElementsByClassName("tablinks");
+  //   for (i = 0; i < tablinks.length; i++) {
+  //     tablinks[i].className = tablinks[i].className.replace(" active", "");
+  //   }
+
+  //   const cityElement = document.getElementById(cityName);
+  //   if(cityElement){
+  //     cityElement.style.display = "block";
+  //   }
+
+  //   if (evt){
+  //   evt.currentTarget.className += " active";
+  //   }
+  // }
 
 }

@@ -42,43 +42,48 @@ constructor(){
 //   { stringValue: 'World', numberValue: 100 }
 // ];
                       // MyObject
-  @Input() tabCategories : any = { "Pizzas": {
-                                          "Salami": [{
-                                                      "img": "img/pizza_salami_1280.jpg",
-                                                      "restaurant": "Majster Pizza",
-                                                      "food": "Pizza Salami",
-                                                      "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-                                                      "price": 8.5,
-                                                      "amount": 1
-                                                      }],                                                  
-                                          "Milano": [{
-                                                        "img": "img/pizza_Milano2_1280 x 853.jpg",
-                                                        "restaurant": "Majster Pizza",
-                                                        "food": "Pizza Milano",
-                                                        "ingredients": "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-                                                        "price": 9,
-                                                        "amount": 1
-                                                      }]
-                                                },
-                                        
-                                    "Salads": {
-                                            "Greek": [{
-                                                      "img": "img/pasta_1.webp",
-                                                      "restaurant": "La Noodleria",
-                                                      "food": "Noodles Napoli",
-                                                      "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                                                      "price": 9.5,
-                                                      "amount": 1,
-                                                    }],
-                                            "Cesar": [{
-                                                      "img": "img/pasta_1.webp",
-                                                      "restaurant": "La Noodleria",
-                                                      "food": "Noodles Napoli",
-                                                      "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                                                      "price": 9.5,
-                                                      "amount": 1,
-                                                    }]
-                                                  }
+  @Input() tabCategories : any = {        "Pizzas": {
+                                              
+                                              "meals": [{
+                                                "Salami": [{
+                                                            "img": "img/pizza_salami_1280.jpg",
+                                                            "restaurant": "Majster Pizza",
+                                                            "food": "Pizza Salami",
+                                                            "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+                                                            "price": 8.5,
+                                                            "amount": 1
+                                                            }],                                                  
+                                                "Milano": [{
+                                                              "img": "img/pizza_Milano2_1280 x 853.jpg",
+                                                              "restaurant": "Majster Pizza",
+                                                              "food": "Pizza Milano",
+                                                              "ingredients": "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+                                                              "price": 9,
+                                                              "amount": 1
+                                                            }]
+                                                      }],
+                                                    },
+                                          "Salads": {
+                                              "meals": [{
+                                                  "Greek": [{
+                                                            "img": "img/pasta_1.webp",
+                                                            "restaurant": "La Noodleria",
+                                                            "food": "Noodles Napoli",
+                                                            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
+                                                            "price": 9.5,
+                                                            "amount": 1,
+                                                          }],
+                                                  "Cesar": [{
+                                                            "img": "img/pasta_1.webp",
+                                                            "restaurant": "La Noodleria",
+                                                            "food": "Noodles Napoli",
+                                                            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
+                                                            "price": 9.5,
+                                                            "amount": 1,
+                                                          }]
+                                                        }]
+                                                      }
+                                                    
                             };
 
   // @Input() tabCategories : AnyCatcher = {

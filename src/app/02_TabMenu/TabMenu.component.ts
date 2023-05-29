@@ -1,3 +1,4 @@
+import { STRING_TYPE } from '@angular/compiler';
 import { Component, OnInit, Input } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
@@ -7,84 +8,120 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
   styleUrls: ['./TabMenu.component.scss']
 })
 export class TabMenuComponent implements OnInit{
-  // createData : any = [];
-
-  // var MyObject =
-  //            {
-  //            datatype: "json",
-  //            url: url,
-  //            datafields : [
-  //            { name: 'Icon', map:  'Rotation>Shifts>Icon' },
-  //            { name: 'Name' , map: 'Rotation>Name' },
-  //            { name: 'BeginOffset' , map:  'Rotation>Shifts>'+test1()+'>BeginOffset'},
-  //            { name: 'EndOffset', map: 'Rotation>Shifts>'+test1()+'>EndOffset' },
-  //            { name: 'PaidHours', map: 'Rotation>Shifts>'+test1()+'>PaidHours' },
-  //            { name: 'Period' , map: 'Rotation>Shifts>'+test1()+'>Period'}
-  //            ]
 
 constructor(){
-//  interface MyObject {
-//   tabCategories: string;
-//   Pizzas: string;
-//   Salads: string;
-//   img: string;
-//   restaurant: string;
-//   food: string;
-//   ingredients: string;
-//   price: number;
-//   amount: number;
-//  }
+
+}
+// @Input()
+
+tabCategories: Food4YouJsonFile = {
+  "Pizzas": {
+    "general": {
+      "img": ["img/original/pizza_Milano_1280 x 853.jpg"]
+    },
+    "meals": [
+      {
+        "Salami": [
+          {
+            "img": "img/pizza_salami_1280.jpg",
+            "restaurant": "Majster Pizza",
+            "food": "Pizza Salami",
+            "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+            "price": 8.5,
+            "amount": 1
+          }
+        ],
+        "Milano": [
+          {
+            "img": "img/pizza_Milano2_1280 x 853.jpg",
+            "restaurant": "Majster Pizza",
+            "food": "Pizza Milano",
+            "ingredients": "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+            "price": 9,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  "Salads": {
+    "general": {
+      "img": ["img/rice_bowl.jpg"]
+    },
+    "meals": [
+      {
+        "Greek": [
+          {
+            "img": "img/pasta_1.webp",
+            "restaurant": "La Noodleria",
+            "food": "Noodles Napoli",
+            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
+            "price": 9.5,
+            "amount": 1
+          }
+        ],
+        "Cesar": [
+          {
+            "img": "img/pasta_1.webp",
+            "restaurant": "La Noodleria",
+            "food": "Noodles Napoli",
+            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
+            "price": 9.5,
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  }
+};
+
+
+ngOnInit(): void {
 }
 
 
-// const jsonArray: MyObject[] = [
-//   { stringValue: 'Hello', numberValue: 42 },
-//   { stringValue: 'World', numberValue: 100 }
-// ];
-                      // MyObject
-  @Input() tabCategories : any = {        "Pizzas": {
-                                              
-                                              "meals": [{
-                                                "Salami": [{
-                                                            "img": "img/pizza_salami_1280.jpg",
-                                                            "restaurant": "Majster Pizza",
-                                                            "food": "Pizza Salami",
-                                                            "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-                                                            "price": 8.5,
-                                                            "amount": 1
-                                                            }],                                                  
-                                                "Milano": [{
-                                                              "img": "img/pizza_Milano2_1280 x 853.jpg",
-                                                              "restaurant": "Majster Pizza",
-                                                              "food": "Pizza Milano",
-                                                              "ingredients": "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-                                                              "price": 9,
-                                                              "amount": 1
-                                                            }]
-                                                      }],
-                                                    },
-                                          "Salads": {
-                                              "meals": [{
-                                                  "Greek": [{
-                                                            "img": "img/pasta_1.webp",
-                                                            "restaurant": "La Noodleria",
-                                                            "food": "Noodles Napoli",
-                                                            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                                                            "price": 9.5,
-                                                            "amount": 1,
-                                                          }],
-                                                  "Cesar": [{
-                                                            "img": "img/pasta_1.webp",
-                                                            "restaurant": "La Noodleria",
-                                                            "food": "Noodles Napoli",
-                                                            "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                                                            "price": 9.5,
-                                                            "amount": 1,
-                                                          }]
-                                                        }]
-                                                      }
-                                                    
-                            };
+}
+
+
+type Food4YouJsonFile = {
+  [key: string]: {
+    general: {
+      img: string[];
+    };
+    meals: {
+      [key: string]: {
+        img: string;
+        restaurant: string;
+        food: string;
+        ingredients: string;
+        price: number;
+        amount: number;
+      }[];
+    };
+  };
+};
+
+
+// type Food4YouJsonFile = {
+//   [key: string]: {general: string {img: string[];
+//                                     };
+//                   meals: string [{ meal: any: 
+//                                           {img: string;
+//                                           restaurant: string;
+//                                           food: string;
+//                                           ingredients: string;
+//                                           price: number;
+//                                           amount: number;
+//                                           },
+//                           }];
+//                   };
+// };
+
+
+
+
+
+
 
   // @Input() tabCategories : AnyCatcher = {
   //                                 "name": "John Doe",
@@ -145,18 +182,8 @@ constructor(){
                           //   }
                           // ;
 
-  ngOnInit(): void {
+// tabCategories: [string, Food4YouJsonFile][] = [];
 
-  }
-
-
-
-
-
-  // const jsonArray: MyObject[] = [
-  //   { stringValue: 'Hello', numberValue: 42 },
-  //   { stringValue: 'World', numberValue: 100 }
-  // ];
 
   // ngAfterViewInit(): void {
   //   // this.openCity('London');
@@ -192,4 +219,3 @@ constructor(){
   //   }
   // }
 
-}

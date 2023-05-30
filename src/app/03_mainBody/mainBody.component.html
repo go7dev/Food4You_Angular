@@ -4,19 +4,19 @@
     <div class="order_content" id="order_content">
         
         <div class="food_picture" id="food_picture">
-            <img src="../assets/img/ChilliConCarne2.jpeg">
+            <img src="../assets/img/meals/international/ChilliConCarne2.jpeg">
         </div>
 
         <div id="order_restaurant" class="order_restaurant">
             <h3>Restaurant</h3>
             <div class="recommendations"><img src="../assets/img/Bewertungen.PNG"></div>
             <div class="order_restaurant_icons">
-                <div class="order_restaurant_icons_1"><img src="../assets/img/icon_clock_32x32.png"><span>opened from 11 am</span></div>
-                <div class="order_restaurant_icons_2"><img src="../assets/img/icon_bike_32x32.png"><span>Delivery Time: 20 min.</span></div>
-                <div class="order_restaurant_icons_3"><img src="../assets/img/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
+                <div class="order_restaurant_icons_1"><img src="../assets/img/icons/icon_clock_32x32.png"><span>opened from 11 am</span></div>
+                <div class="order_restaurant_icons_2"><img src="../assets/img/icons/icon_bike_32x32.png"><span>Delivery Time: 20 min.</span></div>
+                <div class="order_restaurant_icons_3"><img src="../assets/img/icons/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
             </div>
         </div>
-                                                <!-- in the *ngFor loop 'let i = index' is not needed anymore  -->
+                                                
         <div class="menus" *ngFor="let menu of menus; let i = index">    
 
             <div class="menu_description">
@@ -26,7 +26,7 @@
                 </div>
                 <span>{{menu.ingredients}}</span>
                 <div class="menu_description_price">€ {{menu.price.toFixed(2)}}</div>
-                <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/plus4_icon_48x48.png"></button>
+                <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
             </div>
 
         </div>
@@ -54,7 +54,7 @@
                 <div class="table_td_3_delete_bin" id="table_td_3_delete_bin" *ngFor="let order of basket; let i = index">
         
                     <span>€ {{order.price.toFixed(2)}}</span>
-                    <button (click)="deleteOrder(i)"><img src="../assets/img/delete2_icon_blue_24x24.png"></button>
+                    <button (click)="deleteOrder(i)"><img src="../assets/img/icons/delete2_icon_blue_24x24.png"></button>
                 </div>
             </div>
 

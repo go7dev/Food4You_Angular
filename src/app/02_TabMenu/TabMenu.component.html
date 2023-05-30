@@ -5,14 +5,23 @@
   <!-- Here, we use the keyvalue pipe in the ngFor directive to iterate over the tabCategories object.
   This allows us to access both the key and value of each entry in the object.
    In this example, we simply display the category key in the list item. -->
-    <li class="nav-item" *ngFor="let tab of tabCategories | keyvalue">
+    <!-- <li class="nav-item" *ngFor="let tab of tabCategories | keyvalue">
       <a class="nav-link">{{tab.key}}</a>
+    </li> -->
+
+    <li class="nav-item" *ngFor="let category of categories">
+      <a (click)="changeSelectedCategory(category)" class="nav-link">{{category.name}}</a>
     </li>
 </ul>
+<img src="{{selectedCategory.img}}">
 
-<div *ngFor="let tab of tabCategories | keyvalue">
+
+
+
+
+<!-- <div *ngFor="let tab of tabCategories | keyvalue">
   <img src="./assets/{{ tab.general.img.key}}">
-</div>
+</div> -->
 
 <!-- <img src="./assets/img/original/pizza_Milano_1280 x 853.jpg"> -->
 

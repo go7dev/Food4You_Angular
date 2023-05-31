@@ -1,4 +1,8 @@
 <app-TabMenu></app-TabMenu>
+
+
+        <!-- -----  Bootstrap Syntax ----- -->
+
 <div class="content">
 
     <div class="order_content" id="order_content">
@@ -16,8 +20,19 @@
                 <div class="order_restaurant_icons_3"><img src="../assets/img/icons/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
             </div>
         </div>
-                                                
-        <div class="menus" *ngFor="let menu of menus; let i = index">    
+
+
+        <ul class="nav nav-tabs">                  
+            <li class="nav-item" *ngFor="let category of categories">
+                <a class="nav-link">{{category}}</a>
+            </li>
+          </ul>
+
+
+
+        <!-- ----- Non-Bootstrap Syntax ----- -->
+
+        <!-- <div class="menus" *ngFor="let menu of menus; let i = index">    
 
             <div class="menu_description">
                 <div class="menu_description_head">
@@ -29,7 +44,7 @@
                 <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 

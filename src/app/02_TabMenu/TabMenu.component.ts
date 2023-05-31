@@ -1,36 +1,40 @@
-import { STRING_TYPE } from '@angular/compiler';
+// import { STRING_TYPE } from '@angular/compiler';
 import { Component, OnInit, Input } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 interface Category{
-  name: string,
-  info: string,
-  img: string,
-  meals: string,
-  restaurant: string,
-  dish: string,
-  ingredients: string,
-  price: number,
-  amount: number
+  // name: string,
+  // info: string,
+  // img: string
+  // meals: string,
+  // restaurant: string,
+  // dish: string,
+  // ingredients: string,
+  // price: number,
+  // amount: number
 }
 
-// ------ CHAT GPT APPROACH ------
+interface FoodJSON{
+  // img: string,
+  // meals: string,
+  // restaurant: string,
+  // dish: string,
+  // ingredients: string,
+  // price: number,
+  // amount: number
 
-// interface Category {
-//   [category: string]: {
-//     img: string;
-//     meals: {
-//       [meal: string]: {
-//         img: string;
-//         restaurant: string;
-//         dish: string;
-//         ingredients: string;
-//         price: number;
-//         amount: number;
-//       }[];
-//     };
-//   };
-// }
+[meal: string]: {
+img: string,
+restaurant: string,
+dish: string,
+ingredients: string,
+price: number,
+amount: number,
+}[];
+   
+}
+
+
 
 @Component({
   selector: 'app-TabMenu',
@@ -41,271 +45,141 @@ interface Category{
 export class TabMenuComponent implements OnInit{
 
 constructor(){
-this.selectedCategory = this.categories[0];
+// this.selectedCategory = this.categories[0];
 }
-// @Input()
+@Input() categories : string [] = [];
 
-restaurantImage!: string;
-selectedCategory: Category;
+
+// ----- Mihai Approach -----
+
+// restaurantImage!: string;
+// selectedCategory: Category;
 
 // categories : Category [] = [
-//   {name: "Pizzas", img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg"},
-//   {name: "Pasta", img: "./assets/img/meals/pasta/salmone_1_1280 x 853.jpg"}
+//   {name: "Pizzas", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Salads", img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg"},
+//   {name: "Asia", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Pasta", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Indian", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "HermanTheGerman", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
 // ];
 
-changeSelectedCategory(selectedCategory : Category){
-  this.selectedCategory = selectedCategory;
-}
-
-categories: Category [] = {
-        name: "Pizzas" {
-          
-            img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
-            
-            meals: [{
-                "Salami": [{
-                    img: "./assets/img/meals/pizzas/pizza_salami_1280.jpg",
-                    restaurant: "Majster Pizza",
-                    dish: "Pizza Salami",
-                    ingredients: "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-                    price: 8.5,
-                    amount: 1
-                  }],
-                "Milano": [{
-                    img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
-                    restaurant: "Majster Pizza",
-                    dish: "Pizza Milano",
-                    ingredients: "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-                    price: 9,
-                    amount: 1
-                  }]
-            }]
-        },
-        name: "Salads" {
-            
-            img: "./assets/img/meals/salads/lemon_1_1280x853.jpg",
-                            
-            meals: [{
-                "Greek": [{
-                    img: "./assets/img/meals/salads/avocado_1_1227 x 1229_modified.jpg",
-                    restaurant: "La Noodleria",
-                    dish: "Noodles Napoli",
-                    ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                    price: 9.5,
-                    amount: 1
-                  }],
-                "Cesar": [{
-                    img: "./assets/img/meals/salads/paprica_1_1280 x 853.jpg",
-                    restaurant: "La Noodleria",
-                    dish: "Noodles Napoli",
-                    ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
-                    price: 9.5,
-                    amount: 1
-                  }]
-            }]
-          }
-};
-
-
-
-
-// ------ CHAT GPT APPROACH -----
-
-
-// categories: Category = {
-//   Pizzas: {
-//     img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
-//     meals: {
-//       Salami: [
-//         {
-//           img: "./assets/img/meals/pizzas/pizza_salami_1280.jpg",
-//           restaurant: "Majster Pizza",
-//           dish: "Pizza Salami",
-//           ingredients: "with Mozarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the woodstove...",
-//           price: 8.5,
-//           amount: 1,
-//         },
-//       ],
-//       Milano: [
-//         {
-//           img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
-//           restaurant: "Majster Pizza",
-//           dish: "Pizza Milano",
-//           ingredients: "Mozarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-//           price: 9,
-//           amount: 1,
-//         },
-//       ],
-//     },
-//   },
-//   Salads: {
-//     img: "./assets/img/meals/salads/lemon_1_1280x853.jpg",
-//     meals: {
-//       Greek: [
-//         {
-//           img: "./assets/img/meals/salads/avocado_1_1227 x 1229_modified.jpg",
-//           restaurant: "La Noodleria",
-//           dish: "Noodles Napoli",
-//           ingredients: "with Parmesan Cheese, Tomato Sauce, Basil",
-//           price: 9.5,
-//           amount: 1,
-//         },
-//       ],
-//       Cesar: [
-//         {
-//           img: "./assets/img/meals/salads/paprica_1_1280 x 853.jpg",
-//           restaurant: "La Noodleria",
-//           dish: "Noodles Napoli",
-//           ingredients: "with Parmesan Cheese, Tomato Sauce, Basil",
-//           price: 9.5,
-//           amount: 1,
-//         },
-//       ],
-//     },
-//   },
-// };
-
+// changeSelectedCategory(selectedCategory : Category){
+//   this.selectedCategory = selectedCategory;
+// }
 
 ngOnInit(): void {
 }
 
+Pizzas : FoodJSON [] = { meals : [{
+                                  "Salami": [{
+                                      img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
+                                      restaurant: "Majster Pizza",
+                                      dish: "Pizza Salami",
+                                      ingredients: "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+                                      price: 8.5,
+                                      amount: 1
+                                  }],
+                                  "Milano": [{
+                                      img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
+                                      restaurant: "Majster Pizza",
+                                      dish: "Pizza Milano",
+                                      ingredients: "with Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+                                      price: 9,
+                                      amount: 1
+                                  }],
+                                  "Veggie": [{
+                                    img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
+                                    restaurant: "Majster Pizza",
+                                    dish: "Pizza Veggie",
+                                    ingredients: "with Mozarella, Tomatoe Sauce, Zucchini, Olives, Egg Plant, Rucola, from the woodstove...",
+                                    price: 9,
+                                    amount: 1
+                                   }],
+                                  "Four Seasons": [{
+                                    img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
+                                    restaurant: "Majster Pizza",
+                                    dish: "Pizza Four Seasons",
+                                    ingredients: "with Mozarella, Tomatoe Sauce, Onions, Paprica, Olives, Salami, Mushrooms, Sourdough, from the woodstove...",
+                                    price: 9,
+                                    amount: 1
+                                    }],
+                                  "Diavolo": [{
+                                    img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
+                                    restaurant: "Majster Pizza",
+                                    dish: "Pizza Diavolo",
+                                    ingredients: "with Mozarella, Tomatoe Sauce, Hot Salami, Pepperoni, Sourdough, from the woodstove...",
+                                    price: 9,
+                                    amount: 1
+                                    }],
+                                  "Mozarella": [{
+                                    img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
+                                    restaurant: "Majster Pizza",
+                                    dish: "Pizza Mozarella",
+                                    ingredients: "with Mozarella, Tomatoe Sauce, Tomatoes, Basil, Sourdough, from the woodstove...",
+                                    price: 9,
+                                    amount: 1
+                                }],
+                                }]
+                              }
+
+
+Salads : FoodJSON [] = { meals : [{
+                                "Lemon": [{
+                                    img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg",
+                                    restaurant: "Green Rabbits",
+                                    dish: "Lemon Salad",
+                                    ingredients: "with Lemon, Cucumber, Tomatoes, Onion, Olives, Curled Lettuce",
+                                    price: 13.5,
+                                    amount: 1
+                                }],
+                                "Avocado": [{
+                                    img: "./assets/img/meals/2_salads/avocado_1_1227 x 1229_modified.jpg",
+                                    restaurant: "Green Rabbits",
+                                    dish: "Avocado Salad",
+                                    ingredients: "Avocado, Tomatoes, Cucumber, Flaxseed, Iceberg Lettuce",
+                                    price: 12,
+                                    amount: 1
+                                }],
+                                "Strawberry": [{
+                                  img: "./assets/img/meals/2_salads/strawberry_1_756 x 773_modified.jpg",
+                                  restaurant: "Green Rabbits",
+                                  dish: "Strawberry Salad",
+                                  ingredients: "Strawberries, Curled lettuce, Iceberg Lettuce",
+                                  price: 16,
+                                  amount: 1
+                                 }],
+                                "Homemade": [{
+                                  img: "./assets/img/meals/2_salads/homemadeDarkBread_1_1280 x 853_modified.jpg",
+                                  restaurant: "Green Rabbits",
+                                  dish: "Homemade Salad",
+                                  ingredients: "Olives, Avocado, Tomatoes, Feta Cheese, Lambs Lettuce",
+                                  price: 14,
+                                  amount: 1
+                                  }],
+                                "Paprica": [{
+                                  img: "./assets/img/meals/2_salads/paprica_1_1280 x 853.jpg",
+                                  restaurant: "Green Rabbits",
+                                  dish: "Paprica Salad",
+                                  ingredients: "Paprica, Nuts, Feta Cheese, Pepperoni, Onions",
+                                  price: 11,
+                                  amount: 1
+                                  }],
+                                "Burger": [{
+                                  img: "./assets/img/meals/2_salads/veggieBurgerSalad_1_1280 x 1920_modified.jpg",
+                                  restaurant: "Green Rabbits",
+                                  dish: "Veggie Burger Salad",
+                                  ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
+                                  price: 15,
+                                  amount: 1
+                              }],
+                              }]
+                            }
+
+
+
 
 }
 
-
-// type Food4YouJsonFile = {
-//   [key: string]: {
-//     general: {
-//       img: string[];
-//     };
-//     meals: {
-//       [key: string]: {
-//         img: string;
-//         restaurant: string;
-//         food: string;
-//         ingredients: string;
-//         price: number;
-//         amount: number;
-//       }[];
-//     };
-//   };
-// };
-
-
-// type Food4YouJsonFile = {
-//   [key: string]: {general: string {img: string[];
-//                                     };
-//                   meals: string [{ meal: any: 
-//                                           {img: string;
-//                                           restaurant: string;
-//                                           food: string;
-//                                           ingredients: string;
-//                                           price: number;
-//                                           amount: number;
-//                                           },
-//                           }];
-//                   };
-// };
-
-
-
-
-
-
-
-  // @Input() tabCategories : AnyCatcher = {
-  //                                 "name": "John Doe",
-  //                                 "age": 30,
-  //                                 "address": {
-  //                                   "street": "123 Main Street",
-  //                                   "city": "New York",
-  //                                   "state": "NY"
-  //                                 },
-  //                                 "contacts": [
-  //                                   {
-  //                                     "type": "email",
-  //                                     "value": "john.doe@example.com"
-  //                                   },
-  //                                   {
-  //                                     "type": "phone",
-  //                                     "value": "555-1234"
-  //                                   }
-  //                                 ],
-  //                                 "orders": [
-  //                                   {
-  //                                     "orderID": "001",
-  //                                     "products": [
-  //                                       {
-  //                                         "name": "Product A",
-  //                                         "price": 10.99
-  //                                       },
-  //                                       {
-  //                                         "name": "Product B",
-  //                                         "price": 19.99
-  //                                       }
-  //                                     ]
-  //                                   },
-  //                                   {
-  //                                     "orderID": "002",
-  //                                     "products": [
-  //                                       {
-  //                                         "name": "Product C",
-  //                                         "price": 7.99
-  //                                       },
-  //                                       {
-  //                                         "name": "Product D",
-  //                                         "price": 14.99
-  //                                       }
-  //                                     ]
-  //                                   }
-  //                                 ]
-  //                               };
-                            
-                                  
-
-                          //   {"Pizzas":{"meal1", "meal2"},                                                      ],
-                          //   "Salads":{"meal1", "meal2"},                                                      ],                                                      ,
-                          //   "Asia":{"meal1", "meal2"},                                                      ],      
-                          //   "HermanTheGerman":{"meal1", "meal2"},                                                      ],      
-                          //   "India":{"meal1", "meal2"},                                                      ],      
-                          //   "Pasta":{"meal1", "meal2"}                                                      ]     
-                          //   }
-                          // ;
-
-// tabCategories: [string, Food4YouJsonFile][] = [];
-
-
-  // ngAfterViewInit(): void {
-  //   // this.openCity('London');
-  // }
-
-
-
-  //   openCity(cityName: string, evt?: any) {
-
-  //   var i, tabcontent, tablinks;
-
-  //   tabcontent = document.getElementsByClassName("tabcontent");
-  //   for (i = 0; i < tabcontent.length; i++) {
-      
-  //     const tabcontentElement = tabcontent[i] as HTMLElement;
-  //     if(tabcontentElement){
-  //       tabcontentElement.style.display = "none";
-  //     }  
-  //   }
-
-  //   tablinks = document.getElementsByClassName("tablinks");
-  //   for (i = 0; i < tablinks.length; i++) {
-  //     tablinks[i].className = tablinks[i].className.replace(" active", "");
-  //   }
-
-  //   const cityElement = document.getElementById(cityName);
-  //   if(cityElement){
-  //     cityElement.style.display = "block";
-  //   }
-
-  //   if (evt){
-  //   evt.currentTarget.className += " active";
-  //   }
-  // }
 

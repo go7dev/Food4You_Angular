@@ -10,6 +10,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainBodyComponent implements OnInit{
 
+categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+
+//   {name: "Pizzas"},
+//   {name: "Salads", img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg"},
+//   {name: "Asia", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Pasta", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Indian", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "HermanTheGerman", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
+// ];];
+
+  
      // entry param type ' : any []' for the menus array 
 
   menus : any [] = [{

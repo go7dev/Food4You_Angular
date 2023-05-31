@@ -4,16 +4,33 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 interface Category{
   name: string,
-    img: string,
-  // info: string,
-
-  // meals: string,
-  // restaurant: string,
-  // dish: string,
-  // ingredients: string,
-  // price: number,
-  // amount: number
+  info: string,
+  img: string,
+  meals: string,
+  restaurant: string,
+  dish: string,
+  ingredients: string,
+  price: number,
+  amount: number
 }
+
+// ------ CHAT GPT APPROACH ------
+
+// interface Category {
+//   [category: string]: {
+//     img: string;
+//     meals: {
+//       [meal: string]: {
+//         img: string;
+//         restaurant: string;
+//         dish: string;
+//         ingredients: string;
+//         price: number;
+//         amount: number;
+//       }[];
+//     };
+//   };
+// }
 
 @Component({
   selector: 'app-TabMenu',
@@ -31,73 +48,121 @@ this.selectedCategory = this.categories[0];
 restaurantImage!: string;
 selectedCategory: Category;
 
-categories : Category [] = [
-  {name: "Pizzas", img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg"},
-  {name: "Pasta", img: "./assets/img/meals/pasta/salmone_1_1280 x 853.jpg"}
-];
+// categories : Category [] = [
+//   {name: "Pizzas", img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg"},
+//   {name: "Pasta", img: "./assets/img/meals/pasta/salmone_1_1280 x 853.jpg"}
+// ];
 
 changeSelectedCategory(selectedCategory : Category){
   this.selectedCategory = selectedCategory;
 }
 
+categories: Category [] = {
+        name: "Pizzas" {
+          
+            img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
+            
+            meals: [{
+                "Salami": [{
+                    img: "./assets/img/meals/pizzas/pizza_salami_1280.jpg",
+                    restaurant: "Majster Pizza",
+                    dish: "Pizza Salami",
+                    ingredients: "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+                    price: 8.5,
+                    amount: 1
+                  }],
+                "Milano": [{
+                    img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
+                    restaurant: "Majster Pizza",
+                    dish: "Pizza Milano",
+                    ingredients: "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+                    price: 9,
+                    amount: 1
+                  }]
+            }]
+        },
+        name: "Salads" {
+            
+            img: "./assets/img/meals/salads/lemon_1_1280x853.jpg",
+                            
+            meals: [{
+                "Greek": [{
+                    img: "./assets/img/meals/salads/avocado_1_1227 x 1229_modified.jpg",
+                    restaurant: "La Noodleria",
+                    dish: "Noodles Napoli",
+                    ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
+                    price: 9.5,
+                    amount: 1
+                  }],
+                "Cesar": [{
+                    img: "./assets/img/meals/salads/paprica_1_1280 x 853.jpg",
+                    restaurant: "La Noodleria",
+                    dish: "Noodles Napoli",
+                    ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
+                    price: 9.5,
+                    amount: 1
+                  }]
+            }]
+          }
+};
+
+
+
+
+// ------ CHAT GPT APPROACH -----
+
 
 // categories: Category = {
-//         "name": "Pizzas": {
-//                       "info": {"img": ["img/original/pizza_Milano_1280 x 853.jpg"]
-//                             },
-//             "meals": [
-//               {
-//                 "Salami": [
-//                   {
-//                     "img": "img/pizza_salami_1280.jpg",
-//                     "restaurant": "Majster Pizza",
-//                     "dish": "Pizza Salami",
-//                     "ingredients": "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-//                     "price": 8.5,
-//                     "amount": 1
-//                   }
-//                 ],
-//                 "Milano": [
-//                   {
-//                     "img": "img/pizza_Milano2_1280 x 853.jpg",
-//                     "restaurant": "Majster Pizza",
-//                     "dish": "Pizza Milano",
-//                     "ingredients": "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-//                     "price": 9,
-//                     "amount": 1
-//                   }
-//                 ]
-//               }
-//             ]
-//           },
-//          "name": "Salads": {
-//                       "info": {"img": ["img/rice_bowl.jpg"]
-//                             },
-//             "meals": [
-//               {
-//                 "Greek": [
-//                   {
-//                     "img": "img/pasta_1.webp",
-//                     "restaurant": "La Noodleria",
-//                     "dish": "Noodles Napoli",
-//                     "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-//                     "price": 9.5,
-//                     "amount": 1
-//                   }
-//                 ],
-//                 "Cesar": [
-//                   {
-//                     "img": "img/pasta_1.webp",
-//                     "restaurant": "La Noodleria",
-//                     "dish": "Noodles Napoli",
-//                     "ingredients": "with Parmesan Cheese, Tomatoe Sauce, Basil",
-//                     "price": 9.5,
-//                     "amount": 1
-//                   }
-//                 ]
-//               }
-//             ]
-//           }
+//   Pizzas: {
+//     img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
+//     meals: {
+//       Salami: [
+//         {
+//           img: "./assets/img/meals/pizzas/pizza_salami_1280.jpg",
+//           restaurant: "Majster Pizza",
+//           dish: "Pizza Salami",
+//           ingredients: "with Mozarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the woodstove...",
+//           price: 8.5,
+//           amount: 1,
+//         },
+//       ],
+//       Milano: [
+//         {
+//           img: "./assets/img/meals/pizzas/pizza_Milano2_1280 x 853.jpg",
+//           restaurant: "Majster Pizza",
+//           dish: "Pizza Milano",
+//           ingredients: "Mozarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+//           price: 9,
+//           amount: 1,
+//         },
+//       ],
+//     },
+//   },
+//   Salads: {
+//     img: "./assets/img/meals/salads/lemon_1_1280x853.jpg",
+//     meals: {
+//       Greek: [
+//         {
+//           img: "./assets/img/meals/salads/avocado_1_1227 x 1229_modified.jpg",
+//           restaurant: "La Noodleria",
+//           dish: "Noodles Napoli",
+//           ingredients: "with Parmesan Cheese, Tomato Sauce, Basil",
+//           price: 9.5,
+//           amount: 1,
+//         },
+//       ],
+//       Cesar: [
+//         {
+//           img: "./assets/img/meals/salads/paprica_1_1280 x 853.jpg",
+//           restaurant: "La Noodleria",
+//           dish: "Noodles Napoli",
+//           ingredients: "with Parmesan Cheese, Tomato Sauce, Basil",
+//           price: 9.5,
+//           amount: 1,
+//         },
+//       ],
+//     },
+//   },
 // };
 
 

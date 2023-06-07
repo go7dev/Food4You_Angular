@@ -337,6 +337,113 @@ Indian : FoodJSON [] = { meals : [{
 }
 
 
+HermanTheGerman : FoodJSON [] = { meals : [{
+                              "Kaesspatzle": [{
+                                  img: "./assets/img/meals/6_hermanTheGerman/cheeseNoodles_1_1280 x 960.jpg",
+                                  restaurant: "HermanTheGerman",
+                                  dish: "Kaesspatzle (Cheese Noodles)",
+                                  ingredients: "Noodles á la Herman Style, Melted Cheese, Onions (Roasted), Parsley",
+                                  price: 12.0,
+                                  amount: 1
+                              }],
+                              "TarteEggplant": [{
+                                  img: "./assets/img/meals/6_hermanTheGerman/TarteFlambeeAubergine_1_.jpg",
+                                  restaurant: "HermanTheGerman",
+                                  dish: "Tarte Flambée - Eggplant",
+                                  ingredients: "Sour Dough, Tomatoes, German Cheese, Eggplant, Basil Pesto, Fresh Basil",
+                                  price: 10,
+                                  amount: 1
+                              }],
+                              "PotatoGratin": [{
+                                img: "./assets/img/meals/6_hermanTheGerman/kartoffelgratin_1_1085 x 643_modified.jpg",
+                                restaurant: "HermanTheGerman",
+                                dish: "Potato Gratin",
+                                ingredients: "Potatoes, Melted Cheese, Onions, Rosemary, Parsley",
+                                price: 12,
+                                amount: 1
+                              }],
+                              "Maultaschen": [{
+                                img: "./assets/img/meals/5_indian/fish_1_1280 x 853.jpg",
+                                restaurant: "HermanTheGerman",
+                                dish: "German Ravioli",
+                                ingredients: "5x Ravioli á la Herman Style (Filled with Meat or Vegetables), Stock, Basil",
+                                price: 15,
+                                amount: 1
+                                }],
+                              "Schnitzel": [{
+                                img: "./assets/img/meals/6_hermanTheGerman/schnitzel_2_1280 x 853.jpg",
+                                restaurant: "HermanTheGerman",
+                                dish: "Yaeger Schnitzel",
+                                ingredients: "French Fries, Pork Steak, Mushrooms with Cream Sauce, Salad",
+                                price: 18,
+                                amount: 1
+                                }],
+                              "TarteOnion": [{
+                                img: "./assets/img/meals/6_hermanTheGerman/tarteFlammbee_1_1280 x 853.jpg",
+                                restaurant: "HermanTheGerman",
+                                dish: "Tarte Flambée - Onions",
+                                ingredients: "Sour Dough, German Cheese, Onions, Bacon",
+                                price: 9,
+                                amount: 1
+                            }],
+                            }]
+}
+
+
+Hamburgers : FoodJSON [] = { meals : [{
+                              "AmericanDark": [{
+                                  img: "./assets/img/meals/7_hamburger/americanDark_1_1279 x 1266_modified.jpg",
+                                  restaurant: "Burgers' Paradise",
+                                  dish: "American-Dark Burger",
+                                  ingredients: "Beef, Dark-Bread Burger, American Cocktail Sauce, Cucumber, Iceberg Salad, Onions",
+                                  price: 11.0,
+                                  amount: 1
+                              }],
+                              "CheeseBurger": [{
+                                  img: "./assets/img/meals/7_hamburger/cheeseburger_1_1013 x 850_modified.jpg",
+                                  restaurant: "Burgers' Paradise",
+                                  dish: "Cheeseburger",
+                                  ingredients: "Beef, Cheese, Egg, Dark-Bread Burger with Sesame, Mayonnaise, Tomatoes, Basil",
+                                  price: 14,
+                                  amount: 1
+                              }],
+                              "HamburgerRoyal": [{
+                                img: "./assets/img/meals/7_hamburger/hamburger_1_1280 x 1010_modified.jpg",
+                                restaurant: "Burgers' Paradise",
+                                dish: "Hamburger Royal",
+                                ingredients: "Beef (2 Patties), Cheese, Iceberg Salad, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
+                                price: 12,
+                                amount: 1
+                              }],
+                              "OliveBurger": [{
+                                img: "./assets/img/meals/7_hamburger/olive_1_1168 x 1099.jpg",
+                                restaurant: "Burgers' Paradise",
+                                dish: "Olive Burger",
+                                ingredients: "Olives, Beef (2 Patties), Bacon, Salad, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
+                                price: 16,
+                                amount: 1
+                                }],
+                              "BBQBurger": [{
+                                img: "./assets/img/meals/7_hamburger/bbq_1_875 x 762_modified.jpg",
+                                restaurant: "Burgers' Paradise",
+                                dish: "BBQ Burger",
+                                ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Salad, Iceberg Salad, BBQ Sauce",
+                                price: 14,
+                                amount: 1
+                                }],
+                              "ChickenBurger": [{
+                                img: "./assets/img/meals/7_hamburger/sesamChicken_1_808 x 680_modified.jpg",
+                                restaurant: "Burgers' Paradise",
+                                dish: "Chicken Burger",
+                                ingredients: "Chicken, Sesame Burger Bread, Tomatoes, Iceberg Salad, Ketchup or Cheese Sauce",
+                                price: 10,
+                                amount: 1
+                            }],
+                            }]
+}
+
+
+
 }
 
 

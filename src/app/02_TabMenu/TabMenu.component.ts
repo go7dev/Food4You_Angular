@@ -2,36 +2,29 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
-interface Category{
-  // name: string,
-  // info: string,
-  // img: string
-  // meals: string,
-  // restaurant: string,
-  // dish: string,
-  // ingredients: string,
-  // price: number,
-  // amount: number
-}
+// interface Category{
+//   name: string,
+//   info: string,
+//   img: string
+//   meals: string,
+//   restaurant: string,
+//   dish: string,
+//   ingredients: string,
+//   price: number,
+//   amount: number
+// }
 
-interface FoodJSON{
-  // img: string,
-  // meals: string,
-  // restaurant: string,
-  // dish: string,
-  // ingredients: string,
-  // price: number,
-  // amount: number
-
-[meal: string]: {
-img: string,
-restaurant: string,
-dish: string,
-ingredients: string,
-price: number,
-amount: number,
-}[];
-   
+interface FoodJSON {
+meals: {
+        [meal: string]: {
+                          img: string,
+                          restaurant: string,
+                          dish: string,
+                          ingredients: string,
+                          price: number,
+                          amount: number,
+                        }[];
+      }
 }
 
 
@@ -46,9 +39,14 @@ export class TabMenuComponent implements OnInit{
 
 constructor(){
 // this.selectedCategory = this.categories[0];
+// this.FoodJSON
 }
 @Input() categories : string [] = [];
 
+
+// class FoodJSON implements FoodJsonStructure{
+
+// }
 
 // ----- Mihai Approach -----
 
@@ -72,7 +70,7 @@ constructor(){
 ngOnInit(): void {
 }
 
-Pizzas : FoodJSON [] = { meals : [{
+Pizzas : FoodJSON [] = [{ meals: {
                                   "Salami": [{
                                       img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
                                       restaurant: "Magic Pizza",
@@ -121,11 +119,11 @@ Pizzas : FoodJSON [] = { meals : [{
                                     price: 9,
                                     amount: 1
                                 }],
-                                }]
-                              }
+                                }
+                              }]
 
 
-Salads : FoodJSON [] = { meals : [{
+Salads : FoodJSON [] = [{ meals: {
                                 "Lemon": [{
                                     img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg",
                                     restaurant: "Green Rabbits",
@@ -173,12 +171,12 @@ Salads : FoodJSON [] = { meals : [{
                                   ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
                                   price: 15,
                                   amount: 1
-                              }],
-                              }]
-                            }
+                                }],
+                              }
+                        }]
 
 
-Asia : FoodJSON [] = { meals : [{
+Asia : FoodJSON [] = [{ meals: {
                               "ThaiShrimps": [{
                                   img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
                                   restaurant: "Chinese Garden",
@@ -226,12 +224,12 @@ Asia : FoodJSON [] = { meals : [{
                                 ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
                                 price: 11,
                                 amount: 1
-                            }],
-                            }]
-}
+                              }],
+                            }
+                      }]
 
 
-Pasta : FoodJSON [] = { meals : [{
+Pasta : FoodJSON [] = [{ meals: {
                               "Basil": [{
                                   img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
                                   restaurant: "Angelo's",
@@ -279,12 +277,12 @@ Pasta : FoodJSON [] = { meals : [{
                                 ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
                                 price: 11,
                                 amount: 1
-                            }],
-                            }]
-}
+                              }],
+                            }
+                      }]
 
 
-Indian : FoodJSON [] = { meals : [{
+Indian : FoodJSON [] = [{ meals: {
                               "CurryCheese": [{
                                   img: "./assets/img/meals/5_indian/curryCheese_1_1280 x 853.jpg",
                                   restaurant: "Taj Mahal",
@@ -332,12 +330,12 @@ Indian : FoodJSON [] = { meals : [{
                                 ingredients: "Rice, Beans, Cinnamon, Onions, Parsley",
                                 price: 14,
                                 amount: 1
-                            }],
-                            }]
-}
+                              }],
+                            }
+                      }]
 
 
-HermanTheGerman : FoodJSON [] = { meals : [{
+HermanTheGerman : FoodJSON [] = [{ meals: {
                               "Kaesspatzle": [{
                                   img: "./assets/img/meals/6_hermanTheGerman/cheeseNoodles_1_1280 x 960.jpg",
                                   restaurant: "HermanTheGerman",
@@ -385,12 +383,12 @@ HermanTheGerman : FoodJSON [] = { meals : [{
                                 ingredients: "Sour Dough, German Cheese, Onions, Bacon",
                                 price: 9,
                                 amount: 1
-                            }],
-                            }]
-}
+                              }],
+                            }
+                      }]
 
 
-Hamburgers : FoodJSON [] = { meals : [{
+Hamburgers : FoodJSON [] = [{ meals: {
                               "AmericanDark": [{
                                   img: "./assets/img/meals/7_hamburger/americanDark_1_1279 x 1266_modified.jpg",
                                   restaurant: "Burgers' Paradise",
@@ -438,9 +436,9 @@ Hamburgers : FoodJSON [] = { meals : [{
                                 ingredients: "Chicken, Sesame Burger Bread, Tomatoes, Iceberg Salad, Ketchup or Cheese Sauce",
                                 price: 10,
                                 amount: 1
-                            }],
-                            }]
-}
+                              }],
+                            }
+                      }]
 
 
 

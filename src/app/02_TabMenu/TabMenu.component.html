@@ -1,6 +1,6 @@
 <p>TabMenu works!</p>
 <!-- | keyvalue -->
-<ul class="nav nav-tabs">
+<!-- <ul class="nav nav-tabs"> -->
 
   <!----- CHAT GPT APPROACH -----
     
@@ -12,9 +12,10 @@
     </li>
 </ul> -->
 
-<li class="nav-item" *ngFor="let category of categories">
-  <a class="nav-link">{{category}}</a>
-</li>
+<ul class="nav nav-tabs">                  
+  <li class="nav-item" *ngFor="let category of CategoriesArray; let sr = index" (click)="setTab(sr)">
+      <a class="nav-link" [ngClass]="activatedCategory == sr ? 'active': '' ">{{category}}</a>
+  </li>
 </ul>
 
 
@@ -51,20 +52,6 @@
 
 
 
-  <!-- <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled">Disabled</a>
-    </li>
-  </ul> -->
 
   
 <!-- <div class="tab">

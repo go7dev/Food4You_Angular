@@ -1,18 +1,6 @@
 // import { STRING_TYPE } from '@angular/compiler';
-import { Component, OnInit, Input } from '@angular/core';
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
-
-// interface Category{
-//   name: string,
-//   info: string,
-//   img: string
-//   meals: string,
-//   restaurant: string,
-//   dish: string,
-//   ingredients: string,
-//   price: number,
-//   amount: number
-// }
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+// import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 interface FoodJSON {
 meals: {
@@ -27,8 +15,6 @@ meals: {
       }
 }
 
-
-
 @Component({
   selector: 'app-TabMenu',
   templateUrl: './TabMenu.component.html',
@@ -41,12 +27,21 @@ constructor(){
 // this.selectedCategory = this.categories[0];
 // this.FoodJSON
 }
-@Input() categories : string [] = [];
+@Input() CategoriesArray : string [] = [];
+@Output() onTabChange = new EventEmitter<number>();
+activatedCategory: number = 0;
+
+ngOnInit(): void {
+}
+
+setTab(index: number){
+  this.activatedCategory = index;
+  // debugger;
+  this.onTabChange.emit(this.activatedCategory);
+}
 
 
-// class FoodJSON implements FoodJsonStructure{
-
-// }
+// categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
 
 // ----- Mihai Approach -----
 
@@ -67,8 +62,7 @@ constructor(){
 //   this.selectedCategory = selectedCategory;
 // }
 
-ngOnInit(): void {
-}
+
 
 Pizzas : FoodJSON [] = [{ meals: {
                                   "Salami": [{

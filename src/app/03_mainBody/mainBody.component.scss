@@ -1,3 +1,14 @@
+.mainBody{
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    margin-top: 50px;
+    display: flex;
+    position: relative;
+}
+
 .order_restaurant {
 
 }
@@ -62,10 +73,6 @@
 
 }
 
-.content {
-    display: flex;
-    position: relative;
-}
 
 .order_content {
     width: 70%;

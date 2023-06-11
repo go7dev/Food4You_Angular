@@ -10,7 +10,23 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainBodyComponent implements OnInit{
 
-categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+tabs : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+activatedTabIndex: number = 0;
+constructor () {
+  // renderEmptyBasket();
+}
+
+ngOnInit(): void {
+  // RenderMenu_description(), renderEmptyBasket()
+  // renderEmptyBasket();
+}
+
+tabChange(tabIndex: number){
+  // debugger;
+  this.activatedTabIndex = tabIndex;
+}
+
+
 
 //   {name: "Pizzas"},
 //   {name: "Salads", img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg"},
@@ -21,10 +37,8 @@ categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "Herman
 //   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
 // ];];
 
-  
-     // entry param type ' : any []' for the menus array 
-
-  menus : any [] = [{
+menus = [
+  {
     image: "img/pizza_salami_1280.jpg",
     restaurant: "Majster Pizza",
     food: "Pizza Salami",
@@ -64,19 +78,11 @@ categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "Herman
     ingredients: "with Pumpkin, Sour Cream, Peanuts, Curry-Spices",
     price: 10.5,
     amount: 1,
-  }];
+  },
+];
 
     // entry param type ' : any []' for the basket array 
   basket : any[] = [];  
-
-  ngOnInit(): void {
-    // RenderMenu_description(), renderEmptyBasket()
-    // renderEmptyBasket();
-  }
-
-constructor () {
-  // renderEmptyBasket();
-}
 
   // in Typescript we not not need to put the tag 'function' in front of a function addMenutoBasket
 addMenuToBasket(menu_position_from_btn_onclick : number) {

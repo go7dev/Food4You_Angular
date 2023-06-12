@@ -6,12 +6,12 @@
 
     <app-TabMenu [CategoriesArray]="tabs" (onTabChange)="tabChange($event)"></app-TabMenu>
     <div class="content">
-    <div class="row">
-        <div class="col-12">
-            <div *ngIf="activatedTabIndex == 0" >
-              <p>This is Pizzas Panel.</p>
+    <!-- <div class="row">
+        <div class="col-12"> -->
+            <!-- <div >
+              <p>This is Pizzas Panel.</p> -->
                   
-                <div class="order_content" id="order_content">
+                <div *ngIf="activatedTabIndex == 0" class="order_content" id="order_content">
                 
                     <!-- <div class="food_picture" id="food_picture">
                         <img src="../assets/img/meals/international/ChilliConCarne2.jpeg">
@@ -26,41 +26,53 @@
                             <div class="order_restaurant_icons_3"><img src="../assets/img/icons/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
                         </div>
                     </div> -->
+      
 
-                    <!-- <div class="menus" *ngFor="let pizza of Pizzas; let i = index">    
-
-                        <div class="menu_description">
-                            <div class="menu_description_head">
-                                <div class="menu_description_food"><h3>{{i+1}}) {{pizza.dish}}</h3></div>
-                                <div class="menu_description_pic"><img src="../assets/{{pizza.img}}"></div>
-                            </div>
-                            <span>{{pizza.ingredients}}</span>
-                            <div class="menu_description_price">€ {{pizza.price.toFixed(2)}}</div>
-                            <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
+                    <div class="card cardMod" *ngFor="let pizza of Pizzas; let i = index" style="width: 18rem;">
+                        <img src="{{pizza.img}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{i+1}}) {{pizza.dish}}</h5>
+                          <p class="card-text">{{pizza.ingredients}} € {{pizza.price.toFixed(2)}}</p>
+                          <button (click)="addMenuToBasket(i)" class="btn btn-primary">Go somewhere</button>
                         </div>
-
+                    </div>
+                    
+                    <!-- <div class="menu_description">
+                        <div class="menu_description_head">
+                            <div class="menu_description_food"><h3>${i+1}) ${menus_object_infos["food"]}</h3></div>
+                            <div class="menu_description_pic"><img src="${menus_object_infos["image"]}"></div>
+                        </div>
+                        <span>${menus_object_infos["ingredients"]}</span>
+                        <div class="menu_description_price">€ ${menus_object_infos["price"].toFixed(2)}</div>
+                        <button onclick="addMenuToBasket(${i})" class="order_button"><img src="img/plus4_icon_48x48.png"></button>
                     </div> -->
-               
-
-                        <div class="menus" *ngFor="let pizza of Pizzas; let i = index">
-                          <div class="menu_description">
-                            <div class="menu_description_head">
-                              <div class="menu_description_food"><h3>{{i+1}}) {{pizza['dish']}}</h3></div>
-                              <div class="menu_description_pic"><img src="{{pizza['img']}}"></div>
-                            </div>
-                            <span>{{pizza['ingredients']}}</span>
-                            <div class="menu_description_price">€ {{pizza['price']}}</div> <!--.toFixed(2)-->
-                            <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
-                          </div>
-                        </div>
-                      
-                      
 
                 </div>
 
-            </div>
+            <!-- </div> -->
+
 
             <div *ngIf="activatedTabIndex == 1">
+                <p>This is Salad Panel.</p>
+              </div>
+              <!-- <div *ngIf="activatedTabIndex == 2">
+                <p>This is Asia Panel.</p>
+              </div>
+              <div *ngIf="activatedTabIndex == 3">
+                <p>This is Pasta Panel.</p>
+              </div>
+              <div *ngIf="activatedTabIndex == 4">
+                <p>This is Indian Panel.</p>
+              </div>
+              <div *ngIf="activatedTabIndex == 5">
+                <p>This is HermanTheGerman Panel.</p>
+              </div>
+              <div *ngIf="activatedTabIndex == 6">
+                <p>This is Hamburger Panel.</p>
+              </div> -->
+
+
+            <!-- <div *ngIf="activatedTabIndex == 1">
               <p>This is Salad Panel.</p>
             </div>
             <div *ngIf="activatedTabIndex == 2">
@@ -77,9 +89,9 @@
             </div>
             <div *ngIf="activatedTabIndex == 6">
               <p>This is Hamburger Panel.</p>
-            </div>
-        </div>
-      </div>
+            </div> -->
+        <!-- </div>
+      </div> -->
   
     
        

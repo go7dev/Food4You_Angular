@@ -7,6 +7,7 @@
     margin-top: 50px;
     display: flex;
     position: relative;
+    width: 100%;
 }
 
 .order_restaurant {
@@ -75,7 +76,7 @@
 
 
 .order_content {
-    width: 70%;
+    width: 70% !important;
     height:auto;
     display: flex;
     flex-direction: column;
@@ -187,7 +188,7 @@
 }
 
 .basket_supra{
-    width: 30%;
+    width: 30% !important;
     height: 50%;
     display: flex;
     justify-content: flex-start;

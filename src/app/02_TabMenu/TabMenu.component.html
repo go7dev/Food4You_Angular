@@ -13,8 +13,8 @@
 </ul> -->
 
 <ul class="nav nav-tabs">                  
-  <li class="nav-item" *ngFor="let category of CategoriesArray; let sr = index" (click)="setTab(sr)">
-      <a class="nav-link" [ngClass]="activatedCategory == sr ? 'active': '' ">{{category}}</a>
+  <li class="nav-item" *ngFor="let category of CategoriesArray; let i = index" (click)="setTab(i)">
+      <a class="nav-link" [ngClass]="activatedCategory == i ? 'active': '' ">{{category}}</a>
   </li>
 </ul>
 

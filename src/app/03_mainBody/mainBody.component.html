@@ -5,11 +5,61 @@
 <div class="mainBody">
 
     <app-TabMenu [CategoriesArray]="tabs" (onTabChange)="tabChange($event)"></app-TabMenu>
+    <div class="content">
     <div class="row">
         <div class="col-12">
-            <div *ngIf="activatedTabIndex == 0">
+            <div *ngIf="activatedTabIndex == 0" >
               <p>This is Pizzas Panel.</p>
+                  
+                <div class="order_content" id="order_content">
+                
+                    <!-- <div class="food_picture" id="food_picture">
+                        <img src="../assets/img/meals/international/ChilliConCarne2.jpeg">
+                    </div> -->
+        
+                    <!-- <div id="order_restaurant" class="order_restaurant">
+                        <h3>Restaurant</h3>
+                        <div class="recommendations"><img src="../assets/img/Bewertungen.PNG"></div>
+                        <div class="order_restaurant_icons">
+                            <div class="order_restaurant_icons_1"><img src="../assets/img/icons/icon_clock_32x32.png"><span>opened from 11 am</span></div>
+                            <div class="order_restaurant_icons_2"><img src="../assets/img/icons/icon_bike_32x32.png"><span>Delivery Time: 20 min.</span></div>
+                            <div class="order_restaurant_icons_3"><img src="../assets/img/icons/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="menus" *ngFor="let pizza of Pizzas; let i = index">    
+
+                        <div class="menu_description">
+                            <div class="menu_description_head">
+                                <div class="menu_description_food"><h3>{{i+1}}) {{pizza.dish}}</h3></div>
+                                <div class="menu_description_pic"><img src="../assets/{{pizza.img}}"></div>
+                            </div>
+                            <span>{{pizza.ingredients}}</span>
+                            <div class="menu_description_price">€ {{pizza.price.toFixed(2)}}</div>
+                            <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
+                        </div>
+
+                    </div> -->
+               
+
+                        <div class="menus" *ngFor="let pizza of Pizzas; let i = index">
+                          <div class="menu_description">
+                            <div class="menu_description_head">
+                              <div class="menu_description_food"><h3>{{i+1}}) {{pizza['dish']}}</h3></div>
+                              <div class="menu_description_pic"><img src="{{pizza['img']}}"></div>
+                            </div>
+                            <span>{{pizza['ingredients']}}</span>
+                            <div class="menu_description_price">€ {{pizza['price']}}</div> <!--.toFixed(2)-->
+                            <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
+                          </div>
+                        </div>
+                      
+                      
+
+                </div>
+
             </div>
+
             <div *ngIf="activatedTabIndex == 1">
               <p>This is Salad Panel.</p>
             </div>
@@ -30,23 +80,9 @@
             </div>
         </div>
       </div>
-    <div class="content">
+  
     
-        <div class="order_content" id="order_content">
-            
-            <div class="food_picture" id="food_picture">
-                <img src="../assets/img/meals/international/ChilliConCarne2.jpeg">
-            </div>
-
-            <div id="order_restaurant" class="order_restaurant">
-                <h3>Restaurant</h3>
-                <div class="recommendations"><img src="../assets/img/Bewertungen.PNG"></div>
-                <div class="order_restaurant_icons">
-                    <div class="order_restaurant_icons_1"><img src="../assets/img/icons/icon_clock_32x32.png"><span>opened from 11 am</span></div>
-                    <div class="order_restaurant_icons_2"><img src="../assets/img/icons/icon_bike_32x32.png"><span>Delivery Time: 20 min.</span></div>
-                    <div class="order_restaurant_icons_3"><img src="../assets/img/icons/icon_bag.PNG"><span>Minimum Order-Value: € 15</span></div>
-                </div>
-            </div>
+       
 
             
 
@@ -60,21 +96,9 @@
 
             <!-- ----- Non-Bootstrap Syntax ----- -->
 
-            <!-- <div class="menus" *ngFor="let menu of menus; let i = index">    
 
-                <div class="menu_description">
-                    <div class="menu_description_head">
-                        <div class="menu_description_food"><h3>{{i+1}}) {{menu.food}}</h3></div>
-                        <div class="menu_description_pic"><img src="../assets/{{menu.image}}"></div>
-                    </div>
-                    <span>{{menu.ingredients}}</span>
-                    <div class="menu_description_price">€ {{menu.price.toFixed(2)}}</div>
-                    <button (click)="addMenuToBasket(i)" class="order_button"><img src="../assets/img/icons/plus4_icon_48x48.png"></button>
-                </div>
 
-            </div> -->
-
-        </div>
+        
 
         <div class="basket_supra" id="basket_supra">  <div class="basket_supra_head"><h2>Shopping Cart</h2></div>
             <div id="basket" class="basket" >

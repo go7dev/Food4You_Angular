@@ -2,6 +2,17 @@ import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 // declare function renderEmptyBasket(): void;
 
+interface FoodJSON {
+  [meal: string]: {
+    img: string,
+    restaurant: string,
+    dish: string,
+    ingredients: string,
+    price: number,
+    amount: number,
+  }[];
+}
+
 @Component({
   selector: 'app-mainBody',
   templateUrl: './mainBody.component.html',
@@ -36,6 +47,58 @@ tabChange(tabIndex: number){
 //   {name: "HermanTheGerman", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
 //   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
 // ];];
+
+Pizzas : FoodJSON[] = [{ 
+  "Salami": [{
+      img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Salami",
+      ingredients: "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+      price: 8.5,
+      amount: 1
+  }],
+  "Milano": [{
+      img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Milano",
+      ingredients: "with Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+      price: 9,
+      amount: 1
+  }],
+  "Veggie": [{
+    img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
+    restaurant: "Magic Pizza",
+    dish: "Pizza Veggie",
+    ingredients: "with Mozarella, Tomatoe Sauce, Zucchini, Olives, Egg Plant, Rucola, from the woodstove...",
+    price: 9,
+    amount: 1
+   }],
+  "Four Seasons": [{
+    img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
+    restaurant: "Magic Pizza",
+    dish: "Pizza Four Seasons",
+    ingredients: "with Mozarella, Tomatoe Sauce, Onions, Paprica, Olives, Salami, Mushrooms, Sourdough, from the woodstove...",
+    price: 9,
+    amount: 1
+    }],
+  "Diavolo": [{
+    img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
+    restaurant: "Magic Pizza",
+    dish: "Pizza Diavolo",
+    ingredients: "with Mozarella, Tomatoe Sauce, Hot Salami, Pepperoni, Sourdough, from the woodstove...",
+    price: 9,
+    amount: 1
+    }],
+  "Mozarella": [{
+    img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
+    restaurant: "Magic Pizza",
+    dish: "Pizza Mozarella",
+    ingredients: "with Mozarella, Tomatoe Sauce, Tomatoes, Basil, Sourdough, from the woodstove...",
+    price: 9,
+    amount: 1
+}],
+
+}]
 
 menus = [
   {

@@ -32,8 +32,12 @@
                         <img src="{{pizza.img}}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">{{pizza.dish}}</h5>
-                          <p class="card-text">{{pizza.ingredients}} € {{pizza.price.toFixed(2)}}</p>
-                          <button (click)="addMenuToBasket(pizzaIndex)" class="btn btn-primary">Buy</button>
+                          <p class="card-text">{{pizza.ingredients}}</p>
+                          <p class="card-text"><b>Restaurant:</b> {{pizza.restaurant}}</p>
+                          <div class="cardBottom">
+                            <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{pizza.price.toFixed(2)}}</span>
+                          </div>
                         </div>
                     </div>
                     
@@ -45,8 +49,12 @@
                     <img src="{{salad.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{salad.dish}}</h5>
-                      <p class="card-text">{{salad.ingredients}} € {{salad.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(saladIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{salad.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{salad.restaurant}}</p>
+                      <div class="cardBottom">
+                          <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                          <span class="menu_description_price">€ {{salad.price.toFixed(2)}}</span>
+                      </div>
                     </div>
                 </div>
                 
@@ -58,8 +66,11 @@
                     <img src="{{asia.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{asia.dish}}</h5>
-                      <p class="card-text">{{asia.ingredients}} € {{asia.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(asiaIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{asia.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{asia.restaurant}}</p>                          <div class="cardBottom">
+                            <button (click)="addMenuToBasket(asiaIndex, Asian)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{asia.price.toFixed(2)}}</span>
+                          </div>
                     </div>
                 </div>
                 
@@ -71,8 +82,12 @@
                     <img src="{{pasta.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{pasta.dish}}</h5>
-                      <p class="card-text">{{pasta.ingredients}} € {{pasta.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(pastaIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{pasta.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{pasta.restaurant}}</p>
+                            <div class="cardBottom">
+                            <button (click)="addMenuToBasket(pastaIndex, Pastas)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{pasta.price.toFixed(2)}}</span>
+                          </div>
                     </div>
                 </div>
                 
@@ -84,8 +99,12 @@
                     <img src="{{india.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{india.dish}}</h5>
-                      <p class="card-text">{{india.ingredients}} € {{india.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(indiaIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{india.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{india.restaurant}}</p>
+                            <div class="cardBottom">
+                            <button (click)="addMenuToBasket(indiaIndex, Indian)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{india.price.toFixed(2)}}</span>
+                          </div>
                     </div>
                 </div>
                 
@@ -97,8 +116,12 @@
                     <img src="{{herman.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{herman.dish}}</h5>
-                      <p class="card-text">{{herman.ingredients}} € {{herman.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(hermanIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{herman.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{herman.restaurant}}</p>
+                                                <div class="cardBottom">
+                            <button (click)="addMenuToBasket(hermanIndex, HermanTheGerman)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{herman.price.toFixed(2)}}</span>
+                          </div>
                     </div>
                 </div>
                 
@@ -110,8 +133,12 @@
                     <img src="{{hamburger.img}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{hamburger.dish}}</h5>
-                      <p class="card-text">{{hamburger.ingredients}} € {{hamburger.price.toFixed(2)}}</p>
-                      <button (click)="addMenuToBasket(hamburgerIndex)" class="btn btn-primary">Buy</button>
+                      <p class="card-text">{{hamburger.ingredients}}</p>
+                      <p class="card-text"><b>Restaurant:</b> {{hamburger.restaurant}}</p>
+                                            <div class="cardBottom">
+                            <button (click)="addMenuToBasket(hamburgerIndex, Hamburgers)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                            <span class="menu_description_price">€ {{hamburger.price.toFixed(2)}}</span>
+                          </div>
                     </div>
                 </div>
                 

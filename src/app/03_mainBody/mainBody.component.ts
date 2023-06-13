@@ -132,7 +132,7 @@ Salads: FoodItem[] = [
   img: "./assets/img/meals/2_salads/strawberry_1_756 x 773_modified.jpg",
   restaurant: "Green Rabbits",
   dish: "Strawberry Salad",
-  ingredients: "Strawberries, Curled lettuce, Iceberg Lettuce",
+  ingredients: "Strawberries, Curled Lettuce, Iceberg Lettuce",
   price: 16,
   amount: 1
   },
@@ -237,7 +237,7 @@ price: 9,
 amount: 1
 },
 {
-img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
+img: "./assets/img/meals/4_pasta/bolognese_1_1261 x 1179.jpg",
 restaurant: "Angelo's",
 dish: "Spaghetti Bolognaise",
 ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
@@ -413,60 +413,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     }
   ];
-  
-
-
-// Pizzas : FoodJSON[] = [{ 
-//   "Salami": [{
-//       img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
-//       restaurant: "Magic Pizza",
-//       dish: "Pizza Salami",
-//       ingredients: "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-//       price: 8.5,
-//       amount: 1
-//   }],
-//   "Milano": [{
-//       img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
-//       restaurant: "Magic Pizza",
-//       dish: "Pizza Milano",
-//       ingredients: "with Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-//       price: 9,
-//       amount: 1
-//   }],
-//   "Veggie": [{
-//     img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
-//     restaurant: "Magic Pizza",
-//     dish: "Pizza Veggie",
-//     ingredients: "with Mozarella, Tomatoe Sauce, Zucchini, Olives, Egg Plant, Rucola, from the woodstove...",
-//     price: 9,
-//     amount: 1
-//    }],
-//   "Four Seasons": [{
-//     img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
-//     restaurant: "Magic Pizza",
-//     dish: "Pizza Four Seasons",
-//     ingredients: "with Mozarella, Tomatoe Sauce, Onions, Paprica, Olives, Salami, Mushrooms, Sourdough, from the woodstove...",
-//     price: 9,
-//     amount: 1
-//     }],
-//   "Diavolo": [{
-//     img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
-//     restaurant: "Magic Pizza",
-//     dish: "Pizza Diavolo",
-//     ingredients: "with Mozarella, Tomatoe Sauce, Hot Salami, Pepperoni, Sourdough, from the woodstove...",
-//     price: 9,
-//     amount: 1
-//     }],
-//   "Mozarella": [{
-//     img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
-//     restaurant: "Magic Pizza",
-//     dish: "Pizza Mozarella",
-//     ingredients: "with Mozarella, Tomatoe Sauce, Tomatoes, Basil, Sourdough, from the woodstove...",
-//     price: 9,
-//     amount: 1
-// }],
-
-// }]
+ 
 
 // menus = [
 //   {
@@ -516,20 +463,23 @@ Hamburgers: FoodItem[] = [
   basket : any[] = [];  
 
   // in Typescript we not not need to write 'function' in front of a function
-addMenuToBasket(menu_position_from_btn_onclick : number) {
-  // Wie kann ich die Informationen zum Array menus an diese Funktion weiterreichen? Lediglich die Position des Onclick Elements wurde weitergereicht.
-  console.log('menu_position_from_btn_onclick:', menu_position_from_btn_onclick);
-  let entry_menu =  this.Pizzas[menu_position_from_btn_onclick]?.dish ||
+//addMenuToBasket gets TWO parameters as input from component.html
+
+addMenuToBasket(menu_position_from_btn_onclick : number, categories: FoodItem[]) {
+  console.log('menu_position_from_btn_onclick: ', menu_position_from_btn_onclick);
+  console.log('categories: ', categories )
+
+  let entry_menu =  categories[menu_position_from_btn_onclick]?.dish ||
+                    this.Pizzas[menu_position_from_btn_onclick]?.dish ||
                     this.Salads[menu_position_from_btn_onclick]?.dish ||
                     this.Asian[menu_position_from_btn_onclick]?.dish ||
                     this.Pastas[menu_position_from_btn_onclick]?.dish ||
                     this.Indian[menu_position_from_btn_onclick]?.dish ||
                     this.HermanTheGerman[menu_position_from_btn_onclick]?.dish ||
-                    this.Hamburgers[menu_position_from_btn_onclick]?.dish; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
-  
-console.log('entry_menu:', entry_menu);
+                    this.Hamburgers[menu_position_from_btn_onclick]?.dish; 
 
-  let entry_price = this.Pizzas[menu_position_from_btn_onclick]?.price ||
+  let entry_price = categories[menu_position_from_btn_onclick]?.price ||
+                    this.Pizzas[menu_position_from_btn_onclick]?.price ||
                     this.Salads[menu_position_from_btn_onclick]?.price ||
                     this.Asian[menu_position_from_btn_onclick]?.price ||
                     this.Pastas[menu_position_from_btn_onclick]?.price ||

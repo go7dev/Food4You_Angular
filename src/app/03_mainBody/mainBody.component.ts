@@ -518,6 +518,7 @@ Hamburgers: FoodItem[] = [
   // in Typescript we not not need to write 'function' in front of a function
 addMenuToBasket(menu_position_from_btn_onclick : number) {
   // Wie kann ich die Informationen zum Array menus an diese Funktion weiterreichen? Lediglich die Position des Onclick Elements wurde weitergereicht.
+  console.log('menu_position_from_btn_onclick:', menu_position_from_btn_onclick);
   let entry_menu =  this.Pizzas[menu_position_from_btn_onclick]?.dish ||
                     this.Salads[menu_position_from_btn_onclick]?.dish ||
                     this.Asian[menu_position_from_btn_onclick]?.dish ||
@@ -526,6 +527,8 @@ addMenuToBasket(menu_position_from_btn_onclick : number) {
                     this.HermanTheGerman[menu_position_from_btn_onclick]?.dish ||
                     this.Hamburgers[menu_position_from_btn_onclick]?.dish; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
   
+console.log('entry_menu:', entry_menu);
+
   let entry_price = this.Pizzas[menu_position_from_btn_onclick]?.price ||
                     this.Salads[menu_position_from_btn_onclick]?.price ||
                     this.Asian[menu_position_from_btn_onclick]?.price ||

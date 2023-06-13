@@ -31,7 +31,7 @@ interface FoodItem {
 
 export class MainBodyComponent implements OnInit{
 
-tabs : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
 activatedTabIndex: number = 0;
 constructor () {
   // renderEmptyBasket();
@@ -57,6 +57,8 @@ tabChange(tabIndex: number){
 //   {name: "HermanTheGerman", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
 //   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
 // ];];
+
+// ----- Food Arrays -----
 
 Pizzas: FoodItem[] = [
   { 
@@ -160,7 +162,7 @@ Salads: FoodItem[] = [
   }
   ];
   
-Asia: FoodItem[] = [
+Asian: FoodItem[] = [
   {
   img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
   restaurant: "Chinese Garden",
@@ -186,49 +188,78 @@ Asia: FoodItem[] = [
   amount: 1
   },
   {
-  img: "./assets/img/meals/3_asia/teriyakiChicken_1_1280 x 848_modified.jpg",
-  restaurant: "Chinese Garden",
-  dish: "Teriyaki Chicken",
-  ingredients: "Chicken, Teriyaki Sauce, Rice, Ginger, Garlic, Sesame, Vegetables",
-  price: 13.5,
-  amount: 1
-  }
-  ];
+    img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
+    restaurant: "Chinese Garden",
+    dish: "Viet Bowl",
+    ingredients: "Vietnamese Noodles, Chicken, Vgetables, Onion, Parsley, Peppermint, ",
+    price: 14,
+    amount: 1
+  },
+  {
+    img: "./assets/img/meals/3_asia/ChinGongBeef_1_1280 x 960.jpg",
+    restaurant: "Chinese Garden",
+    dish: "Chin Gong Beef",
+    ingredients: "Rice, Beef, Chinese Sweet-Sour Sauce, Peanuts, Sesame, Parsley, Iceberg Lettuce, Vegetables",
+    price: 12,
+    amount: 1
+  },
+  {
+    img: "./assets/img/meals/3_asia/malaChicken_1_773 x 588_modified.jpg",
+    restaurant: "Chinese Garden",
+    dish: "Mala Chicken",
+    ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
+    price: 11,
+    amount: 1
+}];
   
-Pasta: FoodItem[] = [
-  {
-  img: "./assets/img/meals/4_italian/carbonara_1_1280 x 853_modified.jpg",
-  restaurant: "La Dolce Vita",
-  dish: "Spaghetti Carbonara",
-  ingredients: "Pasta, Pancetta, Egg Yolks, Parmesan Cheese, Black Pepper, Salt",
-  price: 14,
+Pastas: FoodItem[] = [{
+  img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
+  restaurant: "Angelo's",
+  dish: "Tagliatelle Basil di Tuscany",
+  ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
+  price: 13.0,
   amount: 1
-  },
-  {
-  img: "./assets/img/meals/4_italian/bruschetta_1_1280 x 853_modified.jpg",
-  restaurant: "La Dolce Vita",
-  dish: "Bruschetta",
-  ingredients: "Toasted Bread, Garlic, Tomatoes, Basil, Olive Oil, Salt",
-  price: 9.5,
+},
+{
+  img: "./assets/img/meals/4_pasta/fruttiMare_1280xx 853.jpg",
+  restaurant: "Angelo's",
+  dish: "Pasta Frutti di Mare",
+  ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
+  price: 19,
   amount: 1
-  },
-  {
-  img: "./assets/img/meals/4_italian/risotto_1_1280 x 853_modified.jpg",
-  restaurant: "La Dolce Vita",
-  dish: "Mushroom Risotto",
-  ingredients: "Rice, Mushrooms, Onion, White Wine, Parmesan Cheese, Broth, Herbs",
-  price: 15.5,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/4_italian/tiramisu_1_1280 x 853_modified.jpg",
-  restaurant: "La Dolce Vita",
-  dish: "Tiramisu",
-  ingredients: "Mascarpone, Ladyfingers, Coffee, Cocoa Powder, Eggs, Sugar",
-  price: 9,
-  amount: 1
-  }
-  ];
+},
+{
+img: "./assets/img/meals/4_pasta/creamPasta_1_853 x 822_modified.jpg",
+restaurant: "Angelo's",
+dish: "Crema Pasta",
+ingredients: "Spaghetti, North Italian melting Cheese (aromatic), Cream, Parsley",
+price: 9,
+amount: 1
+},
+{
+img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
+restaurant: "Angelo's",
+dish: "Spaghetti Bolognaise",
+ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
+price: 14,
+amount: 1
+},
+{
+img: "./assets/img/meals/4_pasta/salmone_1_1280 x 853.jpg",
+restaurant: "Angelo's",
+dish: "Pasta Salmone",
+ingredients: "Tagliatelle, Salmone, Rosemary, Basil-Paprica-Cream, Asparagus, 1 Shrimp, Tomatoes, Radishes, Lemon",
+price: 20,
+amount: 1
+},
+{
+img: "./assets/img/meals/4_pasta/shrimps_1_1280 x 697.jpg",
+restaurant: "Angelo's",
+dish: "Capri Shrimps",
+ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
+price: 11,
+amount: 1
+}];
 
 Indian: FoodItem[] = [
     {
@@ -307,7 +338,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
-      img: "./assets/img/meals/5_indian/fish_1_1280 x 853.jpg",
+      img: "./assets/img/meals/6_hermanTheGerman/maultasche_1_1280 x 1218.jpg",
       restaurant: "HermanTheGerman",
       dish: "German Ravioli",
       ingredients: "5x Ravioli á la Herman Style (Filled with Meat or Vegetables), Stock, Basil",
@@ -353,7 +384,7 @@ Hamburgers: FoodItem[] = [
       img: "./assets/img/meals/7_hamburger/hamburger_1_1280 x 1010_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Hamburger Royal",
-      ingredients: "Beef (2 Patties), Cheese, Iceberg Salad, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
+      ingredients: "Beef (2 Patties), Cheese, Iceberg Lettuce, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
       price: 12,
       amount: 1
     },
@@ -361,7 +392,7 @@ Hamburgers: FoodItem[] = [
       img: "./assets/img/meals/7_hamburger/olive_1_1168 x 1099.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Olive Burger",
-      ingredients: "Olives, Beef (2 Patties), Bacon, Salad, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
+      ingredients: "Olives, Beef (2 Patties), Bacon, Lettuce, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
       price: 16,
       amount: 1
     },
@@ -369,15 +400,15 @@ Hamburgers: FoodItem[] = [
       img: "./assets/img/meals/7_hamburger/bbq_1_875 x 762_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "BBQ Burger",
-      ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Salad, Iceberg Salad, BBQ Sauce",
+      ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Lettuce, Iceberg Lettuce, BBQ Sauce",
       price: 15,
       amount: 1
     },
     {
-      img: "./assets/img/meals/7_hamburger/jalapeno_1_1280 x 853.jpg",
+      img: "./assets/img/meals/7_hamburger/sesamChicken_1_808 x 680_modified.jpg",
       restaurant: "Burgers' Paradise",
-      dish: "Jalapeno Burger",
-      ingredients: "Beef (1 Giant Pattie), Jalapenos, Onions, Roasted Burger Bread, Cream Cheese, Tomatoes, Basil",
+      dish: "Sesame Chicken Burger",
+      ingredients: "Chicken (1 Pattie), Iceberg Lettuce, Onions, Sesame Burger Bread, Tomatoes, Ketchup, Mayonnaise, Herbal Sauce",
       price: 13,
       amount: 1
     }
@@ -437,58 +468,72 @@ Hamburgers: FoodItem[] = [
 
 // }]
 
-menus = [
-  {
-    image: "img/pizza_salami_1280.jpg",
-    restaurant: "Majster Pizza",
-    food: "Pizza Salami",
-    ingredients:
-      "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-    price: 8.5,
-    amount: 1,
-  },
-  {
-    image: "img/pasta_1.webp",
-    restaurant: "La Noodleria",
-    food: "Noodles Napoli",
-    ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
-    price: 9.5,
-    amount: 1,
-  },
-  {
-    image: "img/pizza_Milano2_1280 x 853.jpg",
-    restaurant: "Majster Pizza",
-    food: "Pizza Milano",
-    ingredients: "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-    price: 9,
-    amount: 1,
-  },
-  {
-    image: "img/ChilliConCarne2.jpeg",
-    restaurant: "Restaurant 'El Presidente'",
-    food: "Chilli-Con-Carne",
-    ingredients: "Beef, Tomatoe Sauce, Chillies, Corn, Yogurt Dressing, Fresh Herbs and Lemon",
-    price: 9,
-    amount: 1,
-  },
-  {
-    image: "img/rice_bowl2.webp",
-    restaurant: "Healthy& Green",
-    food: "Rice Bowl",
-    ingredients: "with Pumpkin, Sour Cream, Peanuts, Curry-Spices",
-    price: 10.5,
-    amount: 1,
-  },
-];
+// menus = [
+//   {
+//     image: "img/pizza_salami_1280.jpg",
+//     restaurant: "Majster Pizza",
+//     food: "Pizza Salami",
+//     ingredients:
+//       "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
+//     price: 8.5,
+//     amount: 1,
+//   },
+//   {
+//     image: "img/pasta_1.webp",
+//     restaurant: "La Noodleria",
+//     food: "Noodles Napoli",
+//     ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
+//     price: 9.5,
+//     amount: 1,
+//   },
+//   {
+//     image: "img/pizza_Milano2_1280 x 853.jpg",
+//     restaurant: "Majster Pizza",
+//     food: "Pizza Milano",
+//     ingredients: "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
+//     price: 9,
+//     amount: 1,
+//   },
+//   {
+//     image: "img/ChilliConCarne2.jpeg",
+//     restaurant: "Restaurant 'El Presidente'",
+//     food: "Chilli-Con-Carne",
+//     ingredients: "Beef, Tomatoe Sauce, Chillies, Corn, Yogurt Dressing, Fresh Herbs and Lemon",
+//     price: 9,
+//     amount: 1,
+//   },
+//   {
+//     image: "img/rice_bowl2.webp",
+//     restaurant: "Healthy& Green",
+//     food: "Rice Bowl",
+//     ingredients: "with Pumpkin, Sour Cream, Peanuts, Curry-Spices",
+//     price: 10.5,
+//     amount: 1,
+//   },
+// ];
 
     // entry param type ' : any []' for the basket array 
   basket : any[] = [];  
 
-  // in Typescript we not not need to put the tag 'function' in front of a function addMenutoBasket
+  // in Typescript we not not need to write 'function' in front of a function
 addMenuToBasket(menu_position_from_btn_onclick : number) {
   // Wie kann ich die Informationen zum Array menus an diese Funktion weiterreichen? Lediglich die Position des Onclick Elements wurde weitergereicht.
-  let entry_menu = this.menus[menu_position_from_btn_onclick]["food"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
-  let entry_price = this.menus[menu_position_from_btn_onclick]["price"]; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
+  let entry_menu =  this.Pizzas[menu_position_from_btn_onclick]?.dish ||
+                    this.Salads[menu_position_from_btn_onclick]?.dish ||
+                    this.Asian[menu_position_from_btn_onclick]?.dish ||
+                    this.Pastas[menu_position_from_btn_onclick]?.dish ||
+                    this.Indian[menu_position_from_btn_onclick]?.dish ||
+                    this.HermanTheGerman[menu_position_from_btn_onclick]?.dish ||
+                    this.Hamburgers[menu_position_from_btn_onclick]?.dish; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie food]
+  
+  let entry_price = this.Pizzas[menu_position_from_btn_onclick]?.price ||
+                    this.Salads[menu_position_from_btn_onclick]?.price ||
+                    this.Asian[menu_position_from_btn_onclick]?.price ||
+                    this.Pastas[menu_position_from_btn_onclick]?.price ||
+                    this.Indian[menu_position_from_btn_onclick]?.price ||
+                    this.HermanTheGerman[menu_position_from_btn_onclick]?.price ||
+                    this.Hamburgers[menu_position_from_btn_onclick]?.price; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
+  
   let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); //was muss hinter dem == stehen? Das hier ist die Filterfunktion...
             //was muss hinter dem == stehen? Das hier ist die Filterfunktion... Ist die price Variable nicht ohnehin überflüssig?
 

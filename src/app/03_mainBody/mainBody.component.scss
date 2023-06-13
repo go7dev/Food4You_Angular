@@ -4,7 +4,6 @@
 }
 
 .content {
-    margin-top: 50px;
     display: flex;
     position: relative;
     width: 100%;
@@ -60,6 +59,11 @@
 .cardMod {
     margin: 25px;
     min-width: 250px;
+
+    img {
+        height: 300px;
+        object-fit: cover;
+    }
 }
 
 .menu_bar {
@@ -89,6 +93,7 @@
     width: 70% !important;
     height:auto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     // flex-direction: column;
     position: relative;

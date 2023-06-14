@@ -158,24 +158,26 @@
                     <div class="basket_smiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
                     <span>Add your favourite menu to your shopping cart!!!</span>
                 </div>
-                <!-- <div class="basketMeals" > -->
-                <div class="basket_table" *ngIf="this.basket.length > 0" >
-                 
-                    <div class="table_td_1_menu_description" id="table_td_1_menu_description"
-                    *ngFor="let order of basket; let i = index" >
-                        {{order.amount}} x {{order.food}}
+
+                <div class="basketMeals" *ngIf="this.basket.length > 0">
+                    <div class="basket_table"  *ngFor="let order of basket; let i = index" >
+                    
+                        <div class="table_td_1_menu_description" id="table_td_1_menu_description"
+                        >{{order.amount}} x {{order.food}}
+                        </div>
+                        <div class="table_td_2_basket_buttons" id="table_td_2_basket_buttons">
+                            <button id="basket_minus" (click)="basketMinus(i)">-</button>
+                            <button id="basket_plus" (click)="basketPlus(i)">+</button>
+                        </div>
+                        <div class="table_td_3_delete_bin" id="table_td_3_delete_bin">
+                
+                            <span>€ {{order.price.toFixed(2)}}</span>
+                            <button (click)="deleteOrder(i)"><img src="../assets/img/icons/delete2_icon_blue_24x24.png"></button>
+                        </div>
+                        <!-- <hr> -->
                     </div>
-                    <div class="table_td_2_basket_buttons" id="table_td_2_basket_buttons" *ngFor="let order of basket; let i = index">
-                        <button id="basket_minus" (click)="basketMinus(i)">-</button>
-                        <button id="basket_plus" (click)="basketPlus(i)">+</button>
-                    </div>
-                    <div class="table_td_3_delete_bin" id="table_td_3_delete_bin" *ngFor="let order of basket; let i = index">
-            
-                        <span>€ {{order.price.toFixed(2)}}</span>
-                        <button (click)="deleteOrder(i)"><img src="../assets/img/icons/delete2_icon_blue_24x24.png"></button>
-                    </div>
+                    
                 </div>
-              <!-- </div> -->
 
                 <div id="sums" class="sums" *ngIf="this.basket.length > 0">
 

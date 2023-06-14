@@ -6,55 +6,20 @@
 .content {
     display: flex;
     position: relative;
-    width: 100%;
-}
-
-.order_restaurant {
-
-}
-
-.order_restaurant img {
-    height: 30px;
-    width: auto;
-}
-
-.order_restaurant h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;;
-}
-
-.order_restaurant_icons {
-    width: 100%;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
-.order_restaurant_icons img {
-    margin-right: 5px;
-}
-
-.order_restaurant_icons_1 {
+.order_content {
+    width: 70%;
+    height:auto;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    position: relative;
 
 }
-
-.order_restaurant_icons_2 {
-    display: flex;
-    
-}
-
-.order_restaurant_icons_3 {
-    display: flex;
-    
-}
-
-// .menus{
-//     width: 800px;
-//     height: 800px;
-// }
 
 .cardMod {
     margin: 25px;
@@ -82,6 +47,55 @@
     }
 }
 
+// .order_restaurant {
+
+// }
+
+// .order_restaurant img {
+//     height: 30px;
+//     width: auto;
+// }
+
+// .order_restaurant h3 {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     font-family: 'Montserrat', sans-serif;;
+// }
+
+// .order_restaurant_icons {
+//     width: 100%;
+//     font-size: 20px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+// }
+
+// .order_restaurant_icons img {
+//     margin-right: 5px;
+// }
+
+// .order_restaurant_icons_1 {
+//     display: flex;
+
+// }
+
+// .order_restaurant_icons_2 {
+//     display: flex;
+    
+// }
+
+// .order_restaurant_icons_3 {
+//     display: flex;
+    
+// }
+
+// .menus{
+//     width: 800px;
+//     height: 800px;
+// }
+
+
+
 .menu_bar {
     margin-right: 30px;
 }
@@ -103,22 +117,6 @@
     width: auto;
 
 }
-
-
-.order_content {
-    min-width: 70% !important;
-    height:auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    // flex-direction: column;
-    position: relative;
-
-}
-
-// .card{
-//     width: 70%;
-// }
 
 // .food_picture {
 //     width: 100%;
@@ -284,6 +282,12 @@
     margin-top: 10px;
 }
 
+// .basketMeals{
+//     display: flex;
+//     // flex-direction: column;
+
+// }
+
 .basket_table {
     display: flex;
     justify-content: space-between;
@@ -297,14 +301,15 @@
 
 .table_td_1_menu_description {
     display: block;
+    max-width: 35%;
 }
 
 
 .table_td_2_basket_buttons {
     display: flex;
     justify-content: center;
-    position: absolute;
-    right: 30%;
+    // position: absolute;
+    // right: 30%;
  }
  
  .table_td_2_basket_buttons button {
@@ -327,7 +332,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    max-width: 35%;
 }
 
 .table_td_3_delete_bin button {

@@ -1,6 +1,6 @@
-import { DeclareFunctionStmt } from '@angular/compiler';
+// import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-// declare function renderEmptyBasket(): void;
+
 
 // interface FoodJSON {
 //   [meal: string]: {
@@ -13,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
 //   }[];
 // }
 
+//interface definition defines object structure for TypeScript
+
 interface FoodItem {
   img: string;
   restaurant: string;
@@ -22,7 +24,6 @@ interface FoodItem {
   amount: number;
 }
 
-
 @Component({
   selector: 'app-mainBody',
   templateUrl: './mainBody.component.html',
@@ -31,235 +32,233 @@ interface FoodItem {
 
 export class MainBodyComponent implements OnInit{
 
+// defines tabs Array
 tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+
+//activatedTabIndex variable gets input value tabChange(), see code-lines 52-55
 activatedTabIndex: number = 0;
+
+
 constructor () {
-  // renderEmptyBasket();
+
 }
 
 ngOnInit(): void {
-  // RenderMenu_description(), renderEmptyBasket()
-  // renderEmptyBasket();
+  // dontKnowYet();
 }
 
+
+// catches the value from the variable "activatedCategory: number", see mainBody.component.html, code-line 4; Here renamed as tabIndex 
 tabChange(tabIndex: number){
   // debugger;
   this.activatedTabIndex = tabIndex;
 }
 
 
-
-//   {name: "Pizzas"},
-//   {name: "Salads", img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg"},
-//   {name: "Asia", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
-//   {name: "Pasta", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
-//   {name: "Indian", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
-//   {name: "HermanTheGerman", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"},
-//   {name: "Hamburger", img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg"}
-// ];];
-
-// ----- Food Arrays -----
+//                            !----- Food Arrays -----!
 
 Pizzas: FoodItem[] = [
-  { 
-    img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Salami",
-    ingredients: "with Mozzarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the wood stove...",
-    price: 8.5,
-    amount: 1
-  },
-  { 
-    img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Milano",
-    ingredients: "with Mozzarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the wood stove...",
-    price: 9,
-    amount: 1
-  },
-  { 
-    img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Veggie",
-    ingredients: "with Mozzarella, Tomato Sauce, Zucchini, Olives, Egg Plant, Rucola, from the wood stove...",
-    price: 9,
-    amount: 1
-  },
-  { 
-    img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Four Seasons",
-    ingredients: "with Mozzarella, Tomato Sauce, Onions, Paprika, Olives, Salami, Mushrooms, Sourdough, from the wood stove...",
-    price: 9,
-    amount: 1
-  },
-  { 
-    img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Diavolo",
-    ingredients: "with Mozzarella, Tomato Sauce, Hot Salami, Pepperoni, Sourdough, from the wood stove...",
-    price: 9,
-    amount: 1
-  },
-  { 
-    img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
-    restaurant: "Magic Pizza",
-    dish: "Pizza Mozarella",
-    ingredients: "with Mozzarella, Tomato Sauce, Tomatoes, Basil, Sourdough, from the wood stove...",
-    price: 9,
-    amount: 1
-  }
-];
+    { 
+      img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Salami",
+      ingredients: "with Mozzarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the wood stove...",
+      price: 8.5,
+      amount: 1
+    },
+    { 
+      img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Milano",
+      ingredients: "with Mozzarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the wood stove...",
+      price: 9,
+      amount: 1
+    },
+    { 
+      img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Veggie",
+      ingredients: "with Mozzarella, Tomato Sauce, Zucchini, Olives, Egg Plant, Rucola, from the wood stove...",
+      price: 9,
+      amount: 1
+    },
+    { 
+      img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Four Seasons",
+      ingredients: "with Mozzarella, Tomato Sauce, Onions, Paprika, Olives, Salami, Mushrooms, Sourdough, from the wood stove...",
+      price: 9,
+      amount: 1
+    },
+    { 
+      img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Diavolo",
+      ingredients: "with Mozzarella, Tomato Sauce, Hot Salami, Pepperoni, Sourdough, from the wood stove...",
+      price: 9,
+      amount: 1
+    },
+    { 
+      img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
+      restaurant: "Magic Pizza",
+      dish: "Pizza Mozarella",
+      ingredients: "with Mozzarella, Tomato Sauce, Tomatoes, Basil, Sourdough, from the wood stove...",
+      price: 9,
+      amount: 1
+    }
+  ];
 
 Salads: FoodItem[] = [
-  {
-  img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Lemon Salad",
-  ingredients: "with Lemon, Cucumber, Tomatoes, Onion, Olives, Curled Lettuce",
-  price: 13.5,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/2_salads/avocado_1_1227 x 1229_modified.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Avocado Salad",
-  ingredients: "Avocado, Tomatoes, Cucumber, Flaxseed, Iceberg Lettuce",
-  price: 12,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/2_salads/strawberry_1_756 x 773_modified.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Strawberry Salad",
-  ingredients: "Strawberries, Curled Lettuce, Iceberg Lettuce",
-  price: 16,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/2_salads/homemadeDarkBread_1_1280 x 853_modified.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Homemade Salad",
-  ingredients: "Olives, Avocado, Tomatoes, Feta Cheese, Lambs Lettuce",
-  price: 14,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/2_salads/paprica_1_1280 x 853.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Paprica Salad",
-  ingredients: "Paprica, Nuts, Feta Cheese, Pepperoni, Onions",
-  price: 11,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/2_salads/veggieBurgerSalad_1_1280 x 1920_modified.jpg",
-  restaurant: "Green Rabbits",
-  dish: "Veggie Burger Salad",
-  ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
-  price: 15,
-  amount: 1
-  }
+    {
+      img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Lemon Salad",
+      ingredients: "with Lemon, Cucumber, Tomatoes, Onion, Olives, Curled Lettuce",
+      price: 13.5,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/2_salads/avocado_1_1227 x 1229_modified.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Avocado Salad",
+      ingredients: "Avocado, Tomatoes, Cucumber, Flaxseed, Iceberg Lettuce",
+      price: 12,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/2_salads/strawberry_1_756 x 773_modified.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Strawberry Salad",
+      ingredients: "Strawberries, Curled Lettuce, Iceberg Lettuce",
+      price: 16,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/2_salads/homemadeDarkBread_1_1280 x 853_modified.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Homemade Salad",
+      ingredients: "Olives, Avocado, Tomatoes, Feta Cheese, Lambs Lettuce",
+      price: 14,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/2_salads/paprica_1_1280 x 853.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Paprica Salad",
+      ingredients: "Paprica, Nuts, Feta Cheese, Pepperoni, Onions",
+      price: 11,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/2_salads/veggieBurgerSalad_1_1280 x 1920_modified.jpg",
+      restaurant: "Green Rabbits",
+      dish: "Veggie Burger Salad",
+      ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
+      price: 15,
+      amount: 1
+    }
   ];
   
 Asian: FoodItem[] = [
-  {
-  img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
-  restaurant: "Chinese Garden",
-  dish: "Thai Shrimps Noodles",
-  ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
-  price: 15.0,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/3_asia/sushi3_1_1280 x 853.jpg",
-  restaurant: "Chinese Garden",
-  dish: "Sushi Neo-Tokyo",
-  ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
-  price: 14,
-  amount: 1
-  },
-  {
-  img: "./assets/img/meals/3_asia/noodleSoup_1_1280 x 743_modified.jpg",
-  restaurant: "Chinese Garden",
-  dish: "Taiwanese Noodle Soup",
-  ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
-  price: 12.5,
-  amount: 1
-  },
-  {
-    img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
+    {
+    img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
     restaurant: "Chinese Garden",
-    dish: "Viet Bowl",
-    ingredients: "Vietnamese Noodles, Chicken, Vgetables, Onion, Parsley, Peppermint, ",
+    dish: "Thai Shrimps Noodles",
+    ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
+    price: 15.0,
+    amount: 1
+    },
+    {
+    img: "./assets/img/meals/3_asia/sushi3_1_1280 x 853.jpg",
+    restaurant: "Chinese Garden",
+    dish: "Sushi Neo-Tokyo",
+    ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
     price: 14,
     amount: 1
-  },
-  {
-    img: "./assets/img/meals/3_asia/ChinGongBeef_1_1280 x 960.jpg",
+    },
+    {
+    img: "./assets/img/meals/3_asia/noodleSoup_1_1280 x 743_modified.jpg",
     restaurant: "Chinese Garden",
-    dish: "Chin Gong Beef",
-    ingredients: "Rice, Beef, Chinese Sweet-Sour Sauce, Peanuts, Sesame, Parsley, Iceberg Lettuce, Vegetables",
-    price: 12,
+    dish: "Taiwanese Noodle Soup",
+    ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
+    price: 12.5,
     amount: 1
-  },
-  {
-    img: "./assets/img/meals/3_asia/malaChicken_1_773 x 588_modified.jpg",
-    restaurant: "Chinese Garden",
-    dish: "Mala Chicken",
-    ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
-    price: 11,
-    amount: 1
-}];
+    },
+    {
+      img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Viet Bowl",
+      ingredients: "Vietnamese Noodles, Chicken, Vgetables, Onion, Parsley, Peppermint, ",
+      price: 14,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/3_asia/ChinGongBeef_1_1280 x 960.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Chin Gong Beef",
+      ingredients: "Rice, Beef, Chinese Sweet-Sour Sauce, Peanuts, Sesame, Parsley, Iceberg Lettuce, Vegetables",
+      price: 12,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/3_asia/malaChicken_1_773 x 588_modified.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Mala Chicken",
+      ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
+      price: 11,
+      amount: 1
+  }
+];
   
 Pastas: FoodItem[] = [{
-  img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
-  restaurant: "Angelo's",
-  dish: "Tagliatelle Basil di Tuscany",
-  ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
-  price: 13.0,
-  amount: 1
-},
-{
-  img: "./assets/img/meals/4_pasta/fruttiMare_1280xx 853.jpg",
-  restaurant: "Angelo's",
-  dish: "Pasta Frutti di Mare",
-  ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
-  price: 19,
-  amount: 1
-},
-{
-img: "./assets/img/meals/4_pasta/creamPasta_1_853 x 822_modified.jpg",
-restaurant: "Angelo's",
-dish: "Crema Pasta",
-ingredients: "Spaghetti, North Italian melting Cheese (aromatic), Cream, Parsley",
-price: 9,
-amount: 1
-},
-{
-img: "./assets/img/meals/4_pasta/bolognese_1_1261 x 1179.jpg",
-restaurant: "Angelo's",
-dish: "Spaghetti Bolognaise",
-ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
-price: 14,
-amount: 1
-},
-{
-img: "./assets/img/meals/4_pasta/salmone_1_1280 x 853.jpg",
-restaurant: "Angelo's",
-dish: "Pasta Salmone",
-ingredients: "Tagliatelle, Salmone, Rosemary, Basil-Paprica-Cream, Asparagus, 1 Shrimp, Tomatoes, Radishes, Lemon",
-price: 20,
-amount: 1
-},
-{
-img: "./assets/img/meals/4_pasta/shrimps_1_1280 x 697.jpg",
-restaurant: "Angelo's",
-dish: "Capri Shrimps",
-ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
-price: 11,
-amount: 1
-}];
+        img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
+        restaurant: "Angelo's",
+        dish: "Tagliatelle Basil di Tuscany",
+        ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
+        price: 13.0,
+        amount: 1
+    },
+    {
+        img: "./assets/img/meals/4_pasta/fruttiMare_1280xx 853.jpg",
+        restaurant: "Angelo's",
+        dish: "Pasta Frutti di Mare",
+        ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
+        price: 19,
+        amount: 1
+    },
+    {
+      img: "./assets/img/meals/4_pasta/creamPasta_1_853 x 822_modified.jpg",
+      restaurant: "Angelo's",
+      dish: "Crema Pasta",
+      ingredients: "Spaghetti, North Italian melting Cheese (aromatic), Cream, Parsley",
+      price: 9,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/4_pasta/bolognese_1_1261 x 1179.jpg",
+      restaurant: "Angelo's",
+      dish: "Spaghetti Bolognaise",
+      ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
+      price: 14,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/4_pasta/salmone_1_1280 x 853.jpg",
+      restaurant: "Angelo's",
+      dish: "Pasta Salmone",
+      ingredients: "Tagliatelle, Salmone, Rosemary, Basil-Paprica-Cream, Asparagus, 1 Shrimp, Tomatoes, Radishes, Lemon",
+      price: 20,
+      amount: 1
+    },
+    {
+      img: "./assets/img/meals/4_pasta/shrimps_1_1280 x 697.jpg",
+      restaurant: "Angelo's",
+      dish: "Capri Shrimps",
+      ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
+      price: 11,
+      amount: 1
+    }
+  ];
 
 Indian: FoodItem[] = [
     {
@@ -415,62 +414,30 @@ Hamburgers: FoodItem[] = [
   ];
  
 
-// menus = [
-//   {
-//     image: "img/pizza_salami_1280.jpg",
-//     restaurant: "Majster Pizza",
-//     food: "Pizza Salami",
-//     ingredients:
-//       "with Mozarella, Hot Pepper, Tomatoe Sauce, Pepper, Sourdough, from the woodstove...",
-//     price: 8.5,
-//     amount: 1,
-//   },
-//   {
-//     image: "img/pasta_1.webp",
-//     restaurant: "La Noodleria",
-//     food: "Noodles Napoli",
-//     ingredients: "with Parmesan Cheese, Tomatoe Sauce, Basil",
-//     price: 9.5,
-//     amount: 1,
-//   },
-//   {
-//     image: "img/pizza_Milano2_1280 x 853.jpg",
-//     restaurant: "Majster Pizza",
-//     food: "Pizza Milano",
-//     ingredients: "Mozarella, Tomatoe Sauce, Mushrooms, Ham, Salami, Sourdough, from the woodstove...",
-//     price: 9,
-//     amount: 1,
-//   },
-//   {
-//     image: "img/ChilliConCarne2.jpeg",
-//     restaurant: "Restaurant 'El Presidente'",
-//     food: "Chilli-Con-Carne",
-//     ingredients: "Beef, Tomatoe Sauce, Chillies, Corn, Yogurt Dressing, Fresh Herbs and Lemon",
-//     price: 9,
-//     amount: 1,
-//   },
-//   {
-//     image: "img/rice_bowl2.webp",
-//     restaurant: "Healthy& Green",
-//     food: "Rice Bowl",
-//     ingredients: "with Pumpkin, Sour Cream, Peanuts, Curry-Spices",
-//     price: 10.5,
-//     amount: 1,
-//   },
-// ];
+//                           !----- Other Arrays -----!
 
-    // entry param type ' : any []' for the basket array 
-  basket : any[] = [];  
+dontKnowYet : any[] = [];  
 
-  // in Typescript we not not need to write 'function' in front of a function
-//addMenuToBasket gets TWO parameters as input from component.html
+basket : any[] = [];  
 
-addMenuToBasket(menu_position_from_btn_onclick : number, categories: FoodItem[]) {
+
+//                          !----- Major Functions -----!
+
+// in TypeScript we not not need to write 'function' in front of a function
+
+
+// dontKnowYet() {
+  
+// }
+
+
+//addMenuToBasket gets TWO parameters as input from mainBody.component.html; 
+addMenuToBasket(menu_position_from_btn_onclick: number, categories: FoodItem[]) {
   console.log('menu_position_from_btn_onclick: ', menu_position_from_btn_onclick);
-  console.log('categories: ', categories )
+  console.log('categories: ', categories );
 
-  let entry_menu =  categories[menu_position_from_btn_onclick]?.dish ||
-                    this.Pizzas[menu_position_from_btn_onclick]?.dish ||
+  let entry_menu =  categories[menu_position_from_btn_onclick]?.dish || 
+                    this.Pizzas[menu_position_from_btn_onclick]?.dish ||  //does an element exist on the specified position of the array? - if 'yes', then pass it as value to the entry_menu variable 
                     this.Salads[menu_position_from_btn_onclick]?.dish ||
                     this.Asian[menu_position_from_btn_onclick]?.dish ||
                     this.Pastas[menu_position_from_btn_onclick]?.dish ||
@@ -479,29 +446,29 @@ addMenuToBasket(menu_position_from_btn_onclick : number, categories: FoodItem[])
                     this.Hamburgers[menu_position_from_btn_onclick]?.dish; 
 
   let entry_price = categories[menu_position_from_btn_onclick]?.price ||
-                    this.Pizzas[menu_position_from_btn_onclick]?.price ||
+                    this.Pizzas[menu_position_from_btn_onclick]?.price || //does an element exist on the specified position of the array? - if 'yes', then pass it as value to the entry_price variable 
                     this.Salads[menu_position_from_btn_onclick]?.price ||
                     this.Asian[menu_position_from_btn_onclick]?.price ||
                     this.Pastas[menu_position_from_btn_onclick]?.price ||
                     this.Indian[menu_position_from_btn_onclick]?.price ||
                     this.HermanTheGerman[menu_position_from_btn_onclick]?.price ||
-                    this.Hamburgers[menu_position_from_btn_onclick]?.price; // Hier werden die Informationen zum Array menus direkt vom JSON-Array ausgelesen. Die lokale Variable entry_menu wird definiert = Json-Array menus [position_from_btn_onclick][Kategorie price]
+                    this.Hamburgers[menu_position_from_btn_onclick]?.price; 
   
-  let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); //was muss hinter dem == stehen? Das hier ist die Filterfunktion...
-            //was muss hinter dem == stehen? Das hier ist die Filterfunktion... Ist die price Variable nicht ohnehin überflüssig?
+  let mealIndex = this.basket.findIndex((basket) => basket.food == entry_menu); 
+            
 
-if (mealIndex == -1) {
-  this.pushtoBasket(entry_menu, entry_price);
-  } else {
-  this.basket[mealIndex]["amount"]++; // im JSON-Array basket wird an der Position mealIndex der Wert von amount ++ erhöht, was +1 bedeutet.
-  console.log(this.basket); // an dieser Stelle soll console.log ausgeführt werden, mit dem Eingabefehl (basket)
-  }
-  this.calcSubtotal();
-// renderBasket(); //renderBasket(entry_menu, entry_price, menu_position_from_btn_onclick)
+  if (mealIndex == -1) {
+    this.pushtoBasket(entry_menu, entry_price);
+    } else {
+    this.basket[mealIndex]["amount"]++; // in the JSON-Array basket at the position of mealIndex the value of amount ++ increases (+1)
+    console.log(this.basket); 
+    }
+    this.calcSubtotal();
+
 }
 
 
-pushtoBasket(entry_menu : string, entry_price : number) {
+pushtoBasket(entry_menu: string, entry_price: number) {
   let amount = 1;
   let data = {
     food: entry_menu,
@@ -513,7 +480,7 @@ pushtoBasket(entry_menu : string, entry_price : number) {
 }
 
 
-resultSubtotal : number = 0;
+resultSubtotal: number = 0;
 
 calcSubtotal() {
   this.resultSubtotal = 0;
@@ -522,39 +489,34 @@ calcSubtotal() {
                                                                                 //  const resultSubtotal = menus[menu_position_from_btn_onclick]["price"]; (basket_infos, i));
                                                                                 // const [product, quantity] = cur;
                                                                                     // return sum += products.find(p => p.name === product).price * quantity;
-    this.resultSubtotal += this.basket[i]["price"] * this.basket[i]["amount"]; // hier wird der price des Artikels/ Foods aus dem JSON-Array multipliziert mit dem Amount aus dem gelichen JSON-Array
+    this.resultSubtotal += this.basket[i]["price"] * this.basket[i]["amount"]; // the product's/ food's price gets multiplied with the amount
     
   }
   this.renderSums();
-  // this.renderButtonLine(this.resultSubtotal);
+
 }
 
 finalSum : number = 0;
 
 renderSums(){
    this.finalSum = this.resultSubtotal + 5;
- 
 }
-
-
 
 
 basketMinus(Minus : any) {
   if (this.basket[Minus]["amount"] >= 2) {
     this.basket[Minus]["amount"]--;
-                                        // wenn man auf Minus klickt, dann werden Amount-Werte manchmal um 2 reduziert.
+                                        
       this.calcSubtotal();
-      // renderBasket();
     
   } else {
     this.basket.splice(Minus, 1);
 
     if (this.basket.length == 0) {
-      // renderEmptyBasket();
-      // renderButtonLine();
+
     } else {
       this.calcSubtotal();
-      // renderBasket();
+
     }
   }
 }
@@ -563,7 +525,7 @@ basketPlus(Plus : any) {
   this.basket[Plus]["amount"]++;
 
   this.calcSubtotal();
-  // renderBasket();
+
 }
 
 
@@ -571,11 +533,10 @@ deleteOrder(i : number) {
   this.basket.splice(i, 1); 
   console.log(this.basket);
   if (this.basket.length == 0) {
-    // renderEmptyBasket();
-    // renderButtonLine();
+
   } else {
     this.calcSubtotal();
-    // renderBasket();
+ 
   }         
 }
 
@@ -588,30 +549,5 @@ deleteOrder(i : number) {
   
 // }
 
-// function renderButtonLine(resultSubtotal) {
-//   let finalSum = resultSubtotal +5;
-//   let buttonLine = document.getElementById('mediaCart');
-//   buttonLine.innerHTML = '';
-  
-//   if (basket.length == 0) {
-    
-//     buttonLine.innerHTML += `
-//     <button onclick="shoppingCart()">
-//         <span>&#8679</span>
-//         <h2>Shopping Cart</h2>
-//         <span>&#8679</span>
-//     </button>`
-
-//   } else {
-    
-//   buttonLine.innerHTML += `
-//         <button onclick="shoppingCart()">
-//             <span>&#8679</span>
-//             <h2>Shopping Cart (€ ${finalSum.toFixed(2)} )</h2>
-//             <span>&#8679</span>
-//         </button>
-//   `;
-//   }
-// }
 
 }

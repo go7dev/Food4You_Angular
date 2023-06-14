@@ -21,6 +21,32 @@
 
 }
 
+.filterBar{
+    width: 20%;
+    height: 300px;
+    position: sticky !important;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.filterMenu{
+    width: 80% !important;
+}
+
+.filterBarBTN{
+    height: 10px !important;
+}
+
+.orderContentDontKnowYet{
+    width: 80%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
 .cardMod {
     margin: 25px;
     min-width: 250px;
@@ -31,7 +57,14 @@
     }
 }
 
+.cardBodyMod{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .cardBottom {
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

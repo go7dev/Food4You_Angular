@@ -44,7 +44,8 @@ constructor () {
 }
 
 ngOnInit(): void {
-  // dontKnowYet();
+  this.dontKnowYet();
+  this.sort();
 }
 
 
@@ -416,7 +417,7 @@ Hamburgers: FoodItem[] = [
 
 //                           !----- Other Arrays -----!
 
-dontKnowYet : any[] = [];  
+dontKnowYetArray : any[] = [];  
 
 basket : any[] = [];  
 
@@ -426,9 +427,52 @@ basket : any[] = [];
 // in TypeScript we not not need to write 'function' in front of a function
 
 
-// dontKnowYet() {
-  
-// }
+dontKnowYet(): void {
+    for (let index = 0; index < this.Pizzas.length; index++) {
+      const dontKnowMeal: FoodItem = this.Pizzas[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    } 
+    for (let index = 0; index < this.Salads.length; index++) {
+      const dontKnowMeal: FoodItem = this.Salads[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    }
+    for (let index = 0; index < this.Asian.length; index++) {
+      const dontKnowMeal: FoodItem = this.Asian[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    }
+    for (let index = 0; index < this.Pastas.length; index++) {
+      const dontKnowMeal: FoodItem = this.Pastas[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    }
+    for (let index = 0; index < this.Indian.length; index++) {
+      const dontKnowMeal: FoodItem = this.Indian[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    }
+    for (let index = 0; index < this.HermanTheGerman.length; index++) {
+      const dontKnowMeal: FoodItem = this.HermanTheGerman[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    }
+    for (let index = 0; index < this.Hamburgers.length; index++) {
+      const dontKnowMeal: FoodItem = this.Hamburgers[index];
+      this.dontKnowYetArray.push(dontKnowMeal);
+    } 
+    console.log('dontKnowYetArray content: ', this.dontKnowYetArray);
+    
+}
+
+
+// Alphebetical sorting of dontKnowYetArray
+sort(){
+  this.dontKnowYetArray.sort(function (a, b) {
+    if (a.dish < b.dish) {
+      return -1;
+    }
+    if (a.dish > b.dish) {
+      return 1;
+    }
+    return 0;
+  });console.log('dontKnowYetArray is sorted alphatecially now.');
+}
 
 
 //addMenuToBasket gets TWO parameters as input from mainBody.component.html; 
@@ -540,7 +584,7 @@ deleteOrder(i : number) {
   }         
 }
 
-// function shoppingCart() {
+// shoppingCart() {
 //   let foodlist = document.getElementById('order_content');
 //   let shoppingCart = document.getElementById('basket_supra');
 

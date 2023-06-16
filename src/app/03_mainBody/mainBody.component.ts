@@ -1,6 +1,6 @@
 // import { DeclareFunctionStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 // interface FoodJSON {
 //   [meal: string]: {
@@ -16,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
 //interface definition defines object structure for TypeScript
 
 interface FoodItem {
+  id: string,
   img: string;
   restaurant: string;
   dish: string;
@@ -23,6 +24,14 @@ interface FoodItem {
   price: number;
   amount: number;
 }
+
+interface cuisineType {
+  [cuisineCategory: string]: FoodItem[];
+}
+
+// interface selection {
+//   cuisineCategory: string;
+// }
 
 @Component({
   selector: 'app-mainBody',
@@ -33,7 +42,7 @@ interface FoodItem {
 export class MainBodyComponent implements OnInit{
 
 // defines tabs Array
-tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
+tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburgers"];
 
 //activatedTabIndex variable gets input value tabChange(), see code-lines 52-55
 activatedTabIndex: number = 0;
@@ -44,8 +53,10 @@ constructor () {
 }
 
 ngOnInit(): void {
+  this.cuisines();
   this.dontKnowYet();
-  this.sort();
+  // this.sort();
+  // console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
 }
 
 
@@ -60,6 +71,7 @@ tabChange(tabIndex: number){
 
 Pizzas: FoodItem[] = [
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Salami",
@@ -68,6 +80,7 @@ Pizzas: FoodItem[] = [
       amount: 1
     },
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Milano",
@@ -76,6 +89,7 @@ Pizzas: FoodItem[] = [
       amount: 1
     },
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Veggie",
@@ -84,6 +98,7 @@ Pizzas: FoodItem[] = [
       amount: 1
     },
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Four Seasons",
@@ -92,6 +107,7 @@ Pizzas: FoodItem[] = [
       amount: 1
     },
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Diavolo",
@@ -100,6 +116,7 @@ Pizzas: FoodItem[] = [
       amount: 1
     },
     { 
+      id: "pizzas",
       img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
       restaurant: "Magic Pizza",
       dish: "Pizza Mozarella",
@@ -111,6 +128,7 @@ Pizzas: FoodItem[] = [
 
 Salads: FoodItem[] = [
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/lemon_1_652 x 628_modified.jpg",
       restaurant: "Green Rabbits",
       dish: "Lemon Salad",
@@ -119,6 +137,7 @@ Salads: FoodItem[] = [
       amount: 1
     },
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/avocado_1_1227 x 1229_modified.jpg",
       restaurant: "Green Rabbits",
       dish: "Avocado Salad",
@@ -127,6 +146,7 @@ Salads: FoodItem[] = [
       amount: 1
     },
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/strawberry_1_756 x 773_modified.jpg",
       restaurant: "Green Rabbits",
       dish: "Strawberry Salad",
@@ -135,6 +155,7 @@ Salads: FoodItem[] = [
       amount: 1
     },
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/homemadeDarkBread_1_1280 x 853_modified.jpg",
       restaurant: "Green Rabbits",
       dish: "Homemade Salad",
@@ -143,6 +164,7 @@ Salads: FoodItem[] = [
       amount: 1
     },
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/paprica_1_1280 x 853.jpg",
       restaurant: "Green Rabbits",
       dish: "Paprica Salad",
@@ -151,6 +173,7 @@ Salads: FoodItem[] = [
       amount: 1
     },
     {
+      id: "salads",
       img: "./assets/img/meals/2_salads/veggieBurgerSalad_1_1280 x 1920_modified.jpg",
       restaurant: "Green Rabbits",
       dish: "Veggie Burger Salad",
@@ -162,30 +185,34 @@ Salads: FoodItem[] = [
   
 Asian: FoodItem[] = [
     {
-    img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
-    restaurant: "Chinese Garden",
-    dish: "Thai Shrimps Noodles",
-    ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
-    price: 15.0,
-    amount: 1
+      id: "asian",
+      img: "./assets/img/meals/3_asia/thaiShrimps_1_1280 x 1162.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Thai Shrimps Noodles",
+      ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
+      price: 15.0,
+      amount: 1
     },
     {
-    img: "./assets/img/meals/3_asia/sushi3_1_1280 x 853.jpg",
-    restaurant: "Chinese Garden",
-    dish: "Sushi Neo-Tokyo",
-    ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
-    price: 14,
-    amount: 1
+      id: "asian",
+      img: "./assets/img/meals/3_asia/sushi3_1_1280 x 853.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Sushi Neo-Tokyo",
+      ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
+      price: 14,
+      amount: 1
     },
     {
-    img: "./assets/img/meals/3_asia/noodleSoup_1_1280 x 743_modified.jpg",
-    restaurant: "Chinese Garden",
-    dish: "Taiwanese Noodle Soup",
-    ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
-    price: 12.5,
-    amount: 1
+      id: "asian",
+      img: "./assets/img/meals/3_asia/noodleSoup_1_1280 x 743_modified.jpg",
+      restaurant: "Chinese Garden",
+      dish: "Taiwanese Noodle Soup",
+      ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
+      price: 12.5,
+      amount: 1
     },
     {
+      id: "asian",
       img: "./assets/img/meals/3_asia/vietNoodleBowl_1_892 x 887_modified.jpg",
       restaurant: "Chinese Garden",
       dish: "Viet Bowl",
@@ -194,6 +221,7 @@ Asian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "asian",
       img: "./assets/img/meals/3_asia/ChinGongBeef_1_1280 x 960.jpg",
       restaurant: "Chinese Garden",
       dish: "Chin Gong Beef",
@@ -202,6 +230,7 @@ Asian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "asian",
       img: "./assets/img/meals/3_asia/malaChicken_1_773 x 588_modified.jpg",
       restaurant: "Chinese Garden",
       dish: "Mala Chicken",
@@ -212,22 +241,25 @@ Asian: FoodItem[] = [
 ];
   
 Pastas: FoodItem[] = [{
-        img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
-        restaurant: "Angelo's",
-        dish: "Tagliatelle Basil di Tuscany",
-        ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
-        price: 13.0,
-        amount: 1
+      id: "pastas",    
+      img: "./assets/img/meals/4_pasta/basilTagliatelle_1_1280 x 1097.jpg",
+      restaurant: "Angelo's",
+      dish: "Tagliatelle Basil di Tuscany",
+      ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
+      price: 13.0,
+      amount: 1
     },
     {
-        img: "./assets/img/meals/4_pasta/fruttiMare_1280xx 853.jpg",
-        restaurant: "Angelo's",
-        dish: "Pasta Frutti di Mare",
-        ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
-        price: 19,
-        amount: 1
+      id: "pastas",
+      img: "./assets/img/meals/4_pasta/fruttiMare_1280xx 853.jpg",
+      restaurant: "Angelo's",
+      dish: "Pasta Frutti di Mare",
+      ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
+      price: 19,
+      amount: 1
     },
     {
+      id: "pastas",
       img: "./assets/img/meals/4_pasta/creamPasta_1_853 x 822_modified.jpg",
       restaurant: "Angelo's",
       dish: "Crema Pasta",
@@ -236,6 +268,7 @@ Pastas: FoodItem[] = [{
       amount: 1
     },
     {
+      id: "pastas",
       img: "./assets/img/meals/4_pasta/bolognese_1_1261 x 1179.jpg",
       restaurant: "Angelo's",
       dish: "Spaghetti Bolognaise",
@@ -244,6 +277,7 @@ Pastas: FoodItem[] = [{
       amount: 1
     },
     {
+      id: "pastas",
       img: "./assets/img/meals/4_pasta/salmone_1_1280 x 853.jpg",
       restaurant: "Angelo's",
       dish: "Pasta Salmone",
@@ -252,6 +286,7 @@ Pastas: FoodItem[] = [{
       amount: 1
     },
     {
+      id: "pastas",
       img: "./assets/img/meals/4_pasta/shrimps_1_1280 x 697.jpg",
       restaurant: "Angelo's",
       dish: "Capri Shrimps",
@@ -263,6 +298,7 @@ Pastas: FoodItem[] = [{
 
 Indian: FoodItem[] = [
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/curryCheese_1_1280 x 853.jpg",
       restaurant: "Taj Mahal",
       dish: "Curry Cream Cheese",
@@ -271,6 +307,7 @@ Indian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/fullMenuSpices_1_1090 x 835_modified.jpg",
       restaurant: "Taj Mahal",
       dish: "Family Menu Curry",
@@ -279,6 +316,7 @@ Indian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/modernSamosa_1_1280 x 550_modified.jpg",
       restaurant: "Taj Mahal",
       dish: "Modern Samosa",
@@ -287,6 +325,7 @@ Indian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/fish_1_1280 x 853.jpg",
       restaurant: "Taj Mahal",
       dish: "Yoghurt Curry",
@@ -295,6 +334,7 @@ Indian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/rice_bowl.jpg",
       restaurant: "Taj Mahal",
       dish: "Pumpkin Curry",
@@ -303,6 +343,7 @@ Indian: FoodItem[] = [
       amount: 1
     },
     {
+      id: "indian",
       img: "./assets/img/meals/5_indian/beansPan_1_720 x 592_modified.jpg",
       restaurant: "Taj Mahal",
       dish: "Beans Pan Curry",
@@ -314,6 +355,7 @@ Indian: FoodItem[] = [
   
 HermanTheGerman: FoodItem[] = [
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/cheeseNoodles_1_1280 x 960.jpg",
       restaurant: "HermanTheGerman",
       dish: "Kaesspatzle (Cheese Noodles)",
@@ -322,6 +364,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/TarteFlambeeAubergine_1_.jpg",
       restaurant: "HermanTheGerman",
       dish: "Tarte Flambée - Eggplant",
@@ -330,6 +373,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/kartoffelgratin_1_1085 x 643_modified.jpg",
       restaurant: "HermanTheGerman",
       dish: "Potato Gratin",
@@ -338,6 +382,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/maultasche_1_1280 x 1218.jpg",
       restaurant: "HermanTheGerman",
       dish: "German Ravioli",
@@ -346,6 +391,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/schnitzel_2_1280 x 853.jpg",
       restaurant: "HermanTheGerman",
       dish: "Yaeger Schnitzel",
@@ -354,6 +400,7 @@ HermanTheGerman: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/tarteFlammbee_1_1280 x 853.jpg",
       restaurant: "HermanTheGerman",
       dish: "Tarte Flambée - Onions",
@@ -365,6 +412,7 @@ HermanTheGerman: FoodItem[] = [
   
 Hamburgers: FoodItem[] = [
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/americanDark_1_1279 x 1266_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "American-Dark Burger",
@@ -373,6 +421,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/cheeseburger_1_1013 x 850_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Cheeseburger",
@@ -381,6 +430,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/hamburger_1_1280 x 1010_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Hamburger Royal",
@@ -389,6 +439,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/olive_1_1168 x 1099.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Olive Burger",
@@ -397,6 +448,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/bbq_1_875 x 762_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "BBQ Burger",
@@ -405,6 +457,7 @@ Hamburgers: FoodItem[] = [
       amount: 1
     },
     {
+      id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/sesamChicken_1_808 x 680_modified.jpg",
       restaurant: "Burgers' Paradise",
       dish: "Sesame Chicken Burger",
@@ -417,17 +470,45 @@ Hamburgers: FoodItem[] = [
 
 //                           !----- Other Arrays -----!
 
-dontKnowYetArray : any[] = [];  
+cuisineArray : cuisineType [] = [];
+
+dontKnowYetArray : FoodItem [] = [];  
 
 basket : any[] = [];  
 
-
+filteredDontKnowYetArray : FoodItem [] = []; 
 //                          !----- Major Functions -----!
 
 // in TypeScript we not not need to write 'function' in front of a function
 
 
-dontKnowYet(): void {
+cuisines() {
+  this.cuisineArray.push({ Pizzas: this.Pizzas });
+  this.cuisineArray.push({ Salads: this.Salads });
+  this.cuisineArray.push({ Asian: this.Asian });
+  this.cuisineArray.push({ Pastas: this.Pastas });
+  this.cuisineArray.push({ Indian: this.Indian });
+  this.cuisineArray.push({ HermanTheGerman: this.HermanTheGerman });
+  this.cuisineArray.push({ Hamburgers: this.Hamburgers });
+  console.log('cuisineArray', this.cuisineArray);
+}
+
+// getObjectKeys(obj: any): string[] {
+//   return Object.keys(obj);
+// }
+
+
+// getCuisineArrayKeys() {
+//   for (let index = 0; index < this.cuisineArray.length; index++) {
+//     const selectedCuisines = this.cuisineArray[index];
+//     return selectedCuisines;
+//   }
+
+// }
+
+
+
+dontKnowYet(){
     for (let index = 0; index < this.Pizzas.length; index++) {
       const dontKnowMeal: FoodItem = this.Pizzas[index];
       this.dontKnowYetArray.push(dontKnowMeal);
@@ -456,14 +537,193 @@ dontKnowYet(): void {
       const dontKnowMeal: FoodItem = this.Hamburgers[index];
       this.dontKnowYetArray.push(dontKnowMeal);
     } 
-    console.log('dontKnowYetArray content: ', this.dontKnowYetArray);
+    // console.log('dontKnowYetArray content: ', this.dontKnowYetArray);
     
 }
 
+//Checkboxes Disabled? True/ False.
 
-// Alphebetical sorting of dontKnowYetArray
-sort(){
-  this.dontKnowYetArray.sort(function (a, b) {
+// btncheck1: boolean = false;
+// btncheck2: boolean = false;
+// btncheck3: boolean = false;
+// btncheck4: boolean = false;
+// btncheck5: boolean = false;
+// btncheck6: boolean = false;
+// btncheck7: boolean = false;
+
+areCheckboxesDisabled: boolean = true;
+
+
+updateCheckboxStatus(e: any, id: string){
+  
+    if (e.target.checked) {
+      console.log(id + ' is checked');
+
+      // this.filteredDontKnowYetArray.push(id);
+
+      this.dontKnowYetArray.filter(m=>m.id === id);
+      // let filter = this.dontKnowYetArray.filter(
+      //     (obj) => {return obj.id === id});
+
+      // this.filteredDontKnowYetArray = filter;
+      this.sortFiltered();
+      this.areCheckboxesDisabled = false;
+    } else {
+      console.log(id + ' UNchecked');
+      this.areCheckboxesDisabled = true;
+    }
+}
+
+
+// updateCheckboxStatus(): void {
+
+//   console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
+//   if (this.areCheckboxesDisabled === false) {
+//     this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7);
+//   } else {
+//   this.areCheckboxesDisabled = (this.btncheck1 && this.btncheck2 && this.btncheck3 && this.btncheck4 && this.btncheck5 && this.btncheck6 && this.btncheck7);
+//   // Call the filterDontKnowYet() method 
+//   // this.filterDontKnowYet();  
+//   } console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
+// }
+
+//please help to define a function that will check if a checkbox is checked and if so, it will set the value of the variable "areCheckboxesDisabled" to false. If all checkboxes are unchecked, the value of the variable "areCheckboxesDisabled" should be set to true.
+
+// updateCheckboxStatus(e: any) {
+//   if(e.target.checked==true){
+//     this.areCheckboxesDisabled = false;
+//   }
+// }
+
+//tell me why this is not working
+
+// updateCheckboxStatus() {
+//   if (this.btncheck1 === true) {
+//     this.areCheckboxesDisabled = false;
+//     console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
+//   }
+//   //   else if (this.btncheck1 == false) {
+//   //   this.areCheckboxesDisabled = true;
+//   //   console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
+//   // }
+// }
+
+
+
+// updateCheckboxStatus(): void {
+//   console.log('btncheck: booleans ', this.btncheck1, this.btncheck2, this.btncheck3, this.btncheck4, this.btncheck5, this.btncheck6, this.btncheck7);
+//   console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
+
+//   // Calculate the new value of areCheckboxesDisabled
+//   if (this.areCheckboxesDisabled && (this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7)) {
+//     this.areCheckboxesDisabled = false;
+
+//   } else if (!this.btncheck1 && !this.btncheck2 && !this.btncheck3 && !this.btncheck4 && !this.btncheck5 && !this.btncheck6 && !this.btncheck7) {
+//     this.areCheckboxesDisabled = true;
+//   }
+
+//   console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
+// }
+
+
+
+
+
+
+// updateCheckboxStatus() {
+//   if (this.areCheckboxesDisabled === true && (this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7) === true) {
+//     this.areCheckboxesDisabled = false;
+//     console.log('areCheckboxesDisabled: value is now false');
+//   } else {
+//     if (!(this.btncheck1 && this.btncheck2 && this.btncheck3 && this.btncheck4 && this.btncheck5 && this.btncheck6 && this.btncheck7)) {
+//       this.areCheckboxesDisabled = true;
+//       console.log('areCheckboxesDisabled: value is now true');
+//       // Call the filterDontKnowYet() method asynchronously
+//       // setTimeout(() => {
+//       //   this.filterDontKnowYet();
+//       // }, 150);
+//     }
+//   }
+// }
+
+
+//Filter an Array of JSON Objects
+
+// filterDontKnowYet() {
+//   const selectedIds: string[] = [];
+  
+//   if (this.btncheck1) {
+//     selectedIds.push("pizzas");
+//   }
+//   if (this.btncheck2) {
+//     selectedIds.push("salads");
+//   }
+//   if (this.btncheck3) {
+//     selectedIds.push("asian");
+//   }
+//   if (this.btncheck4) {
+//     selectedIds.push("pastas");
+//   }
+//   if (this.btncheck5) {
+//     selectedIds.push("indian");
+//   }
+//   if (this.btncheck6) {
+//     selectedIds.push("hermans");
+//   }
+//   if (this.btncheck7) {
+//     selectedIds.push("hamburgers");
+//   }
+//   console.log(selectedIds);
+
+//   const filter = this.dontKnowYetArray.filter(obj =>
+//     selectedIds.includes(obj.id)
+//   );
+
+//   this.filteredDontKnowYetArray = filter;
+//   this.sortFiltered();
+// }
+
+// filterDontKnowYet() {
+//   this.filteredDontKnowYetArray = this.dontKnowYetArray.filter(obj =>
+//     (this.btncheck1 && obj.id === "pizzas") ||
+//     (this.btncheck2 && obj.id === "salads") ||
+//     (this.btncheck3 && obj.id === "asian") ||
+//     (this.btncheck4 && obj.id === "pastas") ||
+//     (this.btncheck5 && obj.id === "indian") ||
+//     (this.btncheck6 && obj.id === "hermans") ||
+//     (this.btncheck7 && obj.id === "hamburgers")
+//   );
+//   this.sortFiltered();
+// }
+
+// filterDontKnowYet(): void {
+// let filter = this.dontKnowYetArray.filter(
+//   (obj) => {return obj.id === 'pizzas'}
+// ); 
+// console.log(filter);
+// this.filteredDontKnowYetArray = filter;
+// console.log(this.filteredDontKnowYetArray);
+// this.sortFiltered();
+// }
+
+
+
+// Alphebetical sorting of dontKnowYetArray& filteredDontKnowYetArray
+// sort(){
+//   this.dontKnowYetArray.sort(function (a, b) {
+//     if (a.dish < b.dish) {
+//       return -1;
+//     }
+//     if (a.dish > b.dish) {
+//       return 1;
+//     }
+//     return 0;
+//   });console.log('dontKnowYetArray is sorted alphatecially now.');
+// }
+
+
+sortFiltered(){
+  this.filteredDontKnowYetArray.sort(function (a, b) {
     if (a.dish < b.dish) {
       return -1;
     }

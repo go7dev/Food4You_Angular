@@ -6,7 +6,7 @@
 .content {
     display: flex;
     position: relative;
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 100%;
 }
 
@@ -14,38 +14,82 @@
     width: 70%;
     height:auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     // flex-direction: column;
     position: relative;
 
 }
 
+.OrderContentDontKnowYet{
+    width: 70%;
+    // height:auto;
+    display: flex;
+    // justify-content: flex-start;
+    // flex-direction: column;
+    position: relative;
+
+}
+
+.filteredOrderContentDontKnowYet{
+    width: calc(100% - 240px);
+    display: flex;
+    flex-wrap: wrap !important;
+    // height:auto;
+
+}
+
 .filterBar{
-    width: 20%;
-    height: 300px;
+    width: 240px;
+    height: 380px;
     position: sticky !important;
     top: 30%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
 }
 
 .filterMenu{
-    width: 80% !important;
+    width: 85% !important;
 }
 
-.filterBarBTN{
-    height: 10px !important;
+.filterHeader{
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+
+    .filterHeaderInside {
+        display:flex;
+        justify-content: center;
+    }
 }
 
-.orderContentDontKnowYet{
-    width: 80%;
-    height:auto;
+.filterGridTopBorder{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.objectKeysCuisine{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
 
+    // .objectKeysCuisineInside{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     width: 100%;
+    // }
 }
+
+// .filterBarBTN{
+//     height: 10px !important;
+// }
+
+
 
 .cardMod {
     margin: 25px;

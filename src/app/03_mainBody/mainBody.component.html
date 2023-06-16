@@ -5,50 +5,86 @@
     <app-TabMenu [CategoriesArray]="tabs" (onTabChange)="tabChange($event)"></app-TabMenu>
     <div class="content">
                   
-        <!-- -----  Bootstrap 5.0 Syntax ----- -->
+        <!-- -----  Bootstrap 5.3.0 Syntax ----- -->
 
-              <div *ngIf="activatedTabIndex == 0" class="orderContent" id="order_content">
+              <div *ngIf="activatedTabIndex == 0" class="OrderContentDontKnowYet" id="order_content">
                 
                 <div class="filterBar">
-                  <!-- <div class="btn-group-vertical " style="width: 18rem;">
-                    <div class="card-header">
-                      <b>Filter: Menus</b>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">An item</li>
-                      <li class="list-group-item">A second item</li>
-                      <li class="list-group-item">A third item</li>
-                    </ul>
-                  </div> -->
+                      
+                      <div class="card filterMenu filterHeader" style="width: 18rem;">
+                        <div class="card-header filterHeaderInside"><b>Filters:</b></div>
+                      </div>
+                                                                                                        <!-- *ngFor="let cuisine of cuisineArray" -->
+                      <!-- <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group" > -->
+                        <!-- <div class="objectKeysCuisine" *ngFor="let key of getObjectKeys(cuisine)">
+                          <input type="checkbox" class="btn-check" id="btncheck" name="key" [(ngModel)]="dontKnowYetArray" (ngModelChange)="updateCheckboxStatus($event)" [value]="key">
+                          <label class="btn btn-outline-primary filterGridTopBorder" for="'btncheck'">{{ key }}</label>
+                        </div> -->
 
-                  <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
-                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
-                  
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
-                  
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="btncheck3">Checkbox 3</label>
-                  </div>
+
+                        <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
+                                                                                          <!-- [(ngModel)]="d" -->
+                          <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" (change)="updateCheckboxStatus($event, 'pizzas')" >
+                          <label class="btn btn-outline-primary" for="btncheck1">Pizzas</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" (change)="updateCheckboxStatus($event, 'salads')">
+                          <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+
+                          <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" (change)="updateCheckboxStatus($event, 'asian')">
+                          <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
+
+
+                        
+                      </div>
                 </div>
+
+                    <!-- ------SOLUTION???------ -->
+
+                <!-- <input type="checkbox" onchange="alert(this.checked)">
+                  <button id='check'>check</button> 
+                  <button id='uncheck'>uncheck</button>
+
+                  document.getElementById('check').onclick = function() {
+                    if (!this.checked) {
+                        this.click();
+                    }
+                  } -->
               
-              <div class="orderContentDontKnowYet">
-                <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
-                    <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
-                    <div class="card-body cardBodyMod">
-                        <div class="cardMidMod">
-                          <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
-                          <p class="card-text">{{dontKnowMeal.ingredients}}</p>
-                          <p class="card-text"><b>Restaurant:</b> {{dontKnowMeal.restaurant}}</p>
+                  <div class="filteredOrderContentDontKnowYet">
+                    <div *ngIf="areCheckboxesDisabled">
+                        <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
+                            <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
+                            <div class="card-body cardBodyMod">
+                                <div class="cardMidMod">
+                                  <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
+                                  <p class="card-text">{{dontKnowMeal.ingredients}}</p>
+                                  <p class="card-text"><b>Restaurant:</b> {{dontKnowMeal.restaurant}}</p>
+                                </div>
+                                <div class="cardBottom">
+                                  <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                  <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cardBottom">
-                          <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
-                          <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
+                      </div>
+
+                      <!-- <div *ngIf="!areCheckboxesDisabled">
+                        <div class="card cardMod" *ngFor="let filteredMeal of filteredDontKnowYetArray; let filteredIndex = index" style="width: 18rem;">
+                            <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
+                            <div class="card-body cardBodyMod">
+                                <div class="cardMidMod">
+                                  <h5 class="card-title">{{filteredMeal.dish}}</h5>
+                                  <p class="card-text">{{filteredMeal.ingredients}}</p>
+                                  <p class="card-text"><b>Restaurant:</b> {{filteredMeal.restaurant}}</p>
+                                </div>
+                                <div class="cardBottom">
+                                  <button (click)="addMenuToBasket(filteredIndex, filteredDontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                  <span class="menu_description_price">€ {{filteredMeal.price.toFixed(2)}}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-              </div>
+                      </div> -->
+                  </div>
               </div>
 
               <div *ngIf="activatedTabIndex == 1" class="orderContent" id="order_content">

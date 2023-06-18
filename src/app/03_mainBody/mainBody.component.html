@@ -9,59 +9,61 @@
 
               <div *ngIf="activatedTabIndex == 0" class="OrderContentDontKnowYet" id="order_content">
                 
-                <div class="filterBar">
-                  <div class="card filterMenu filterHeader" style="width: 18rem;">
-                    <div class="card-header filterHeaderInside"><b>Filters:</b></div>
-                  </div>
-                
-                  <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
+                  <div class="filterBar">
+                      
+                      <div class="card filterMenu filterHeader" style="width: 18rem;">
+                        <div class="card-header filterHeaderInside"><b>Filters:</b></div>
+                      </div>
+                  
+                      <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
+                        
+                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
                     
-                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
-                
-                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
-                
-                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
+                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                    
+                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
 
-                    <!-- <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
+                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
 
-                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
+                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
 
-                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
+                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
 
-                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
-                    <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label> -->
+                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
+                        <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
 
+                      </div>
                   </div>
-                </div>
                 
 
                     <!-- ------SOLUTION???------ -->
          
-                  <!-- <div class="filteredOrderContentDontKnowYet"> -->
-                    <div *ngIf="areCheckboxesDisabled">
-                        <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
-                            <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
-                            <div class="card-body cardBodyMod">
-                                <div class="cardMidMod">
-                                  <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
-                                  <p class="card-text">{{dontKnowMeal.ingredients}}</p>
-                                  <p class="card-text"><b>Restaurant:</b> {{dontKnowMeal.restaurant}}</p>
-                                </div>
-                                <div class="cardBottom">
-                                  <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
-                                  <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
-                                </div>
-                            </div>
+                 
+                   
+                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled">
+                          <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
+                              <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
+                              <div class="card-body cardBodyMod">
+                                  <div class="cardMidMod">
+                                    <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
+                                    <p class="card-text">{{dontKnowMeal.ingredients}}</p>
+                                    <p class="card-text"><b>Restaurant:</b> {{dontKnowMeal.restaurant}}</p>
+                                  </div>
+                                  <div class="cardBottom">
+                                    <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                    <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
-                      </div>
 
-                      <div *ngIf="!areCheckboxesDisabled">
+                      <div class="ifEnabledDisabled" *ngIf="!areCheckboxesDisabled">
                         <div class="card cardMod" *ngFor="let filteredMeal of selectedItems; let filteredIndex = index" style="width: 18rem;">
                             <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
                             <div class="card-body cardBodyMod">
@@ -77,7 +79,8 @@
                             </div>
                         </div>
                       </div>
-                  <!-- </div> -->
+                  
+                  
               </div>
 
               <div *ngIf="activatedTabIndex == 1" class="orderContent" id="order_content">

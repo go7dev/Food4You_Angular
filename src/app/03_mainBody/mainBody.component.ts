@@ -478,7 +478,6 @@ dontKnowYetArray : FoodItem [] = [];
 
 basket : any[] = [];  
 
-filteredDontKnowYetArray : FoodItem [] = []; 
 //                          !----- Major Functions -----!
 
 // in TypeScript we not not need to write 'function' in front of a function
@@ -494,20 +493,6 @@ filteredDontKnowYetArray : FoodItem [] = [];
 //   this.cuisineArray.push({ Hamburgers: this.Hamburgers });
 //   console.log('cuisineArray', this.cuisineArray);
 // }
-
-// getObjectKeys(obj: any): string[] {
-//   return Object.keys(obj);
-// }
-
-
-// getCuisineArrayKeys() {
-//   for (let index = 0; index < this.cuisineArray.length; index++) {
-//     const selectedCuisines = this.cuisineArray[index];
-//     return selectedCuisines;
-//   }
-
-// }
-
 
 
 dontKnowYet(){
@@ -547,16 +532,16 @@ dontKnowYet(){
 btncheck1: boolean = false;
 btncheck2: boolean = false;
 btncheck3: boolean = false;
-// btncheck4: boolean = false;
-// btncheck5: boolean = false;
-// btncheck6: boolean = false;
-// btncheck7: boolean = false;
+btncheck4: boolean = false;
+btncheck5: boolean = false;
+btncheck6: boolean = false;
+btncheck7: boolean = false;
 
 areCheckboxesDisabled: boolean = true;
 
 
 updateCheckboxStatus(): void {
-  this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3);
+  this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7);
   console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
 
   if (this.areCheckboxesDisabled === false) {
@@ -568,47 +553,18 @@ updateCheckboxStatus(): void {
 
 //Filter an Array of JSON Objects
 
-// filterSelectedItems(): void {
-//   // const selectedIds: string[] = [];
-  
-//   if (this.btncheck1) {
-//     let filter = this.dontKnowYetArray.filter(
-//       (obj) => {return obj.id === 'pizzas'})
-//       this.filteredDontKnowYetArray = filter;
-//       console.log (filter);
-
-//   } if (this.btncheck2) {
-//       let filter = this.dontKnowYetArray.filter(
-//         (obj) => {return obj.id === 'salads'})
-        
-//         console.log (filter);
-//     }
-// }
- 
-
 filterDontKnowYet() {
   this.selectedItems = this.dontKnowYetArray.filter(obj =>
-    (this.btncheck1 && obj.id === "pizzas") ||
-    (this.btncheck2 && obj.id === "salads") ||
-    (this.btncheck3 && obj.id === "asian") 
-    // (this.btncheck4 && obj.id === "pastas") ||
-    // (this.btncheck5 && obj.id === "indian") ||
-    // (this.btncheck6 && obj.id === "hermans") ||
-    // (this.btncheck7 && obj.id === "hamburgers")
+    (this.btncheck1 && obj.id === "pizzas")  ||
+    (this.btncheck2 && obj.id === "salads")  ||
+    (this.btncheck3 && obj.id === "asian")   ||
+    (this.btncheck4 && obj.id === "pastas")  ||
+    (this.btncheck5 && obj.id === "indian")  ||
+    (this.btncheck6 && obj.id === "hermans") ||
+    (this.btncheck7 && obj.id === "hamburgers")
   );
   this.sortFiltered();
 }
-
-// filterDontKnowYet(): void {
-// let filter = this.dontKnowYetArray.filter(
-//   (obj) => {return obj.id === 'pizzas'}
-// ); 
-// console.log(filter);
-// this.filteredDontKnowYetArray = filter;
-// console.log(this.filteredDontKnowYetArray);
-// this.sortFiltered();
-// }
-
 
 
 // Alphebetical sorting of dontKnowYetArray& selectedItems Array

@@ -10,47 +10,40 @@
               <div *ngIf="activatedTabIndex == 0" class="OrderContentDontKnowYet" id="order_content">
                 
                 <div class="filterBar">
-                      
-                      <div class="card filterMenu filterHeader" style="width: 18rem;">
-                        <div class="card-header filterHeaderInside"><b>Filters:</b></div>
-                      </div>
-                                                                                                        <!-- *ngFor="let cuisine of cuisineArray" -->
-                      <!-- <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group" > -->
-                        <!-- <div class="objectKeysCuisine" *ngFor="let key of getObjectKeys(cuisine)">
-                          <input type="checkbox" class="btn-check" id="btncheck" name="key" [(ngModel)]="dontKnowYetArray" (ngModelChange)="updateCheckboxStatus($event)" [value]="key">
-                          <label class="btn btn-outline-primary filterGridTopBorder" for="'btncheck'">{{ key }}</label>
-                        </div> -->
+                  <div class="card filterMenu filterHeader" style="width: 18rem;">
+                    <div class="card-header filterHeaderInside"><b>Filters:</b></div>
+                  </div>
+                
+                  <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
+                    
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
 
+                    <!-- <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
 
-                        <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
-                                                                                          <!-- [(ngModel)]="d" -->
-                          <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" (change)="updateCheckboxStatus($event, 'pizzas')" >
-                          <label class="btn btn-outline-primary" for="btncheck1">Pizzas</label>
+                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" (change)="updateCheckboxStatus($event, 'salads')">
-                          <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
 
-                          <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" (change)="updateCheckboxStatus($event, 'asian')">
-                          <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
+                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
+                    <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label> -->
 
-
-                        
-                      </div>
+                  </div>
                 </div>
+                
 
                     <!-- ------SOLUTION???------ -->
-
-                <!-- <input type="checkbox" onchange="alert(this.checked)">
-                  <button id='check'>check</button> 
-                  <button id='uncheck'>uncheck</button>
-
-                  document.getElementById('check').onclick = function() {
-                    if (!this.checked) {
-                        this.click();
-                    }
-                  } -->
-              
-                  <div class="filteredOrderContentDontKnowYet">
+         
+                  <!-- <div class="filteredOrderContentDontKnowYet"> -->
                     <div *ngIf="areCheckboxesDisabled">
                         <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
                             <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
@@ -68,8 +61,8 @@
                         </div>
                       </div>
 
-                      <!-- <div *ngIf="!areCheckboxesDisabled">
-                        <div class="card cardMod" *ngFor="let filteredMeal of filteredDontKnowYetArray; let filteredIndex = index" style="width: 18rem;">
+                      <div *ngIf="!areCheckboxesDisabled">
+                        <div class="card cardMod" *ngFor="let filteredMeal of selectedItems; let filteredIndex = index" style="width: 18rem;">
                             <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
                             <div class="card-body cardBodyMod">
                                 <div class="cardMidMod">
@@ -78,13 +71,13 @@
                                   <p class="card-text"><b>Restaurant:</b> {{filteredMeal.restaurant}}</p>
                                 </div>
                                 <div class="cardBottom">
-                                  <button (click)="addMenuToBasket(filteredIndex, filteredDontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                  <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                                   <span class="menu_description_price">€ {{filteredMeal.price.toFixed(2)}}</span>
                                 </div>
                             </div>
                         </div>
-                      </div> -->
-                  </div>
+                      </div>
+                  <!-- </div> -->
               </div>
 
               <div *ngIf="activatedTabIndex == 1" class="orderContent" id="order_content">

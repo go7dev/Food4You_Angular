@@ -25,9 +25,9 @@ interface FoodItem {
   amount: number;
 }
 
-interface cuisineType {
-  [cuisineCategory: string]: FoodItem[];
-}
+// interface cuisineType {
+//   [cuisineCategory: string]: FoodItem[];
+// }
 
 // interface selection {
 //   cuisineCategory: string;
@@ -53,7 +53,7 @@ constructor () {
 }
 
 ngOnInit(): void {
-  this.cuisines();
+  // this.cuisines();
   this.dontKnowYet();
   // this.sort();
   // console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
@@ -470,7 +470,9 @@ Hamburgers: FoodItem[] = [
 
 //                           !----- Other Arrays -----!
 
-cuisineArray : cuisineType [] = [];
+// cuisineArray : cuisineType [] = [];
+
+selectedItems: FoodItem[] = [];
 
 dontKnowYetArray : FoodItem [] = [];  
 
@@ -482,16 +484,16 @@ filteredDontKnowYetArray : FoodItem [] = [];
 // in TypeScript we not not need to write 'function' in front of a function
 
 
-cuisines() {
-  this.cuisineArray.push({ Pizzas: this.Pizzas });
-  this.cuisineArray.push({ Salads: this.Salads });
-  this.cuisineArray.push({ Asian: this.Asian });
-  this.cuisineArray.push({ Pastas: this.Pastas });
-  this.cuisineArray.push({ Indian: this.Indian });
-  this.cuisineArray.push({ HermanTheGerman: this.HermanTheGerman });
-  this.cuisineArray.push({ Hamburgers: this.Hamburgers });
-  console.log('cuisineArray', this.cuisineArray);
-}
+// cuisines() {
+//   this.cuisineArray.push({ Pizzas: this.Pizzas });
+//   this.cuisineArray.push({ Salads: this.Salads });
+//   this.cuisineArray.push({ Asian: this.Asian });
+//   this.cuisineArray.push({ Pastas: this.Pastas });
+//   this.cuisineArray.push({ Indian: this.Indian });
+//   this.cuisineArray.push({ HermanTheGerman: this.HermanTheGerman });
+//   this.cuisineArray.push({ Hamburgers: this.Hamburgers });
+//   console.log('cuisineArray', this.cuisineArray);
+// }
 
 // getObjectKeys(obj: any): string[] {
 //   return Object.keys(obj);
@@ -537,15 +539,14 @@ dontKnowYet(){
       const dontKnowMeal: FoodItem = this.Hamburgers[index];
       this.dontKnowYetArray.push(dontKnowMeal);
     } 
-    // console.log('dontKnowYetArray content: ', this.dontKnowYetArray);
-    
+    this.sort();
 }
 
 //Checkboxes Disabled? True/ False.
 
-// btncheck1: boolean = false;
-// btncheck2: boolean = false;
-// btncheck3: boolean = false;
+btncheck1: boolean = false;
+btncheck2: boolean = false;
+btncheck3: boolean = false;
 // btncheck4: boolean = false;
 // btncheck5: boolean = false;
 // btncheck6: boolean = false;
@@ -554,147 +555,49 @@ dontKnowYet(){
 areCheckboxesDisabled: boolean = true;
 
 
-updateCheckboxStatus(e: any, id: string){
-  
-    if (e.target.checked) {
-      console.log(id + ' is checked');
+updateCheckboxStatus(): void {
+  this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3);
+  console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
 
-      // this.filteredDontKnowYetArray.push(id);
-
-      this.dontKnowYetArray.filter(m=>m.id === id);
-      // let filter = this.dontKnowYetArray.filter(
-      //     (obj) => {return obj.id === id});
-
-      // this.filteredDontKnowYetArray = filter;
-      this.sortFiltered();
-      this.areCheckboxesDisabled = false;
-    } else {
-      console.log(id + ' UNchecked');
-      this.areCheckboxesDisabled = true;
-    }
+  if (this.areCheckboxesDisabled === false) {
+    
+    this.filterDontKnowYet();
+  }
 }
-
-
-// updateCheckboxStatus(): void {
-
-//   console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
-//   if (this.areCheckboxesDisabled === false) {
-//     this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7);
-//   } else {
-//   this.areCheckboxesDisabled = (this.btncheck1 && this.btncheck2 && this.btncheck3 && this.btncheck4 && this.btncheck5 && this.btncheck6 && this.btncheck7);
-//   // Call the filterDontKnowYet() method 
-//   // this.filterDontKnowYet();  
-//   } console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
-// }
-
-//please help to define a function that will check if a checkbox is checked and if so, it will set the value of the variable "areCheckboxesDisabled" to false. If all checkboxes are unchecked, the value of the variable "areCheckboxesDisabled" should be set to true.
-
-// updateCheckboxStatus(e: any) {
-//   if(e.target.checked==true){
-//     this.areCheckboxesDisabled = false;
-//   }
-// }
-
-//tell me why this is not working
-
-// updateCheckboxStatus() {
-//   if (this.btncheck1 === true) {
-//     this.areCheckboxesDisabled = false;
-//     console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
-//   }
-//   //   else if (this.btncheck1 == false) {
-//   //   this.areCheckboxesDisabled = true;
-//   //   console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
-//   // }
-// }
-
-
-
-// updateCheckboxStatus(): void {
-//   console.log('btncheck: booleans ', this.btncheck1, this.btncheck2, this.btncheck3, this.btncheck4, this.btncheck5, this.btncheck6, this.btncheck7);
-//   console.log('areCheckboxesDisabled1: ', this.areCheckboxesDisabled);
-
-//   // Calculate the new value of areCheckboxesDisabled
-//   if (this.areCheckboxesDisabled && (this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7)) {
-//     this.areCheckboxesDisabled = false;
-
-//   } else if (!this.btncheck1 && !this.btncheck2 && !this.btncheck3 && !this.btncheck4 && !this.btncheck5 && !this.btncheck6 && !this.btncheck7) {
-//     this.areCheckboxesDisabled = true;
-//   }
-
-//   console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
-// }
-
-
-
-
-
-
-// updateCheckboxStatus() {
-//   if (this.areCheckboxesDisabled === true && (this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7) === true) {
-//     this.areCheckboxesDisabled = false;
-//     console.log('areCheckboxesDisabled: value is now false');
-//   } else {
-//     if (!(this.btncheck1 && this.btncheck2 && this.btncheck3 && this.btncheck4 && this.btncheck5 && this.btncheck6 && this.btncheck7)) {
-//       this.areCheckboxesDisabled = true;
-//       console.log('areCheckboxesDisabled: value is now true');
-//       // Call the filterDontKnowYet() method asynchronously
-//       // setTimeout(() => {
-//       //   this.filterDontKnowYet();
-//       // }, 150);
-//     }
-//   }
-// }
 
 
 //Filter an Array of JSON Objects
 
-// filterDontKnowYet() {
-//   const selectedIds: string[] = [];
+// filterSelectedItems(): void {
+//   // const selectedIds: string[] = [];
   
 //   if (this.btncheck1) {
-//     selectedIds.push("pizzas");
-//   }
-//   if (this.btncheck2) {
-//     selectedIds.push("salads");
-//   }
-//   if (this.btncheck3) {
-//     selectedIds.push("asian");
-//   }
-//   if (this.btncheck4) {
-//     selectedIds.push("pastas");
-//   }
-//   if (this.btncheck5) {
-//     selectedIds.push("indian");
-//   }
-//   if (this.btncheck6) {
-//     selectedIds.push("hermans");
-//   }
-//   if (this.btncheck7) {
-//     selectedIds.push("hamburgers");
-//   }
-//   console.log(selectedIds);
+//     let filter = this.dontKnowYetArray.filter(
+//       (obj) => {return obj.id === 'pizzas'})
+//       this.filteredDontKnowYetArray = filter;
+//       console.log (filter);
 
-//   const filter = this.dontKnowYetArray.filter(obj =>
-//     selectedIds.includes(obj.id)
-//   );
-
-//   this.filteredDontKnowYetArray = filter;
-//   this.sortFiltered();
+//   } if (this.btncheck2) {
+//       let filter = this.dontKnowYetArray.filter(
+//         (obj) => {return obj.id === 'salads'})
+        
+//         console.log (filter);
+//     }
 // }
+ 
 
-// filterDontKnowYet() {
-//   this.filteredDontKnowYetArray = this.dontKnowYetArray.filter(obj =>
-//     (this.btncheck1 && obj.id === "pizzas") ||
-//     (this.btncheck2 && obj.id === "salads") ||
-//     (this.btncheck3 && obj.id === "asian") ||
-//     (this.btncheck4 && obj.id === "pastas") ||
-//     (this.btncheck5 && obj.id === "indian") ||
-//     (this.btncheck6 && obj.id === "hermans") ||
-//     (this.btncheck7 && obj.id === "hamburgers")
-//   );
-//   this.sortFiltered();
-// }
+filterDontKnowYet() {
+  this.selectedItems = this.dontKnowYetArray.filter(obj =>
+    (this.btncheck1 && obj.id === "pizzas") ||
+    (this.btncheck2 && obj.id === "salads") ||
+    (this.btncheck3 && obj.id === "asian") 
+    // (this.btncheck4 && obj.id === "pastas") ||
+    // (this.btncheck5 && obj.id === "indian") ||
+    // (this.btncheck6 && obj.id === "hermans") ||
+    // (this.btncheck7 && obj.id === "hamburgers")
+  );
+  this.sortFiltered();
+}
 
 // filterDontKnowYet(): void {
 // let filter = this.dontKnowYetArray.filter(
@@ -708,22 +611,23 @@ updateCheckboxStatus(e: any, id: string){
 
 
 
-// Alphebetical sorting of dontKnowYetArray& filteredDontKnowYetArray
-// sort(){
-//   this.dontKnowYetArray.sort(function (a, b) {
-//     if (a.dish < b.dish) {
-//       return -1;
-//     }
-//     if (a.dish > b.dish) {
-//       return 1;
-//     }
-//     return 0;
-//   });console.log('dontKnowYetArray is sorted alphatecially now.');
-// }
+// Alphebetical sorting of dontKnowYetArray& selectedItems Array
+
+sort(){
+  this.dontKnowYetArray.sort(function (a, b) {
+    if (a.dish < b.dish) {
+      return -1;
+    }
+    if (a.dish > b.dish) {
+      return 1;
+    }
+    return 0;
+  });console.log('dontKnowYetArray is sorted alphatecially now.');
+}
 
 
 sortFiltered(){
-  this.filteredDontKnowYetArray.sort(function (a, b) {
+  this.selectedItems.sort(function (a, b) {
     if (a.dish < b.dish) {
       return -1;
     }

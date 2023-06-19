@@ -465,9 +465,20 @@
 
 .buy {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+
+    p{
+        margin-top: 20px;
+    }
+
+    img {
+        height: 280px;
+        width: auto;
+    }
 }
 
 .orders_delivery_costs_supra {

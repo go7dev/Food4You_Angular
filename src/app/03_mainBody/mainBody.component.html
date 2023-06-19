@@ -16,7 +16,9 @@
                       </div>
                   
                       <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
-                        
+                  
+                     <!--Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
+                  
                         <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
                         <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
                     
@@ -274,7 +276,7 @@
                             <div id="orders_subtotal_left">Subtotal</div>
                             <div id="orders_subtotal_right">€ {{resultSubtotal.toFixed(2)}}</div>
                         </div>
-                        <div class="orders_delivery_costs_supra" id="orders_delivery_costs_supra">
+                        <div *ngIf="resultSubtotal > 20 || resultSubtotal == 20" class="orders_delivery_costs_supra" id="orders_delivery_costs_supra">
                             <div id="orders_delivery_costs_left">Delivery Costs</div>
                             <div id="orders_delivery_costs_right">€ 5.00</div>
                         </div>
@@ -282,7 +284,14 @@
                             <div id="orders_total_left">Total</div>
                             <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div>
                         </div>
-                        <div class="buy" id="buy"><button>Buy!</button></div>
+
+                        <div *ngIf="resultSubtotal < 20" class="buy" id="buy">
+                          <button class="btn btn-primary disabled">Buy!</button>
+                          <p class="text-center">Sorry,<br>You Haven't Reached our Minimum Order Value of at Least <b>€ 20.00</b> Yet.<br>(Delivery Costs are Excluded)</p>
+                          <img src="../assets/img/icons/courier-deliver_CC00_green.png">
+                        </div>
+                        
+                        <div *ngIf="resultSubtotal > 20 || resultSubtotal == 20" class="buy" id="buy"><button class="btn btn-primary">Buy!</button></div>
                     </div>
         
                 </div>

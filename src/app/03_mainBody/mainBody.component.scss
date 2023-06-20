@@ -6,7 +6,6 @@
 .content {
     display: flex;
     position: relative;
-    // justify-content: space-between;
     width: 100%;
 }
 
@@ -14,9 +13,8 @@
     width: 70%;
     // height:auto;
     display: flex;
-    // justify-content: flex-start;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    // position: relative;
 
 }
 
@@ -28,17 +26,17 @@
 .ifEnabledDisabled{
     width: calc(100% - 240px);
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap ;
 }
 
 .filterBar{
     width: 240px;
     height: 380px;
-    position: sticky !important;
+    position: sticky;
     top: 30%;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     align-items: center;
 }
 
@@ -47,8 +45,8 @@
 }
 
 .filterHeader{
-    border-bottom-left-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 
     .filterHeaderInside {
         display:flex;
@@ -57,30 +55,9 @@
 }
 
 .filterGridTopBorder{
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
 }
-
-// .objectKeysCuisine{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     width: 100%;
-
-//     // .objectKeysCuisineInside{
-//     //     display: flex;
-//     //     flex-direction: column;
-//     //     justify-content: center;
-//     //     align-items: center;
-//     //     width: 100%;
-//     // }
-// }
-
-// .filterBarBTN{
-//     height: 10px !important;
-// }
-
 
 
 .cardMod {
@@ -98,6 +75,107 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.cardMidMod{
+
+     .restaurantInfo{
+
+        &:hover{
+            cursor: pointer;  
+        }
+    }
+}
+
+// #popoverTitle {
+    
+// }
+
+.cardMidModSub{
+    position: relative;
+    // display: flex; Doesn't work in combination with popover element!
+    height: 47px;
+
+    .btnMod {
+        position: absolute;
+        right: 20px;
+        z-index: 0;
+        height: 47px;
+
+        img {
+            object-fit: contain;
+            height: 100%;
+            width: auto;
+        }
+      }
+      
+}
+
+.popoverContainer {
+    // padding: 0px !important;
+    // align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: center;
+    max-height: 620px;
+    z-index: 10 !important;
+
+    img {
+        object-fit: contain;
+        // margin-top: 10px !important;
+        max-width: 100%;
+        max-height: 280px;
+    }
+
+    .popover-header {
+        // background-color: #a72727; 
+        // margin-top: -20px;
+        font-size: 28px;
+        color: white;
+        text-shadow: 8px;
+        text-align: center;
+        width: 100%;
+        // position: absolute;
+        // top: 0px;
+
+    }
+
+    .popover-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+     
+
+        img {
+            object-fit: contain;
+            max-width: 100%;
+          
+        }
+    }
+
+    .location{
+        width: 160px;
+        height: 160px;
+    }
+  }
+
+
+
+// .popoverContainer{
+//     z-index: 10;
+//     width: 400px;
+//     height: 300px;
+// }
+
+.custom-popover {
+    --bs-popover-max-width: 200px;
+    --bs-popover-border-color: var(--bs-primary);
+    --bs-popover-header-bg: var(--bs-primary);
+    --bs-popover-header-color: var(--bs-white);
+    --bs-popover-body-padding-x: 1rem;
+    --bs-popover-body-padding-y: .5rem;
+  }
 
 .cardBottom {
     margin-top: 20px;
@@ -163,27 +241,7 @@
 //     height: 800px;
 // }
 
-.menu_bar {
-    margin-right: 30px;
 
-    button {
-        background-color: #38E54D;
-        object-fit: contain;
-        border: 1px solid #38E54D;
-
-        &:hover {
-            cursor: pointer;
-            border: 1px solid white;
-        }
-    }
-
-    img{
-        height: 30px;
-        padding-left: 0px;
-        width: auto;
-    
-    }
-}
 
 // .food_picture {
 //     width: 100%;
@@ -264,29 +322,29 @@
     // margin: none !important;
 }
 
-.menu_description button {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    height:70px;
-    width: 70px;
-    background-color:whitesmoke;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
+// .menu_description button {
+//     position: absolute;
+//     top: 0px;
+//     right: 0px;
+//     height:70px;
+//     width: 70px;
+//     background-color:whitesmoke;
+//     border: 1px solid black;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;   
 
-    :hover {
-        cursor: pointer;
-        background-color: #9CFF2E;
-        border: 1px solid black;
-    }
-}
+//     :hover {
+//         cursor: pointer;
+//         background-color: #9CFF2E;
+//         border: 1px solid black;
+//     }
+// }
 
-.order_button img {
-    height: 60px;
+// .order_button img {
+//     height: 60px;
 
-}
+// }
 
 .basket_supra{
     width: 30% !important;
@@ -550,6 +608,10 @@
 
     .basket_supra{
         width: 40%;
+    }
+
+    .emptyBasket {
+        height: auto;
     }
 
 }

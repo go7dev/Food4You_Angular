@@ -101,22 +101,37 @@
                         </div>
                     </div> -->
       
-
-                <div class="card cardMod" *ngFor="let pizza of Pizzas; let pizzaIndex = index" style="width: 18rem;">
-                    <img src="{{pizza.img}}" class="card-img-top" alt="...">
-                    <div class="card-body cardBodyMod">
-                        <div class="cardMidMod">
-                          <h5 class="card-title">{{pizza.dish}}</h5>
-                          <p class="card-text">{{pizza.ingredients}}</p>
-                          <p class="card-text"><b>Restaurant:</b> {{pizza.restaurant}}</p>
+                      <div class="card cardMod" *ngFor="let pizza of Pizzas; let pizzaIndex = index" style="width: 18rem;">
+                        <img src="{{ pizza.img }}" class="card-img-top" alt="...">
+                        <div class="card-body cardBodyMod">
+                          <div class="cardMidMod">
+                            <h5 class="card-title">{{ pizza.dish }}</h5>
+                            <p class="card-text">{{ pizza.ingredients }}</p>
+                            <div class="cardMidModSub">
+                              <b>Restaurant:</b>
+                              <button type="button" class="btn btn-outline-info btnMod" placement="top" [popover]="popoverContent" triggers="focus" container="body"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</button>
+                            </div>
+                            <ng-template #popoverContent>
+                              <div class="popoverContainer">
+                               
+                                <div class="popover-header bg-info">{{ pizza.restaurant }}</div>
+                                <!-- <div class="popover-body"><img src="{{ pizza.restaurantIMG }}"> And here's some amazing content. It's very engaging. Right?</div> -->
+                                <img src="{{ pizza.restaurantIMG }}"> 
+                                <div [innerHTML]="sanitizeHTML(pizza.location)"></div>
+                              </div>
+                            </ng-template>
+                          </div>
+                          <div class="cardBottom">
+                            <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary">
+                              <img src="./assets/img/icons/plus4_icon_48x48.png">
+                              <span>Buy</span>
+                            </button>
+                            <span class="menu_description_price">€ {{ pizza.price.toFixed(2) }}</span>
+                          </div>
                         </div>
-                        <div class="cardBottom">
-                          <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
-                          <span class="menu_description_price">€ {{pizza.price.toFixed(2)}}</span>
-                        </div>
-                    </div>
-                </div>
-                    
+                      </div>
+                                       
+              
               </div>
 
               <div *ngIf="activatedTabIndex == 2" class="orderContent" id="order_content">
@@ -124,11 +139,23 @@
                 <div class="card cardMod" *ngFor="let salad of Salads; let saladIndex = index" style="width: 18rem;">
                   <img src="{{salad.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{salad.dish}}</h5>
-                        <p class="card-text">{{salad.ingredients}}</p>
-                        <p class="card-text"><b>Restaurant:</b> {{salad.restaurant}}</p>
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{ salad.dish }}</h5>
+                      <p class="card-text">{{ salad.ingredients }}</p>
+                      <div class="cardMidModSub">
+                        <b>Restaurant:</b>
+                        <button type="button" class="btn btn-outline-info btnMod" placement="top" [popover]="popoverContent" triggers="focus"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</button>
                       </div>
+                      <ng-template #popoverContent>
+                        <div class="popoverContainer">
+                         
+                          <div class="popover-header bg-info">{{ salad.restaurant }}</div>
+                          <!-- <div class="popover-body"><img src="{{ pizza.restaurantIMG }}"> And here's some amazing content. It's very engaging. Right?</div> -->
+                          <img src="{{ salad.restaurantIMG }}"> 
+                          <div [innerHTML]="sanitizeHTML(salad.location)"></div>
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
                         <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{salad.price.toFixed(2)}}</span>

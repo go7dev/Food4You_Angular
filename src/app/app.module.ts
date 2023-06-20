@@ -7,6 +7,8 @@ import { HeaderComponent } from './01_header/header.component';
 import { TabMenuComponent } from './02_TabMenu/TabMenu.component';
 import { MainBodyComponent } from './03_mainBody/mainBody.component';
 import { FooterComponent } from './04_footer/footer.component';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { FooterComponent } from './04_footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule 
+    FormsModule,
+    PopoverModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

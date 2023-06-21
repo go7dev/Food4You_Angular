@@ -1,7 +1,8 @@
 // import { DeclareFunctionStmt } from '@angular/compiler';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PopoverModule } from 'ngx-bootstrap/popover';
+import { popper, createPopper, Instance } from '@popperjs/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 
@@ -40,13 +41,6 @@ interface FoodItem {
 // }
 
 
-declare const bootstrap: any;
-
-// const popover = new bootstrap.Popover('.popover-dismiss', {
-//   trigger: 'focus'
-// })
-
-
 @Component({
   selector: 'app-mainBody',
   templateUrl: './mainBody.component.html',
@@ -54,6 +48,7 @@ declare const bootstrap: any;
 })
 
 export class MainBodyComponent implements OnInit{
+
 
 // defines tabs Array
 tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburgers"];
@@ -71,7 +66,7 @@ ngOnInit(): void {
 
 }
 
-@ViewChild('popoverContent') popoverContent: any;
+// @ViewChild('popoverContent') popoverContent: any;
 
 // popoverInit(){
 //   const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
@@ -717,6 +712,34 @@ sortFiltered(){
   });
   // console.log('dontKnowYetArray is sorted alphatecially now.');
 }
+
+
+// CreatePopOver
+
+
+// createPopper(){
+//   console.log('popOver() is called.')
+//   const popcorn: any = document.querySelector<HTMLButtonElement>('#myButton');
+//   const tooltip: any = document.querySelector<HTMLDivElement>('#divTooltip');
+//   const container: any = document.querySelector<HTMLDivElement>('#container');
+  
+//   createPopper(popcorn, tooltip, {
+//     placement: 'top',
+//     modifiers: [
+//       {
+//         name: 'offset',
+//         options: {
+//           offset: [0, 8],
+//         },
+//       },
+//     ],
+//   });
+  
+//   (container as HTMLElement).scrollTop = 520;
+//   console.log('createPopper() method has been executed');
+
+// }
+
 
 // allow to execute HTML code in the browser, which is rendered dynamically as HTML code from an array
 

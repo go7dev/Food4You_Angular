@@ -56,13 +56,25 @@
                                     <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
                                     <p class="card-text">{{dontKnowMeal.ingredients}}</p>
                                     <div class="cardMidModSub">
-                                      <!-- <div class="left"> -->
+                                      <div class="restaurant">
                                         <b>Restaurant:</b>
                                         <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
-                                      <!-- </div> -->
-                                      <!-- <div class="right">
-                                        <span>Rating</span>   
-                                      </div> -->
+                                      </div>
+                                      <div class="superStar">
+                                        <span><b>Customers' Rating:</b></span>   
+
+                                          <div class="stars">
+                                            <form action="">
+                                              <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                                           
+                                              <input class="star star-{{i}}" id="star-{{dontKnowMealIndex}}-{{i}}" type="radio" name="star-{{dontKnowMealIndex}}" [value]="i" [checked]="dontKnowMeal.selectedStar === i" />
+                                          
+                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}"></label>
+                                              </ng-container>
+                                            </form>
+                                          </div>
+
+                                      </div>
                                              
                                     </div>
                                
@@ -75,7 +87,7 @@
                                     </ng-template>
                                   </div>
                                   <div class="cardBottom">
-                                    <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                    <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                                     <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
                                   </div>
                               </div>
@@ -86,24 +98,42 @@
                         <div class="card cardMod" *ngFor="let filteredMeal of selectedItems; let filteredIndex = index" style="width: 18rem;">
                             <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
                             <div class="card-body cardBodyMod">
-                                <div class="cardMidMod">
-                                  <h5 class="card-title">{{filteredMeal.dish}}</h5>
-                                  <p class="card-text">{{filteredMeal.ingredients}}</p>
-                                  <div class="cardMidModSub">
-                                    <b>Restaurant:</b>                              
+                              <div class="cardMidMod">
+                                <h5 class="card-title">{{filteredMeal.dish}}</h5>
+                                <p class="card-text">{{filteredMeal.ingredients}}</p>
+                                <div class="cardMidModSub">
+                                  <div class="restaurant">
+                                    <b>Restaurant:</b>
                                     <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
                                   </div>
-                             
-                                  <ng-template class="bcs" #popoverContent>
-                                    <div  class="popoverContainer">
-                                      <div class="popover-header bg-info">{{ filteredMeal.restaurant }}</div>
-                                        <img src="{{ filteredMeal.restaurantIMG }}"> 
-                                        <div [innerHTML]="sanitizeHTML(filteredMeal.location)"></div>             
-                                    </div>
-                                  </ng-template>
+                                  <div class="superStar">
+                                    <span><b>Customers' Rating:</b></span>   
+
+                                      <div class="stars">
+                                        <form action="">
+                                          <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                                       
+                                          <input class="star star-{{i}}" id="star-{{filteredIndex}}-{{i}}" type="radio" name="star-{{filteredIndex}}" [value]="i" [checked]="filteredMeal.selectedStar === i" />
+                                      
+                                          <label class="star star-{{i}}" for="star-{{filteredIndex}}-{{i}}"></label>
+                                          </ng-container>
+                                        </form>
+                                      </div>
+
+                                  </div>
+                                         
                                 </div>
+                           
+                                <ng-template class="bcs" #popoverContent>
+                                  <div  class="popoverContainer">
+                                    <div class="popover-header bg-info">{{ filteredMeal.restaurant }}</div>
+                                      <img src="{{ filteredMeal.restaurantIMG }}"> 
+                                      <div [innerHTML]="sanitizeHTML(filteredMeal.location)"></div>             
+                                  </div>
+                                </ng-template>
+                              </div>
                                 <div class="cardBottom">
-                                  <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                  <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                                   <span class="menu_description_price">€ {{filteredMeal.price.toFixed(2)}}</span>
                                 </div>
                             </div>
@@ -133,11 +163,29 @@
                         <img src="{{ pizza.img }}" class="card-img-top" alt="...">
                         <div class="card-body cardBodyMod">
                           <div class="cardMidMod">
-                            <h5 class="card-title">{{ pizza.dish }}</h5>
-                            <p class="card-text">{{ pizza.ingredients }}</p>
+                            <h5 class="card-title">{{pizza.dish}}</h5>
+                            <p class="card-text">{{pizza.ingredients}}</p>
                             <div class="cardMidModSub">
-                              <b>Restaurant:</b>                              
-                              <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
+                              <div class="restaurant">
+                                <b>Restaurant:</b>
+                                <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
+                              </div>
+                              <div class="superStar">
+                                <span><b>Customers' Rating:</b></span>   
+
+                                  <div class="stars">
+                                    <form action="">
+                                      <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                                   
+                                      <input class="star star-{{i}}" id="star-{{pizzaIndex}}-{{i}}" type="radio" name="star-{{pizzaIndex}}" [value]="i" [checked]="pizza.selectedStar === i" />
+                                  
+                                      <label class="star star-{{i}}" for="star-{{pizzaIndex}}-{{i}}"></label>
+                                      </ng-container>
+                                    </form>
+                                  </div>
+
+                              </div>
+                                     
                             </div>
                        
                             <ng-template class="bcs" #popoverContent>
@@ -147,10 +195,9 @@
                                   <div [innerHTML]="sanitizeHTML(pizza.location)"></div>             
                               </div>
                             </ng-template>
-
                           </div>
                           <div class="cardBottom">
-                            <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary">
+                            <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary btn-lg">
                               <img src="./assets/img/icons/plus4_icon_48x48.png">
                               <span>Buy</span>
                             </button>
@@ -168,11 +215,29 @@
                   <img src="{{salad.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
                     <div class="cardMidMod">
-                      <h5 class="card-title">{{ salad.dish }}</h5>
-                      <p class="card-text">{{ salad.ingredients }}</p>
+                      <h5 class="card-title">{{salad.dish}}</h5>
+                      <p class="card-text">{{salad.ingredients}}</p>
                       <div class="cardMidModSub">
-                        <b>Restaurant:</b>                              
-                        <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
+                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
+                        </div>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{saladIndex}}-{{i}}" type="radio" name="star-{{saladIndex}}" [value]="i" [checked]="salad.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{saladIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
                  
                       <ng-template class="bcs" #popoverContent>
@@ -184,7 +249,7 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{salad.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -197,24 +262,42 @@
                 <div class="card cardMod" *ngFor="let asia of Asian; let asiaIndex = index" style="width: 18rem;">
                   <img src="{{asia.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{asia.dish}}</h5>
-                        <p class="card-text">{{asia.ingredients}}</p>
-                        <div class="cardMidModSub">
-                          <b>Restaurant:</b>                              
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{asia.dish}}</h5>
+                      <p class="card-text">{{asia.ingredients}}</p>
+                      <div class="cardMidModSub">
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
                           <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
                         </div>
-                   
-                        <ng-template class="bcs" #popoverContent>
-                          <div  class="popoverContainer">
-                            <div class="popover-header bg-info">{{ asia.restaurant }}</div>
-                              <img src="{{ asia.restaurantIMG }}"> 
-                              <div [innerHTML]="sanitizeHTML(asia.location)"></div>             
-                          </div>
-                        </ng-template>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{asiaIndex}}-{{i}}" type="radio" name="star-{{asiaIndex}}" [value]="i" [checked]="asia.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{asiaIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
+                 
+                      <ng-template class="bcs" #popoverContent>
+                        <div  class="popoverContainer">
+                          <div class="popover-header bg-info">{{ asia.restaurant }}</div>
+                            <img src="{{ asia.restaurantIMG }}"> 
+                            <div [innerHTML]="sanitizeHTML(asia.location)"></div>             
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(asiaIndex, Asian)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(asiaIndex, Asian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{asia.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -227,24 +310,42 @@
                 <div class="card cardMod" *ngFor="let pasta of Pastas; let pastaIndex = index" style="width: 18rem;">
                   <img src="{{pasta.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{pasta.dish}}</h5>
-                        <p class="card-text">{{pasta.ingredients}}</p>
-                        <div class="cardMidModSub">
-                          <b>Restaurant:</b>                              
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{pasta.dish}}</h5>
+                      <p class="card-text">{{pasta.ingredients}}</p>
+                      <div class="cardMidModSub">
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
                           <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
                         </div>
-                   
-                        <ng-template class="bcs" #popoverContent>
-                          <div  class="popoverContainer">
-                            <div class="popover-header bg-info">{{ pasta.restaurant }}</div>
-                              <img src="{{ pasta.restaurantIMG }}"> 
-                              <div [innerHTML]="sanitizeHTML(pasta.location)"></div>             
-                          </div>
-                        </ng-template>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{pastaIndex}}-{{i}}" type="radio" name="star-{{pastaIndex}}" [value]="i" [checked]="pasta.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{pastaIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
+                 
+                      <ng-template class="bcs" #popoverContent>
+                        <div  class="popoverContainer">
+                          <div class="popover-header bg-info">{{ pasta.restaurant }}</div>
+                            <img src="{{ pasta.restaurantIMG }}"> 
+                            <div [innerHTML]="sanitizeHTML(pasta.location)"></div>             
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(pastaIndex, Pastas)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(pastaIndex, Pastas)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{pasta.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -257,24 +358,42 @@
                 <div class="card cardMod" *ngFor="let india of Indian; let indiaIndex = index" style="width: 18rem;">
                   <img src="{{india.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{india.dish}}</h5>
-                        <p class="card-text">{{india.ingredients}}</p>
-                        <div class="cardMidModSub">
-                          <b>Restaurant:</b>                              
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{india.dish}}</h5>
+                      <p class="card-text">{{india.ingredients}}</p>
+                      <div class="cardMidModSub">
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
                           <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
                         </div>
-                   
-                        <ng-template class="bcs" #popoverContent>
-                          <div  class="popoverContainer">
-                            <div class="popover-header bg-info">{{ india.restaurant }}</div>
-                              <img src="{{ india.restaurantIMG }}"> 
-                              <div [innerHTML]="sanitizeHTML(india.location)"></div>             
-                          </div>
-                        </ng-template>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{indiaIndex}}-{{i}}" type="radio" name="star-{{indiaIndex}}" [value]="i" [checked]="india.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{indiaIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
+                 
+                      <ng-template class="bcs" #popoverContent>
+                        <div  class="popoverContainer">
+                          <div class="popover-header bg-info">{{ india.restaurant }}</div>
+                            <img src="{{ india.restaurantIMG }}"> 
+                            <div [innerHTML]="sanitizeHTML(india.location)"></div>             
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(indiaIndex, Indian)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(indiaIndex, Indian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{india.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -287,24 +406,42 @@
                 <div class="card cardMod" *ngFor="let herman of HermanTheGerman; let hermanIndex = index" style="width: 18rem;">
                   <img src="{{herman.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{herman.dish}}</h5>
-                        <p class="card-text">{{herman.ingredients}}</p>
-                        <div class="cardMidModSub">
-                          <b>Restaurant:</b>                              
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{herman.dish}}</h5>
+                      <p class="card-text">{{herman.ingredients}}</p>
+                      <div class="cardMidModSub">
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
                           <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
                         </div>
-                   
-                        <ng-template class="bcs" #popoverContent>
-                          <div  class="popoverContainer">
-                            <div class="popover-header bg-info">{{ herman.restaurant }}</div>
-                              <img src="{{ herman.restaurantIMG }}"> 
-                              <div [innerHTML]="sanitizeHTML(herman.location)"></div>             
-                          </div>
-                        </ng-template>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{hermanIndex}}-{{i}}" type="radio" name="star-{{hermanIndex}}" [value]="i" [checked]="herman.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{hermanIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
+                 
+                      <ng-template class="bcs" #popoverContent>
+                        <div  class="popoverContainer">
+                          <div class="popover-header bg-info">{{ herman.restaurant }}</div>
+                            <img src="{{ herman.restaurantIMG }}"> 
+                            <div [innerHTML]="sanitizeHTML(herman.location)"></div>             
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(hermanIndex, HermanTheGerman)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(hermanIndex, HermanTheGerman)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{herman.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -317,24 +454,42 @@
                 <div class="card cardMod" *ngFor="let hamburger of Hamburgers; let hamburgerIndex = index" style="width: 18rem;">
                   <img src="{{hamburger.img}}" class="card-img-top" alt="...">
                   <div class="card-body cardBodyMod">
-                      <div class="cardMidMod">
-                        <h5 class="card-title">{{hamburger.dish}}</h5>
-                        <p class="card-text">{{hamburger.ingredients}}</p>
-                        <div class="cardMidModSub">
-                          <b>Restaurant:</b>                              
+                    <div class="cardMidMod">
+                      <h5 class="card-title">{{hamburger.dish}}</h5>
+                      <p class="card-text">{{hamburger.ingredients}}</p>
+                      <div class="cardMidModSub">
+                        <div class="restaurant">
+                          <b>Restaurant:</b>
                           <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
                         </div>
-                   
-                        <ng-template class="bcs" #popoverContent>
-                          <div  class="popoverContainer">
-                            <div class="popover-header bg-info">{{ hamburger.restaurant }}</div>
-                              <img src="{{ hamburger.restaurantIMG }}"> 
-                              <div [innerHTML]="sanitizeHTML(hamburger.location)"></div>             
-                          </div>
-                        </ng-template>
+                        <div class="superStar">
+                          <span><b>Customers' Rating:</b></span>   
+
+                            <div class="stars">
+                              <form action="">
+                                <ng-container *ngFor="let i of numStars; let idx = index">
+                                                                             
+                                <input class="star star-{{i}}" id="star-{{hamburgerIndex}}-{{i}}" type="radio" name="star-{{hamburgerIndex}}" [value]="i" [checked]="hamburger.selectedStar === i" />
+                            
+                                <label class="star star-{{i}}" for="star-{{hamburgerIndex}}-{{i}}"></label>
+                                </ng-container>
+                              </form>
+                            </div>
+
+                        </div>
+                               
                       </div>
+                 
+                      <ng-template class="bcs" #popoverContent>
+                        <div  class="popoverContainer">
+                          <div class="popover-header bg-info">{{ hamburger.restaurant }}</div>
+                            <img src="{{ hamburger.restaurantIMG }}"> 
+                            <div [innerHTML]="sanitizeHTML(hamburger.location)"></div>             
+                        </div>
+                      </ng-template>
+                    </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(hamburgerIndex, Hamburgers)" class="btn btn-primary"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(hamburgerIndex, Hamburgers)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
                         <span class="menu_description_price">€ {{hamburger.price.toFixed(2)}}</span>
                       </div>
                   </div>

@@ -28,6 +28,7 @@ interface FoodItem {
   location: string;
   dish: string;
   ingredients: string;
+  selectedStar: number;
   price: number;
   amount: number;
 }
@@ -51,7 +52,7 @@ export class MainBodyComponent implements OnInit{
 
 
 // defines tabs Array
-tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburgers"];
+tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "Herman-The-German", "Hamburgers"];
 
 //activatedTabIndex variable gets input value tabChange(), see code-lines 52-55
 activatedTabIndex: number = 0;
@@ -111,6 +112,7 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Salami",
       ingredients: "with Mozzarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the wood stove...",
+      selectedStar: 3,
       price: 8.5,
       amount: 1
     },
@@ -122,6 +124,7 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Milano",
       ingredients: "with Mozzarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the wood stove...",
+      selectedStar: 1,
       price: 9,
       amount: 1
     },
@@ -133,7 +136,8 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Veggie",
       ingredients: "with Mozzarella, Tomato Sauce, Zucchini, Olives, Egg Plant, Rucola, from the wood stove...",
-      price: 9,
+      selectedStar: 2,
+      price: 8,
       amount: 1
     },
     { 
@@ -144,7 +148,8 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Four Seasons",
       ingredients: "with Mozzarella, Tomato Sauce, Onions, Paprika, Olives, Salami, Mushrooms, Sourdough, from the wood stove...",
-      price: 9,
+      selectedStar: 4,
+      price: 11,
       amount: 1
     },
     { 
@@ -155,6 +160,7 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Diavolo",
       ingredients: "with Mozzarella, Tomato Sauce, Hot Salami, Pepperoni, Sourdough, from the wood stove...",
+      selectedStar: 5,
       price: 9,
       amount: 1
     },
@@ -166,7 +172,8 @@ Pizzas: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Mozarella",
       ingredients: "with Mozzarella, Tomato Sauce, Tomatoes, Basil, Sourdough, from the wood stove...",
-      price: 9,
+      selectedStar: 3,
+      price: 7,
       amount: 1
     }
   ];
@@ -180,6 +187,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Lemon Salad",
       ingredients: "with Lemon, Cucumber, Tomatoes, Onion, Olives, Curled Lettuce",
+      selectedStar: 5,
       price: 13.5,
       amount: 1
     },
@@ -191,6 +199,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Avocado Salad",
       ingredients: "Avocado, Tomatoes, Cucumber, Flaxseed, Iceberg Lettuce",
+      selectedStar: 5,
       price: 12,
       amount: 1
     },
@@ -202,6 +211,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Strawberry Salad",
       ingredients: "Strawberries, Curled Lettuce, Iceberg Lettuce",
+      selectedStar: 3,
       price: 16,
       amount: 1
     },
@@ -213,6 +223,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Homemade Salad",
       ingredients: "Olives, Avocado, Tomatoes, Feta Cheese, Lambs Lettuce",
+      selectedStar: 1,
       price: 14,
       amount: 1
     },
@@ -224,6 +235,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Paprica Salad",
       ingredients: "Paprica, Nuts, Feta Cheese, Pepperoni, Onions",
+      selectedStar: 2,
       price: 11,
       amount: 1
     },
@@ -235,6 +247,7 @@ Salads: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5622.718975471653!2d13.065670054619977!3d52.41327890799852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a8f7570e60019f%3A0x854243f660fec203!2zS8O8Y2hlbmdlYsOkdWRl!5e0!3m2!1sde!2sde!4v1687273714191!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Veggie Burger Salad",
       ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
+      selectedStar: 4,
       price: 15,
       amount: 1
     }
@@ -249,6 +262,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Thai Shrimps Noodles",
       ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
+      selectedStar: 5,
       price: 15.0,
       amount: 1
     },
@@ -260,6 +274,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Sushi Neo-Tokyo",
       ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
+      selectedStar: 4,
       price: 14,
       amount: 1
     },
@@ -271,6 +286,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Taiwanese Noodle Soup",
       ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
+      selectedStar: 3,
       price: 12.5,
       amount: 1
     },
@@ -282,6 +298,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Viet Bowl",
       ingredients: "Vietnamese Noodles, Chicken, Vgetables, Onion, Parsley, Peppermint, ",
+      selectedStar: 1,
       price: 14,
       amount: 1
     },
@@ -293,6 +310,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Chin Gong Beef",
       ingredients: "Rice, Beef, Chinese Sweet-Sour Sauce, Peanuts, Sesame, Parsley, Iceberg Lettuce, Vegetables",
+      selectedStar: 5,
       price: 12,
       amount: 1
     },
@@ -304,6 +322,7 @@ Asian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1153.3921844750453!2d9.992136160213866!3d53.54220391506839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1687274140842!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Mala Chicken",
       ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
+      selectedStar: 3,
       price: 11,
       amount: 1
   }
@@ -317,6 +336,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Tagliatelle Basil di Tuscany",
       ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
+      selectedStar: 5,
       price: 13.0,
       amount: 1
     },
@@ -328,6 +348,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pasta Frutti di Mare",
       ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
+      selectedStar: 5,
       price: 19,
       amount: 1
     },
@@ -339,6 +360,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Crema Pasta",
       ingredients: "Spaghetti, North Italian melting Cheese (aromatic), Cream, Parsley",
+      selectedStar: 4,
       price: 9,
       amount: 1
     },
@@ -350,6 +372,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Spaghetti Bolognaise",
       ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
+      selectedStar: 3,
       price: 14,
       amount: 1
     },
@@ -361,6 +384,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pasta Salmone",
       ingredients: "Tagliatelle, Salmone, Rosemary, Basil-Paprica-Cream, Asparagus, 1 Shrimp, Tomatoes, Radishes, Lemon",
+      selectedStar: 1,
       price: 20,
       amount: 1
     },
@@ -372,6 +396,7 @@ Pastas: FoodItem[] = [{
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d860.0258945152949!2d6.959769188676069!3d50.93747578023893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25ff8b3b90c1%3A0x98f3dd8123f4c033!2sHeumarkt!5e0!3m2!1sde!2sde!4v1687274249484!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Capri Shrimps",
       ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
+      selectedStar: 2,
       price: 11,
       amount: 1
     }
@@ -386,6 +411,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Curry Cream Cheese",
       ingredients: "Rice, Cream Cheese, Curry, Paprica, Ginger, Curcuma, Parsley",
+      selectedStar: 4,
       price: 11.0,
       amount: 1
     },
@@ -397,6 +423,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Family Menu Curry",
       ingredients: "Rice, Optional: Chicken or Vegetable Curry, a Pallette of Indian Spices (Curcuma, Cinnamon, Caraway Seeds, Cashew Nuts, Clove, Nutmeg, Anisey, dried Orange Peel)",
+      selectedStar: 5,
       price: 38,
       amount: 1
     },
@@ -408,6 +435,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Modern Samosa",
       ingredients: "4x Dumplings with Vegetables (Fried), Paprica Powder, Onions, Parsley, Sweet-Sour Sauce",
+      selectedStar: 3,
       price: 12,
       amount: 1
     },
@@ -419,6 +447,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Yoghurt Curry",
       ingredients: "Rice, Yoghurt (Spiced), Brocolli, Carrots, Onions, Parsley",
+      selectedStar: 2,
       price: 10,
       amount: 1
     },
@@ -430,6 +459,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pumpkin Curry",
       ingredients: "Rice, Pumpkin, Peanuts, Onions, Carrots, Zucchini",
+      selectedStar: 1,
       price: 13,
       amount: 1
     },
@@ -441,6 +471,7 @@ Indian: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3323400.3472247124!2d77.73033676239803!3d27.959916443164154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1staj%20mahal%2C%20india!5e0!3m2!1sde!2sde!4v1687274686212!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Beans Pan Curry",
       ingredients: "Rice, Beans, Cinnamon, Onions, Parsley",
+      selectedStar: 5,
       price: 14,
       amount: 1
     }
@@ -450,66 +481,72 @@ HermanTheGerman: FoodItem[] = [
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/cheeseNoodles_1_1280 x 960.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Kaesspatzle (Cheese Noodles)",
       ingredients: "Noodles á la Herman Style, Melted Cheese, Onions (Roasted), Parsley",
+      selectedStar: 5,
       price: 12.0,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/TarteFlambeeAubergine_1_.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Tarte Flambée - Eggplant",
       ingredients: "Sour Dough, Tomatoes, German Cheese, Eggplant, Basil Pesto, Fresh Basil",
+      selectedStar: 4,
       price: 10,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/kartoffelgratin_1_1085 x 643_modified.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Potato Gratin",
       ingredients: "Potatoes, Melted Cheese, Onions, Rosemary, Parsley",
+      selectedStar: 4,
       price: 12,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/maultasche_1_1280 x 1218.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "German Ravioli",
       ingredients: "5x Ravioli á la Herman Style (Filled with Meat or Vegetables), Stock, Basil",
+      selectedStar: 3,
       price: 15,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/schnitzel_2_1280 x 853.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Yaeger Schnitzel",
       ingredients: "French Fries, Pork Steak, Mushrooms with Cream Sauce, Salad",
+      selectedStar: 5,
       price: 18,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/tarteFlammbee_1_1280 x 853.jpg",
-      restaurant: "HermanTheGerman",
+      restaurant: "Herman-The-German",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Tarte Flambée - Onions",
       ingredients: "Sour Dough, German Cheese, Onions, Bacon",
+      selectedStar: 1,
       price: 9,
       amount: 1
     }
@@ -524,6 +561,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "American-Dark Burger",
       ingredients: "Beef, Dark-Bread Burger, American Cocktail Sauce, Cucumber, Iceberg Salad, Onions",
+      selectedStar: 5,
       price: 11.0,
       amount: 1
     },
@@ -535,6 +573,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Cheeseburger",
       ingredients: "Beef, Cheese, Egg, Dark-Bread Burger with Sesame, Mayonnaise, Tomatoes, Basil",
+      selectedStar: 1,
       price: 14,
       amount: 1
     },
@@ -546,6 +585,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Hamburger Royal",
       ingredients: "Beef (2 Patties), Cheese, Iceberg Lettuce, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
+      selectedStar: 5,
       price: 12,
       amount: 1
     },
@@ -557,6 +597,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Olive Burger",
       ingredients: "Olives, Beef (2 Patties), Bacon, Lettuce, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
+      selectedStar: 2,
       price: 16,
       amount: 1
     },
@@ -568,6 +609,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "BBQ Burger",
       ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Lettuce, Iceberg Lettuce, BBQ Sauce",
+      selectedStar: 3,
       price: 15,
       amount: 1
     },
@@ -579,6 +621,7 @@ Hamburgers: FoodItem[] = [
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Sesame Chicken Burger",
       ingredients: "Chicken (1 Pattie), Iceberg Lettuce, Onions, Sesame Burger Bread, Tomatoes, Ketchup, Mayonnaise, Herbal Sauce",
+      selectedStar: 4,
       price: 13,
       amount: 1
     }
@@ -592,6 +635,12 @@ Hamburgers: FoodItem[] = [
 selectedItems: FoodItem[] = [];
 
 dontKnowYetArray : FoodItem [] = [];  
+
+// Stars
+
+numStars: number[] = [5, 4, 3, 2, 1];
+
+// Basket
 
 basket : any[] = [];  
 
@@ -714,31 +763,8 @@ sortFiltered(){
 }
 
 
-// CreatePopOver
+// Etc.
 
-
-// createPopper(){
-//   console.log('popOver() is called.')
-//   const popcorn: any = document.querySelector<HTMLButtonElement>('#myButton');
-//   const tooltip: any = document.querySelector<HTMLDivElement>('#divTooltip');
-//   const container: any = document.querySelector<HTMLDivElement>('#container');
-  
-//   createPopper(popcorn, tooltip, {
-//     placement: 'top',
-//     modifiers: [
-//       {
-//         name: 'offset',
-//         options: {
-//           offset: [0, 8],
-//         },
-//       },
-//     ],
-//   });
-  
-//   (container as HTMLElement).scrollTop = 520;
-//   console.log('createPopper() method has been executed');
-
-// }
 
 
 // allow to execute HTML code in the browser, which is rendered dynamically as HTML code from an array

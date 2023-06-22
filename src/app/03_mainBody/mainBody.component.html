@@ -87,7 +87,11 @@
                                     </ng-template>
                                   </div>
                                   <div class="cardBottom">
-                                    <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                    <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                                    <div class="time">
+                                      <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                                      {{ dontKnowMeal.deliverTime }} min.
+                                    </div>
                                     <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
                                   </div>
                               </div>
@@ -133,7 +137,11 @@
                                 </ng-template>
                               </div>
                                 <div class="cardBottom">
-                                  <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                                  <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                                  <div class="time">
+                                    <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                                    {{ filteredMeal.deliverTime }} min.
+                                  </div>
                                   <span class="menu_description_price">€ {{filteredMeal.price.toFixed(2)}}</span>
                                 </div>
                             </div>
@@ -198,9 +206,13 @@
                           </div>
                           <div class="cardBottom">
                             <button (click)="addMenuToBasket(pizzaIndex, Pizzas)" class="btn btn-primary btn-lg">
-                              <img src="./assets/img/icons/plus4_icon_48x48.png">
+                              <img src="./assets/img/icons/plus4_icon_48x48_white.png">
                               <span>Buy</span>
                             </button>
+                            <div class="time">
+                              <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                              {{ pizza.deliverTime }} min.
+                            </div>
                             <span class="menu_description_price">€ {{ pizza.price.toFixed(2) }}</span>
                           </div>
                         </div>
@@ -249,7 +261,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(saladIndex, Salads)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ salad.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{salad.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -297,7 +313,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(asiaIndex, Asian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(asiaIndex, Asian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ asia.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{asia.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -345,7 +365,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(pastaIndex, Pastas)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(pastaIndex, Pastas)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ pasta.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{pasta.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -393,7 +417,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(indiaIndex, Indian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(indiaIndex, Indian)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ india.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{india.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -441,7 +469,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(hermanIndex, HermanTheGerman)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(hermanIndex, HermanTheGerman)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ herman.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{herman.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -489,7 +521,11 @@
                       </ng-template>
                     </div>
                       <div class="cardBottom">
-                        <button (click)="addMenuToBasket(hamburgerIndex, Hamburgers)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48.png"><span>Buy</span></button>
+                        <button (click)="addMenuToBasket(hamburgerIndex, Hamburgers)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
+                        <div class="time">
+                          <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                          {{ hamburger.deliverTime }} min.
+                        </div>
                         <span class="menu_description_price">€ {{hamburger.price.toFixed(2)}}</span>
                       </div>
                   </div>
@@ -507,7 +543,7 @@
             <div id="basket" class="basket" >
                 <div class="emptyBasket" *ngIf="this.basket.length == 0"> 
                     <img src="../assets/img/shopping car_lemon_CC00_svg.svg">
-                    <span>Mmmmh....super delicious!!!</span>
+                    <span>Yummy....super delicious!!!</span>
                     <div class="basket_smiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
                     <span>Add your favourite menu to your shopping cart!!!</span>
                 </div>
@@ -551,7 +587,7 @@
 
                         <div *ngIf="resultSubtotal < 20" class="buy" id="buy">
                           <button class="btn btn-primary disabled">Buy!</button>
-                          <p class="text-center">Sorry,<br>You Haven't Reached our Minimum Order Value of at Least <b>€ 20.00</b> Yet.<br>(Delivery Costs are Excluded)</p>
+                          <p class="text-center">Sorry,<br>You haven't reached our <b>Minimum Order Value</b> of at least <b>€ 20.00</b> yet.<br>(Delivery Costs are Excluded)</p>
                           <img src="../assets/img/icons/courier-deliver_CC00_green.png">
                         </div>
                         

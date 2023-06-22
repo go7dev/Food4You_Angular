@@ -129,6 +129,8 @@
         
     }
 
+    //Stars - Customer Rating 
+
     .superStar{
        display: flex;
        flex-direction: column;
@@ -256,6 +258,21 @@
             height: 30px;
             padding-right: 5px;
         }
+    }
+
+    .time{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            object-fit: cover;
+            height: 30px;
+            width: 30px;
+          
+        }
+
     }
 }
 

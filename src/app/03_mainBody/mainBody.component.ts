@@ -29,6 +29,7 @@ interface FoodItem {
   dish: string;
   ingredients: string;
   selectedStar: number;
+  deliverTime: number;
   price: number;
   amount: number;
 }
@@ -52,7 +53,7 @@ export class MainBodyComponent implements OnInit{
 
 
 // defines tabs Array
-tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "Herman-The-German", "Hamburgers"];
+tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburgers"];
 
 //activatedTabIndex variable gets input value tabChange(), see code-lines 52-55
 activatedTabIndex: number = 0;
@@ -113,6 +114,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Salami",
       ingredients: "with Mozzarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the wood stove...",
       selectedStar: 3,
+      deliverTime: 15,
       price: 8.5,
       amount: 1
     },
@@ -125,6 +127,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Milano",
       ingredients: "with Mozzarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the wood stove...",
       selectedStar: 1,
+      deliverTime: 25,
       price: 9,
       amount: 1
     },
@@ -137,6 +140,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Veggie",
       ingredients: "with Mozzarella, Tomato Sauce, Zucchini, Olives, Egg Plant, Rucola, from the wood stove...",
       selectedStar: 2,
+      deliverTime: 20,
       price: 8,
       amount: 1
     },
@@ -149,6 +153,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Four Seasons",
       ingredients: "with Mozzarella, Tomato Sauce, Onions, Paprika, Olives, Salami, Mushrooms, Sourdough, from the wood stove...",
       selectedStar: 4,
+      deliverTime: 20,
       price: 11,
       amount: 1
     },
@@ -161,6 +166,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Diavolo",
       ingredients: "with Mozzarella, Tomato Sauce, Hot Salami, Pepperoni, Sourdough, from the wood stove...",
       selectedStar: 5,
+      deliverTime: 15,
       price: 9,
       amount: 1
     },
@@ -173,6 +179,7 @@ Pizzas: FoodItem[] = [
       dish: "Pizza Mozarella",
       ingredients: "with Mozzarella, Tomato Sauce, Tomatoes, Basil, Sourdough, from the wood stove...",
       selectedStar: 3,
+      deliverTime: 18,
       price: 7,
       amount: 1
     }
@@ -188,6 +195,7 @@ Salads: FoodItem[] = [
       dish: "Lemon Salad",
       ingredients: "with Lemon, Cucumber, Tomatoes, Onion, Olives, Curled Lettuce",
       selectedStar: 5,
+      deliverTime: 25,
       price: 13.5,
       amount: 1
     },
@@ -200,6 +208,7 @@ Salads: FoodItem[] = [
       dish: "Avocado Salad",
       ingredients: "Avocado, Tomatoes, Cucumber, Flaxseed, Iceberg Lettuce",
       selectedStar: 5,
+      deliverTime: 20,
       price: 12,
       amount: 1
     },
@@ -212,6 +221,7 @@ Salads: FoodItem[] = [
       dish: "Strawberry Salad",
       ingredients: "Strawberries, Curled Lettuce, Iceberg Lettuce",
       selectedStar: 3,
+      deliverTime: 15,
       price: 16,
       amount: 1
     },
@@ -224,6 +234,7 @@ Salads: FoodItem[] = [
       dish: "Homemade Salad",
       ingredients: "Olives, Avocado, Tomatoes, Feta Cheese, Lambs Lettuce",
       selectedStar: 1,
+      deliverTime: 40,
       price: 14,
       amount: 1
     },
@@ -236,6 +247,7 @@ Salads: FoodItem[] = [
       dish: "Paprica Salad",
       ingredients: "Paprica, Nuts, Feta Cheese, Pepperoni, Onions",
       selectedStar: 2,
+      deliverTime: 30,
       price: 11,
       amount: 1
     },
@@ -248,6 +260,7 @@ Salads: FoodItem[] = [
       dish: "Veggie Burger Salad",
       ingredients: "3 Patties made up of Fried Vergetables, Avocado Cream, Iceberg Lettuce, Corn, Ham, Feta Cheese",
       selectedStar: 4,
+      deliverTime: 35,
       price: 15,
       amount: 1
     }
@@ -263,6 +276,7 @@ Asian: FoodItem[] = [
       dish: "Thai Shrimps Noodles",
       ingredients: "Thai Noodles, Shrimps, Eggs, Coriander, Paprica, Chives, Thai Spices",
       selectedStar: 5,
+      deliverTime: 35,
       price: 15.0,
       amount: 1
     },
@@ -275,6 +289,7 @@ Asian: FoodItem[] = [
       dish: "Sushi Neo-Tokyo",
       ingredients: "Rice, Algae, Avocado, Salmon, Different Fish, Iceberg Lettuce, Parsley, Herbs",
       selectedStar: 4,
+      deliverTime: 15,
       price: 14,
       amount: 1
     },
@@ -287,6 +302,7 @@ Asian: FoodItem[] = [
       dish: "Taiwanese Noodle Soup",
       ingredients: "Noodles, Broth, Pork, Beef, Vegetables, Herbs, Spices",
       selectedStar: 3,
+      deliverTime: 20,
       price: 12.5,
       amount: 1
     },
@@ -299,6 +315,7 @@ Asian: FoodItem[] = [
       dish: "Viet Bowl",
       ingredients: "Vietnamese Noodles, Chicken, Vgetables, Onion, Parsley, Peppermint, ",
       selectedStar: 1,
+      deliverTime: 25,
       price: 14,
       amount: 1
     },
@@ -311,6 +328,7 @@ Asian: FoodItem[] = [
       dish: "Chin Gong Beef",
       ingredients: "Rice, Beef, Chinese Sweet-Sour Sauce, Peanuts, Sesame, Parsley, Iceberg Lettuce, Vegetables",
       selectedStar: 5,
+      deliverTime: 30,
       price: 12,
       amount: 1
     },
@@ -323,6 +341,7 @@ Asian: FoodItem[] = [
       dish: "Mala Chicken",
       ingredients: "Chicken, Tofu Cubes (fried), Green Beans, Plums, Spices",
       selectedStar: 3,
+      deliverTime: 25,
       price: 11,
       amount: 1
   }
@@ -337,6 +356,7 @@ Pastas: FoodItem[] = [{
       dish: "Tagliatelle Basil di Tuscany",
       ingredients: "Tagliatelle (homemade Style), Basil Pesto, Parmesan Cheese, Fresh Basil",
       selectedStar: 5,
+      deliverTime: 20,
       price: 13.0,
       amount: 1
     },
@@ -349,6 +369,7 @@ Pastas: FoodItem[] = [{
       dish: "Pasta Frutti di Mare",
       ingredients: "Spaghetti di Mare, Frutti di Mare, Fresh Venus Shells, Onions, Parsley",
       selectedStar: 5,
+      deliverTime: 45,
       price: 19,
       amount: 1
     },
@@ -361,6 +382,7 @@ Pastas: FoodItem[] = [{
       dish: "Crema Pasta",
       ingredients: "Spaghetti, North Italian melting Cheese (aromatic), Cream, Parsley",
       selectedStar: 4,
+      deliverTime: 45,
       price: 9,
       amount: 1
     },
@@ -373,6 +395,7 @@ Pastas: FoodItem[] = [{
       dish: "Spaghetti Bolognaise",
       ingredients: "Spaghetti, Meat, Giorgio's Tomatoe Sauce, Parmesan Cheese",
       selectedStar: 3,
+      deliverTime: 35,
       price: 14,
       amount: 1
     },
@@ -385,6 +408,7 @@ Pastas: FoodItem[] = [{
       dish: "Pasta Salmone",
       ingredients: "Tagliatelle, Salmone, Rosemary, Basil-Paprica-Cream, Asparagus, 1 Shrimp, Tomatoes, Radishes, Lemon",
       selectedStar: 1,
+      deliverTime: 50,
       price: 20,
       amount: 1
     },
@@ -397,6 +421,7 @@ Pastas: FoodItem[] = [{
       dish: "Capri Shrimps",
       ingredients: "Spaghetti, Shrimps di Capri, Tomatoes, Parmesan Cheese, Fresh Basil",
       selectedStar: 2,
+      deliverTime: 25,
       price: 11,
       amount: 1
     }
@@ -412,6 +437,7 @@ Indian: FoodItem[] = [
       dish: "Curry Cream Cheese",
       ingredients: "Rice, Cream Cheese, Curry, Paprica, Ginger, Curcuma, Parsley",
       selectedStar: 4,
+      deliverTime: 15,
       price: 11.0,
       amount: 1
     },
@@ -424,6 +450,7 @@ Indian: FoodItem[] = [
       dish: "Family Menu Curry",
       ingredients: "Rice, Optional: Chicken or Vegetable Curry, a Pallette of Indian Spices (Curcuma, Cinnamon, Caraway Seeds, Cashew Nuts, Clove, Nutmeg, Anisey, dried Orange Peel)",
       selectedStar: 5,
+      deliverTime: 50,
       price: 38,
       amount: 1
     },
@@ -436,6 +463,7 @@ Indian: FoodItem[] = [
       dish: "Modern Samosa",
       ingredients: "4x Dumplings with Vegetables (Fried), Paprica Powder, Onions, Parsley, Sweet-Sour Sauce",
       selectedStar: 3,
+      deliverTime: 15,
       price: 12,
       amount: 1
     },
@@ -448,6 +476,7 @@ Indian: FoodItem[] = [
       dish: "Yoghurt Curry",
       ingredients: "Rice, Yoghurt (Spiced), Brocolli, Carrots, Onions, Parsley",
       selectedStar: 2,
+      deliverTime: 25,
       price: 10,
       amount: 1
     },
@@ -460,6 +489,7 @@ Indian: FoodItem[] = [
       dish: "Pumpkin Curry",
       ingredients: "Rice, Pumpkin, Peanuts, Onions, Carrots, Zucchini",
       selectedStar: 1,
+      deliverTime: 20,
       price: 13,
       amount: 1
     },
@@ -472,6 +502,7 @@ Indian: FoodItem[] = [
       dish: "Beans Pan Curry",
       ingredients: "Rice, Beans, Cinnamon, Onions, Parsley",
       selectedStar: 5,
+      deliverTime: 30,
       price: 14,
       amount: 1
     }
@@ -481,72 +512,78 @@ HermanTheGerman: FoodItem[] = [
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/cheeseNoodles_1_1280 x 960.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Kaesspatzle (Cheese Noodles)",
       ingredients: "Noodles á la Herman Style, Melted Cheese, Onions (Roasted), Parsley",
       selectedStar: 5,
+      deliverTime: 25,
       price: 12.0,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/TarteFlambeeAubergine_1_.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Tarte Flambée - Eggplant",
       ingredients: "Sour Dough, Tomatoes, German Cheese, Eggplant, Basil Pesto, Fresh Basil",
       selectedStar: 4,
+      deliverTime: 20,
       price: 10,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/kartoffelgratin_1_1085 x 643_modified.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Potato Gratin",
       ingredients: "Potatoes, Melted Cheese, Onions, Rosemary, Parsley",
       selectedStar: 4,
+      deliverTime: 35,
       price: 12,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/maultasche_1_1280 x 1218.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "German Ravioli",
       ingredients: "5x Ravioli á la Herman Style (Filled with Meat or Vegetables), Stock, Basil",
       selectedStar: 3,
+      deliverTime: 20,
       price: 15,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/schnitzel_2_1280 x 853.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Yaeger Schnitzel",
       ingredients: "French Fries, Pork Steak, Mushrooms with Cream Sauce, Salad",
       selectedStar: 5,
+      deliverTime: 20,
       price: 18,
       amount: 1
     },
     {
       id: "hermans",
       img: "./assets/img/meals/6_hermanTheGerman/tarteFlammbee_1_1280 x 853.jpg",
-      restaurant: "Herman-The-German",
+      restaurant: "Herman's",
       restaurantIMG: "./assets/img/restaurantIMGs/herman_4_CC00_640x427.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10646.34545338615!2d11.597187945585851!3d48.15678238431253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e759710813fb1%3A0x9993c251b452be58!2sMonopteros%20im%20Englischen%20Garten!5e0!3m2!1sde!2sde!4v1687274805837!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Tarte Flambée - Onions",
       ingredients: "Sour Dough, German Cheese, Onions, Bacon",
       selectedStar: 1,
+      deliverTime: 25,
       price: 9,
       amount: 1
     }
@@ -562,6 +599,7 @@ Hamburgers: FoodItem[] = [
       dish: "American-Dark Burger",
       ingredients: "Beef, Dark-Bread Burger, American Cocktail Sauce, Cucumber, Iceberg Salad, Onions",
       selectedStar: 5,
+      deliverTime: 15,
       price: 11.0,
       amount: 1
     },
@@ -574,6 +612,7 @@ Hamburgers: FoodItem[] = [
       dish: "Cheeseburger",
       ingredients: "Beef, Cheese, Egg, Dark-Bread Burger with Sesame, Mayonnaise, Tomatoes, Basil",
       selectedStar: 1,
+      deliverTime: 55,
       price: 14,
       amount: 1
     },
@@ -586,6 +625,7 @@ Hamburgers: FoodItem[] = [
       dish: "Hamburger Royal",
       ingredients: "Beef (2 Patties), Cheese, Iceberg Lettuce, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
       selectedStar: 5,
+      deliverTime: 30,
       price: 12,
       amount: 1
     },
@@ -598,6 +638,7 @@ Hamburgers: FoodItem[] = [
       dish: "Olive Burger",
       ingredients: "Olives, Beef (2 Patties), Bacon, Lettuce, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
       selectedStar: 2,
+      deliverTime: 35,
       price: 16,
       amount: 1
     },
@@ -610,6 +651,7 @@ Hamburgers: FoodItem[] = [
       dish: "BBQ Burger",
       ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Lettuce, Iceberg Lettuce, BBQ Sauce",
       selectedStar: 3,
+      deliverTime: 10,
       price: 15,
       amount: 1
     },
@@ -622,6 +664,7 @@ Hamburgers: FoodItem[] = [
       dish: "Sesame Chicken Burger",
       ingredients: "Chicken (1 Pattie), Iceberg Lettuce, Onions, Sesame Burger Bread, Tomatoes, Ketchup, Mayonnaise, Herbal Sauce",
       selectedStar: 4,
+      deliverTime: 15,
       price: 13,
       amount: 1
     }

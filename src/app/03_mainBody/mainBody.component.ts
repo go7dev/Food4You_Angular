@@ -1,9 +1,14 @@
 // import { DeclareFunctionStmt } from '@angular/compiler';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
 import { PopoverModule } from 'ngx-bootstrap/popover';
-import { popper, createPopper, Instance } from '@popperjs/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { tooltip } from 'ng-bootstrap';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { createPopper } from '@popperjs/core';
+// import { Tooltip } from 'bootstrap';
 
 
 
@@ -65,35 +70,17 @@ constructor (private sanitizer: DomSanitizer) {
 
 ngOnInit(): void {
   this.dontKnowYet();
+  this.initBootstrapTooltips();
 
 }
 
+// ngAfterViewChecked(): void {
+//   jQuery('[data-bs-toggle="tooltip"]').tooltip();
+// }
+
 // @ViewChild('popoverContent') popoverContent: any;
 
-// popoverInit(){
-//   const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-//     const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-//       return new bootstrap.Popover(popoverTriggerEl);
-//     });
-// }
 
-// popoverInit(){
-//   const popover = new bootstrap.Popover('.popover-dismiss', {
-//     trigger: 'focus'
-//   })
-// }
-
-// ngAfterViewInit() {
-//   const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-//   const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-//     return new bootstrap.Popover(popoverTriggerEl);
-//   });
-// }
-
-// const popoverTriggerList: any = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-// const popoverList: any = popoverTriggerList.map(function ( popoverTriggerEl:any) {
-//   return new bootstrap.Popover( popoverTriggerEl )
-// });
 
 // catches the value from the variable "activatedCategory: number", see mainBody.component.html, code-line 4; Here renamed as tabIndex 
 tabChange(tabIndex: number){
@@ -109,7 +96,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_salami_1280.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Salami",
       ingredients: "with Mozzarella, Hot Pepper, Tomato Sauce, Pepper, Sourdough, from the wood stove...",
@@ -122,7 +109,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_Milano2_1280 x 853.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Milano",
       ingredients: "with Mozzarella, Tomato Sauce, Mushrooms, Ham, Salami, Sourdough, from the wood stove...",
@@ -135,7 +122,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/veggie_1_723 x 642_modified.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Veggie",
       ingredients: "with Mozzarella, Tomato Sauce, Zucchini, Olives, Egg Plant, Rucola, from the wood stove...",
@@ -148,7 +135,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/pizza_four seasons_1280x853.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Four Seasons",
       ingredients: "with Mozzarella, Tomato Sauce, Onions, Paprika, Olives, Salami, Mushrooms, Sourdough, from the wood stove...",
@@ -161,7 +148,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/diavolo_1_1220 x 598_modified.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Diavolo",
       ingredients: "with Mozzarella, Tomato Sauce, Hot Salami, Pepperoni, Sourdough, from the wood stove...",
@@ -174,7 +161,7 @@ Pizzas: FoodItem[] = [
       id: "pizzas",
       img: "./assets/img/meals/1_pizzas/mozarella_1_1192 x 1084_modified.jpg",
       restaurant: "Magic Pizza",
-      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/magicPizza_1_CC00_640x896_mod2.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17305.25916587046!2d13.463704296639811!3d52.514221309924125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e5edfbb9139%3A0x64d2319b3f19cf56!2sBoxhagener%20Platz!5e0!3m2!1sde!2sde!4v1687273395283!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Pizza Mozarella",
       ingredients: "with Mozzarella, Tomato Sauce, Tomatoes, Basil, Sourdough, from the wood stove...",
@@ -806,8 +793,32 @@ sortFiltered(){
 }
 
 
-// Etc.
+// Initialize Bootstrap Tooltips
 
+initBootstrapTooltips() {
+  console.log('initBootstrapTooltips()');
+  // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) as HTMLElement[];
+  // tooltipTriggerList.map(function (tooltipTriggerEl) {
+  //     const tooltip = new bootstrap.Tooltip(tooltipTriggerEl)
+  //     if (tooltipTriggerEl.innerText?.includes('top')) {
+  //         tooltip.enable()
+  //     } else {
+  //         tooltip.disable()
+  //     }
+  //     return tooltip;
+  // })
+
+  // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) as HTMLElement[];
+  // const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  //     const tooltip = new bootstrap.Tooltip(tooltipTriggerEl)
+  //     if (tooltipTriggerEl.innerText?.includes('top')) {
+  //         tooltip.enable()
+  //     } else {
+  //         tooltip.disable()
+  //     }
+  //     return tooltip;
+  // })
+}
 
 
 // allow to execute HTML code in the browser, which is rendered dynamically as HTML code from an array

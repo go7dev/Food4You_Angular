@@ -56,10 +56,25 @@
                                     <h5 class="card-title">{{dontKnowMeal.dish}}</h5>
                                     <p class="card-text">{{dontKnowMeal.ingredients}}</p>
                                     <div class="cardMidModSub">
-                                      <div class="restaurant">
-                                        <b>Restaurant:</b>
-                                        <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
-                                      </div>
+                                      <div class="restaurant" >
+                                        <!-- data-bs-toggle="tooltip"  title="Click Me!" data-bs-placement="top"  -->
+                                        <!-- <ng-template #my-tooltip-template>
+                                          <div class="tooltip" role="tooltip">
+                                            <div class="tooltip-arrow"></div>
+                                            <div class="tooltip-inner">
+                                              Tooltip content
+                                            </div>
+                                          </div>
+                                        </ng-template> -->
+                                        <!-- <ng-template class="tooltip" role="tooltip" #my_tooltip_template> -->
+                                          <!-- Tooltip content -->
+                                          <!-- Click me!!!
+                                        </ng-template> -->
+                                       <b>Restaurant:</b>
+                                        
+                                        <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" data-bs-toggle="tooltip" 
+                                        data-bs-placement="top" title="Click me!!!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
+                                        </div>
                                       <div class="superStar">
                                         <span><b>Customers' Rating:</b></span>   
 
@@ -108,7 +123,7 @@
                                 <div class="cardMidModSub">
                                   <div class="restaurant">
                                     <b>Restaurant:</b>
-                                    <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
+                                    <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
                                   </div>
                                   <div class="superStar">
                                     <span><b>Customers' Rating:</b></span>   
@@ -176,7 +191,7 @@
                             <div class="cardMidModSub">
                               <div class="restaurant">
                                 <b>Restaurant:</b>
-                                <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
+                                <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
                               </div>
                               <div class="superStar">
                                 <span><b>Customers' Rating:</b></span>   
@@ -232,7 +247,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -284,7 +299,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -336,7 +351,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -388,7 +403,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -440,7 +455,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -492,7 +507,7 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-outline-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   

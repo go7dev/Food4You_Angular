@@ -72,8 +72,8 @@
                                         </ng-template> -->
                                        <b>Restaurant:</b>
                                         
-                                        <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" data-bs-toggle="tooltip" 
-                                        data-bs-placement="top" title="Click me!!!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
+                                        <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" data-bs-toggle="tooltip" 
+                                        data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
                                         </div>
                                       <div class="superStar">
                                         <span><b>Customers' Rating:</b></span>   
@@ -84,7 +84,8 @@
                                                                                            
                                               <input class="star star-{{i}}" id="star-{{dontKnowMealIndex}}-{{i}}" type="radio" name="star-{{dontKnowMealIndex}}" [value]="i" [checked]="dontKnowMeal.selectedStar === i" />
                                           
-                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}"></label>
+                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                              data-bs-placement="top" title="Click me!"></label>
                                               </ng-container>
                                             </form>
                                           </div>
@@ -123,7 +124,8 @@
                                 <div class="cardMidModSub">
                                   <div class="restaurant">
                                     <b>Restaurant:</b>
-                                    <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
+                                    <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
                                   </div>
                                   <div class="superStar">
                                     <span><b>Customers' Rating:</b></span>   
@@ -134,22 +136,24 @@
                                                                                        
                                           <input class="star star-{{i}}" id="star-{{filteredIndex}}-{{i}}" type="radio" name="star-{{filteredIndex}}" [value]="i" [checked]="filteredMeal.selectedStar === i" />
                                       
-                                          <label class="star star-{{i}}" for="star-{{filteredIndex}}-{{i}}"></label>
+                                          <label class="star star-{{i}}" for="star-{{filteredIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                          data-bs-placement="top" title="Click me!"></label>
                                           </ng-container>
                                         </form>
                                       </div>
 
                                   </div>
-                                         
+
+                                  <ng-template class="bcs" #popoverContent>
+                                    <div  class="popoverContainer">
+                                      <div class="popover-header bg-info">{{ filteredMeal.restaurant }}</div>
+                                        <img src="{{ filteredMeal.restaurantIMG }}"> 
+                                        <div [innerHTML]="sanitizeHTML(filteredMeal.location)"></div>             
+                                    </div>
+                                  </ng-template>
                                 </div>
                            
-                                <ng-template class="bcs" #popoverContent>
-                                  <div  class="popoverContainer">
-                                    <div class="popover-header bg-info">{{ filteredMeal.restaurant }}</div>
-                                      <img src="{{ filteredMeal.restaurantIMG }}"> 
-                                      <div [innerHTML]="sanitizeHTML(filteredMeal.location)"></div>             
-                                  </div>
-                                </ng-template>
+                               
                               </div>
                                 <div class="cardBottom">
                                   <button (click)="addMenuToBasket(filteredIndex, selectedItems)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
@@ -191,7 +195,8 @@
                             <div class="cardMidModSub">
                               <div class="restaurant">
                                 <b>Restaurant:</b>
-                                <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
+                                <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                                data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
                               </div>
                               <div class="superStar">
                                 <span><b>Customers' Rating:</b></span>   
@@ -202,7 +207,8 @@
                                                                                    
                                       <input class="star star-{{i}}" id="star-{{pizzaIndex}}-{{i}}" type="radio" name="star-{{pizzaIndex}}" [value]="i" [checked]="pizza.selectedStar === i" />
                                   
-                                      <label class="star star-{{i}}" for="star-{{pizzaIndex}}-{{i}}"></label>
+                                      <label class="star star-{{i}}" for="star-{{pizzaIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                      data-bs-placement="top" title="Click me!"></label>
                                       </ng-container>
                                     </form>
                                   </div>
@@ -247,7 +253,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -258,7 +265,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{saladIndex}}-{{i}}" type="radio" name="star-{{saladIndex}}" [value]="i" [checked]="salad.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{saladIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{saladIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>
@@ -299,7 +307,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -310,7 +319,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{asiaIndex}}-{{i}}" type="radio" name="star-{{asiaIndex}}" [value]="i" [checked]="asia.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{asiaIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{asiaIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>
@@ -351,7 +361,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -362,7 +373,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{pastaIndex}}-{{i}}" type="radio" name="star-{{pastaIndex}}" [value]="i" [checked]="pasta.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{pastaIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{pastaIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>
@@ -403,7 +415,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -414,7 +427,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{indiaIndex}}-{{i}}" type="radio" name="star-{{indiaIndex}}" [value]="i" [checked]="india.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{indiaIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{indiaIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>
@@ -455,7 +469,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -466,7 +481,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{hermanIndex}}-{{i}}" type="radio" name="star-{{hermanIndex}}" [value]="i" [checked]="herman.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{hermanIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{hermanIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>
@@ -507,7 +523,8 @@
                       <div class="cardMidModSub">
                         <div class="restaurant">
                           <b>Restaurant:</b>
-                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
+                          <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                          data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -518,7 +535,8 @@
                                                                              
                                 <input class="star star-{{i}}" id="star-{{hamburgerIndex}}-{{i}}" type="radio" name="star-{{hamburgerIndex}}" [value]="i" [checked]="hamburger.selectedStar === i" />
                             
-                                <label class="star star-{{i}}" for="star-{{hamburgerIndex}}-{{i}}"></label>
+                                <label class="star star-{{i}}" for="star-{{hamburgerIndex}}-{{i}}" data-bs-toggle="tooltip" 
+                                data-bs-placement="top" title="Click me!"></label>
                                 </ng-container>
                               </form>
                             </div>

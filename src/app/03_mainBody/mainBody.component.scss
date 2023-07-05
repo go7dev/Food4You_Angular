@@ -112,7 +112,7 @@
 
         .btnMod {
             position: absolute;
-            right: 0;
+            right: -3px;
             // z-index: 0;
             // word-break: keep-all;
             max-width: 67%;
@@ -126,6 +126,15 @@
         }
         
     }
+
+
+    // ToolTip
+
+    $border-radius: 5px;
+    $tooltip-arrow-width: .8rem;
+    $tooltip-arrow-height: .4rem;
+    // $tooltip-bg: $black;
+    // $tooltip-arrow-color: $tooltip-bg;
 
     //Stars - Customer Rating 
 
@@ -194,7 +203,7 @@
 }
 
 //  .bcs{
-//      z-index: 99;   
+   
 //     }
 
 //Popper.js
@@ -205,7 +214,7 @@
     // justify-content: flex-start !important;
     align-items: center;
     max-height: 400px;
-    
+
     z-index: 501 !important;
 
     img {
@@ -226,7 +235,7 @@
         text-shadow: 2px 0px 5px black;
         text-align: center;
         width: 100%;
-        margin-top: -20px;
+        margin-top: -18px;
         
     }
 

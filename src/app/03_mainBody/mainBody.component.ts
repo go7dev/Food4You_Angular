@@ -71,7 +71,7 @@ constructor (private sanitizer: DomSanitizer) {
 ngOnInit(): void {
   this.dontKnowYet();
   this.initBootstrapTooltips();
-
+  // this.initPopovers();
 }
 
 // ngAfterViewChecked(): void {
@@ -581,7 +581,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/americanDark_1_1279 x 1266_modified.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "American-Dark Burger",
       ingredients: "Beef, Dark-Bread Burger, American Cocktail Sauce, Cucumber, Iceberg Salad, Onions",
@@ -594,7 +594,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/cheeseburger_1_1013 x 850_modified.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Cheeseburger",
       ingredients: "Beef, Cheese, Egg, Dark-Bread Burger with Sesame, Mayonnaise, Tomatoes, Basil",
@@ -607,7 +607,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/hamburger_1_1280 x 1010_modified.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Hamburger Royal",
       ingredients: "Beef (2 Patties), Cheese, Iceberg Lettuce, Tomatoes, Onions, Yoghurt-Mayonnaise Sauce",
@@ -620,7 +620,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/olive_1_1168 x 1099.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Olive Burger",
       ingredients: "Olives, Beef (2 Patties), Bacon, Lettuce, Onions, Ketchup, Mayonnaise, Pickled Cucumber",
@@ -633,7 +633,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/bbq_1_875 x 762_modified.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "BBQ Burger",
       ingredients: "Beef (1 Giant Pattie), Roasted Burger Bread, Cheese, Arugula Lettuce, Iceberg Lettuce, BBQ Sauce",
@@ -646,7 +646,7 @@ Hamburgers: FoodItem[] = [
       id: "hamburgers",
       img: "./assets/img/meals/7_hamburger/sesamChicken_1_808 x 680_modified.jpg",
       restaurant: "Burgers' Paradise",
-      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_1_CC00_640x427.jpg",
+      restaurantIMG: "./assets/img/restaurantIMGs/burgerStore_3mod_CC00_640x426.jpg",
       location: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7647.849372723193!2d-157.8534913631!3d21.291726512726857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c006dfc54507bd9%3A0xbad3d4b3375695d!2sAla%20Moana%20Regional%20Park!5e0!3m2!1sde!2sde!4v1687275039197!5m2!1sde!2sde" width="100%" height="150" style="border:0;" scrolling="yes" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
       dish: "Sesame Chicken Burger",
       ingredients: "Chicken (1 Pattie), Iceberg Lettuce, Onions, Sesame Burger Bread, Tomatoes, Ketchup, Mayonnaise, Herbal Sauce",
@@ -820,6 +820,12 @@ initBootstrapTooltips() {
   // })
 }
 
+// Initialize Bootstrap Popovers
+
+// initPopovers(): void {
+//   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+//   const popoverList = Array.from(popoverTriggerList).map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+// }
 
 // allow to execute HTML code in the browser, which is rendered dynamically as HTML code from an array
 

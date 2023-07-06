@@ -7,16 +7,12 @@ header {
     justify-content: space-between;
     align-items: center;
     color: white;
-}
 
-header h2 {
-    font-family: 'Montserrat', sans-serif;
 }
 
 .Logo4You{
     display: flex;
     align-items: center;
-    justify-content: center;
 
     h1{
         margin: 0;
@@ -248,3 +244,32 @@ header h2 {
 //         display: none;
 //     }
 // }
+
+
+
+// RESPONSIVE DESIGN
+
+@media (min-width: 400px) and (max-width: 600px) {
+
+    .Logo4You{
+        // align-items: flex-end;
+
+        img{
+           height: 70px;
+           width: auto;
+        }
+    }
+}
+
+@media (min-width: 250px) and (max-width: 399px) {
+
+    .Logo4You{
+        // align-items: flex-end;
+
+        img{
+            height: 58px;
+            width: auto;
+            padding-left: 20px;
+        }
+    }
+}

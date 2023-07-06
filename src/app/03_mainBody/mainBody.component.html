@@ -8,42 +8,99 @@
         <!-- -----  Bootstrap 5.3.0 Syntax ----- -->
 
               <div *ngIf="activatedTabIndex == 0" class="OrderContentDontKnowYet" id="order_content">
-                
-                  <div class="filterBar">
-                      
+                  <div class="facilitatesStickyLeft">
+                    <div class="sideBarLeft">
                       <div class="card filterMenu filterHeader" style="width: 18rem;">
-                        <div class="card-header filterHeaderInside"><b>Filters:</b></div>
+                          <div class="card-header filterHeaderInside"><b>Search For:</b></div>
+                            <div class="sideBarLeftsearchField">
+                              <img src="./assets/img/icons/magnifier.svg">
+                              <input>
+                            </div>
                       </div>
-                  
-                      <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
-                  
-                     <!--Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
-                  
-                        <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
-                    
-                        <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
-                    
-                        <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
+                      <div class="filterBar">
+                            
+                              <div class="card filterMenu filterHeader" style="width: 18rem;">
+                              <div class="card-header filterHeaderInside"><b>Filters:</b></div>
+                            </div>
+                        
+                            <div class="btn-group-vertical filterMenu" role="group" aria-label="Basic checkbox toggle button group">
+                        
+                          <!--Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
+                        
+                              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary filterGridTopBorder" for="btncheck1">Pizzas</label>
+                          
+                              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                          
+                              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
+                              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
+                              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
 
-                        <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
-                        <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
+                              <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
 
+                              <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
+
+                            </div>
+                            
                       </div>
+
+                    </div>
                   </div>
-                
+                 <div class="hideAndSee">
 
+                        <div class="searchField">
+                          <img src="./assets/img/icons/magnifier.svg">
+                          <input>
+                        </div>
+
+                      <div class="dropdown">
+                        
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dropdownMenuButton"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                          Filters:
+                        </button>
+                      
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <div class="btn-group-vertical btn-group-lg" role="group" aria-label="Basic checkbox toggle Large button group">
+                      
+                            <!--Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
+                        
+                              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck1">Pizzas</label>
+                          
+                              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                          
+                              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
+      
+                              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
+      
+                              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
+      
+                              <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
+      
+                              <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
+                              <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
+      
+                            </div>
+                        </ul>
+
+                        
+                      </div>
+                </div>
                     <!-- ------SOLUTION???------ -->
          
                  
@@ -71,9 +128,9 @@
                                           <!-- Click me!!!
                                         </ng-template> -->
                                        <b>Restaurant:</b>
-                                        
-                                        <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" data-bs-toggle="tooltip" 
-                                        data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
+                                       
+                                        <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" data-container="#popoverContainer" (click)="$event.preventDefault();"  
+                                        data-bs-toggle="popover" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
                                         </div>
                                       <div class="superStar">
                                         <span><b>Customers' Rating:</b></span>   
@@ -93,9 +150,9 @@
                                       </div>
                                              
                                     </div>
-                               
+                                    
                                     <ng-template class="bcs" #popoverContent>
-                                      <div  class="popoverContainer">
+                                      <div  id="popoverContainer" class="popoverContainer">
                                         <div class="popover-header bg-info">{{ dontKnowMeal.restaurant }}</div>
                                           <img src="{{ dontKnowMeal.restaurantIMG }}"> 
                                           <div [innerHTML]="sanitizeHTML(dontKnowMeal.location)"></div>             
@@ -124,7 +181,7 @@
                                 <div class="cardMidModSub">
                                   <div class="restaurant">
                                     <b>Restaurant:</b>
-                                    <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" (click)="$event.preventDefault();" triggers="focus" placement="top"
+                                    <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
                                     data-bs-toggle="tooltip" data-bs-placement="top" title="Click me!"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
                                   </div>
                                   <div class="superStar">
@@ -572,26 +629,27 @@
 
         
 
-        <div class="basket_supra" id="basket_supra">  <div class="basket_supra_head"><h2>Shopping Cart</h2></div>
+        <div class="basketSupra" id="basket_supra">  
+          <div class="basketSupraHead"><h2>Shopping Cart</h2></div>
             <div id="basket" class="basket" >
                 <div class="emptyBasket" *ngIf="this.basket.length == 0"> 
                     <img src="../assets/img/shopping car_lemon_CC00_svg.svg">
                     <span>Yummy....super delicious!!!</span>
-                    <div class="basket_smiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
+                    <div class="basketSmiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
                     <span>Add your favourite menu to your shopping cart!!!</span>
                 </div>
 
                 <div class="basketMeals" *ngIf="this.basket.length > 0">
-                    <div class="basket_table"  *ngFor="let order of basket; let i = index" >
+                    <div class="basketTable"  *ngFor="let order of basket; let i = index" >
                         
-                        <div class="table_td_1_menu_description" id="table_td_1_menu_description"
+                        <div class="tableTd_1_MenuDescription" id="table_td_1_menu_description"
                         >{{order.amount}} x {{order.food}}
                         </div>
-                        <div class="table_td_2_basket_buttons" id="table_td_2_basket_buttons">
+                        <div class="tableTd_2_BasketButtons" id="table_td_2_basket_buttons">
                             <button id="basket_minus" (click)="basketMinus(i)">-</button>
                             <button id="basket_plus" (click)="basketPlus(i)">+</button>
                         </div>
-                        <div class="table_td_3_delete_bin" id="table_td_3_delete_bin">
+                        <div class="tableTd_3_deleteBin" id="table_td_3_delete_bin">
                 
                             <span>€ {{order.price.toFixed(2)}}</span>
                             <button (click)="deleteOrder(i)"><img src="../assets/img/icons/delete2_icon_blue_24x24.png"></button>
@@ -603,17 +661,17 @@
 
                 <div id="sums" class="sums" *ngIf="this.basket.length > 0">
 
-                    <div class="table_row_sum">
+                    <div class="tableRowSum">
                         <hr>  
-                        <div class="orders_subtotal_supra" id="orders_subtotal_supra">
+                        <div class="ordersSubtotalSupra" id="orders_subtotal_supra">
                             <div id="orders_subtotal_left">Subtotal</div>
                             <div id="orders_subtotal_right">€ {{resultSubtotal.toFixed(2)}}</div>
                         </div>
-                        <div *ngIf="resultSubtotal > 20 || resultSubtotal == 20" class="orders_delivery_costs_supra" id="orders_delivery_costs_supra">
+                        <div *ngIf="resultSubtotal > 20 || resultSubtotal == 20" class="ordersDeliveryCostsSupra" id="orders_delivery_costs_supra">
                             <div id="orders_delivery_costs_left">Delivery Costs</div>
                             <div id="orders_delivery_costs_right">€ 5.00</div>
                         </div>
-                        <div class="orders_total_supra" id="orders_total_supra">
+                        <div class="ordersTotalSupra" id="orders_total_supra">
                             <div id="orders_total_left">Total</div>
                             <div id="orders_total_right">€ {{finalSum.toFixed(2)}}</div>
                         </div>

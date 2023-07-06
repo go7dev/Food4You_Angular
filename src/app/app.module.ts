@@ -32,7 +32,7 @@ import { createPopper } from '@popperjs/core';
     PopoverModule.forRoot(),
     TooltipModule.forRoot(),
     // TooltipModule,
-    // BrowserAnimationsModule
+    BrowserAnimationsModule
 
   ],
   providers: [],

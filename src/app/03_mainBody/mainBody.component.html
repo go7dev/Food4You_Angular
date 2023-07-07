@@ -14,7 +14,7 @@
                           <div class="card-header filterHeaderInside"><b>Search For:</b></div>
                             <div class="sideBarLeftsearchField">
                               <img src="./assets/img/icons/magnifier.svg">
-                              <input>
+                              <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()">
                             </div>
                       </div>
 
@@ -59,7 +59,7 @@
 
                         <div class="searchField">
                           <img src="./assets/img/icons/magnifier.svg">
-                          <input>
+                          <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()">
                         </div>
 
                       <div class="dropdown">
@@ -105,7 +105,7 @@
          
                  
                    
-                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled">
+                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled && selectedItems.length === 0  ">
                           <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
                               <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
                               <div class="card-body cardBodyMod">
@@ -171,7 +171,7 @@
                           </div>
                         </div>
 
-                      <div class="ifEnabledDisabled" *ngIf="!areCheckboxesDisabled">
+                      <div class="ifEnabledDisabled" *ngIf="!areCheckboxesDisabled || selectedItems.length !== 0 ">
                         <div class="card cardMod" *ngFor="let filteredMeal of selectedItems; let filteredIndex = index" style="width: 18rem;">
                             <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
                             <div class="card-body cardBodyMod">

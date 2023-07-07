@@ -87,6 +87,7 @@
         height: 47px;
         min-width: 200px;
         max-width: 40%;
+        background-color: white;
         border: 1px solid black;
         border-radius: 8px;
 
@@ -895,8 +896,9 @@
         display: flex;
         // justify-content: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
-        padding-top: 20px;
-        padding-bottom: 5px;
+        // background: linear-gradient(180deg, rgba(56,229,77,1) 24%, rgba(0,212,255,1) 43%, rgba(156,255,46,1) 87%);
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
 

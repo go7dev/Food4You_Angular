@@ -1,5 +1,5 @@
 // import { DeclareFunctionStmt } from '@angular/compiler';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
 import { PopoverModule } from 'ngx-bootstrap/popover';
@@ -750,6 +750,8 @@ updateCheckboxStatus(): void {
 //Filter an Array of JSON Objects
 
 filterDontKnowYet() {
+  if (this.areCheckboxesDisabled === false) {
+  
   this.selectedItems = this.dontKnowYetArray.filter(obj =>
     (this.btncheck1 && obj.id === "pizzas")  ||
     (this.btncheck2 && obj.id === "salads")  ||
@@ -758,12 +760,22 @@ filterDontKnowYet() {
     (this.btncheck5 && obj.id === "indian")  ||
     (this.btncheck6 && obj.id === "hermans") ||
     (this.btncheck7 && obj.id === "hamburgers")
-  );
+  )}
+
+  // if the global variable searchText is not empty, filter the selectedItems Array again 
+
+  else if (this.searchText) {
+    this.selectedItems = this.dontKnowYetArray.filter(obj =>
+      (obj.dish.toLowerCase().includes(this.searchText.toLowerCase())) ||
+      (obj.restaurant.toLowerCase().includes(this.searchText.toLowerCase())) ||
+      (obj.ingredients.toLowerCase().includes(this.searchText.toLowerCase()))
+    )
+  };
   this.sortFiltered();
 }
 
 
-// Alphebetical sorting of dontKnowYetArray& selectedItems Array
+// Alphebetical sorting of dontKnowYetArray
 
 sort(){
   this.dontKnowYetArray.sort(function (a, b) {
@@ -778,6 +790,7 @@ sort(){
   // console.log('dontKnowYetArray is sorted alphatecially now.');
 }
 
+// Alphebetical sorting of selectedItems Array
 
 sortFiltered(){
   this.selectedItems.sort(function (a, b) {
@@ -790,6 +803,32 @@ sortFiltered(){
     return 0;
   });
   // console.log('dontKnowYetArray is sorted alphatecially now.');
+}
+
+
+// ----- Search Function -----
+
+// 1. Raising the Event/ Establishing Two-Way-Binding from input field to searchQuery()
+
+enteredSearchValue: string = '';
+
+@Output()
+searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+raiseSearchQueryEvent(){
+  this.searchTextChanged.emit(this.enteredSearchValue);
+    this.searchQuery(this.enteredSearchValue);
+}
+
+
+// 2. Actual SearchFunction
+
+searchText: string = '';
+
+searchQuery(enteredSearchValue: string){
+  this.searchText = this.enteredSearchValue;
+  console.log('this.searchText: ', this.searchText);
+  this.filterDontKnowYet();
 }
 
 
@@ -832,6 +871,9 @@ initBootstrapTooltips() {
 sanitizeHTML(html: string): any {
   return this.sanitizer.bypassSecurityTrustHtml(html);
 }
+
+
+
 
 //addMenuToBasket gets TWO parameters as input from mainBody.component.html; 
 addMenuToBasket(menu_position_from_btn_onclick: number, categories: FoodItem[]) {

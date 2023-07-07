@@ -362,7 +362,7 @@
     
             img{
                 object-fit: cover;
-                height: 30px;
+                height: 30px !important;
                 width: 30px;
               
             }
@@ -856,7 +856,6 @@
 
     .orderContent {
         width: 60%;
-    
     }
 
     .basketSupra{

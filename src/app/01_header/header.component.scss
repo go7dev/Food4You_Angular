@@ -14,6 +14,14 @@ header {
     display: flex;
     align-items: center;
 
+    .break{
+        display: flex;
+    }
+
+    .long {
+        display: none;
+    }
+
     h1{
         margin: 0;
         font-family: 'Montserrat', sans-serif;
@@ -25,48 +33,6 @@ header {
         width: auto;
         padding-left: 40px;
     }
-}
-
-
-.order_restaurant {
-    
-    img {
-        height: 30px;
-        width: auto;
-    }
-
-    h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-family: 'Montserrat', sans-serif;;
-    }
-}
-
-.order_restaurant_icons {
-    width: 100%;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    img {
-        margin-right: 5px;
-    }
-}
-
-.order_restaurant_icons_1 {
-    display: flex;
-
-}
-
-.order_restaurant_icons_2 {
-    display: flex;
-    
-}
-
-.order_restaurant_icons_3 {
-    display: flex;
-    
 }
 
 .menu_bar {
@@ -249,25 +215,47 @@ header {
 
 // RESPONSIVE DESIGN
 
-@media (min-width: 400px) and (max-width: 600px) {
+@media (min-width: 430px) and (max-width: 839px) {
+    
+    header {
+        height: 80px;
+    }
 
     .Logo4You{
-        // align-items: flex-end;
+
+        .break{
+            display: none;
+        }
+    
+        .long {
+            display: flex;
+        }
 
         img{
-           height: 70px;
+           height: 48px;
            width: auto;
         }
     }
 }
 
-@media (min-width: 250px) and (max-width: 399px) {
+@media (min-width: 250px) and (max-width: 429px) {
+
+    header {
+        height: 60px;
+    }
 
     .Logo4You{
-        // align-items: flex-end;
+
+        .break{
+            display: none;
+        }
+    
+        .long {
+            display: flex;
+        }
 
         img{
-            height: 58px;
+            height: 48px;
             width: auto;
             padding-left: 20px;
         }

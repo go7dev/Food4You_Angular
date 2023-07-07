@@ -812,7 +812,7 @@ sortFiltered(){
 
 // ----- Search Function -----
 
-// 1. Raising the Event/ Establishing Two-Way-Binding from input field to searchQuery()
+// 1. RAISING THE EVENT/ Establishing Two-Way-Binding from input field to searchQuery()
 
 enteredSearchValue: string = '';
 

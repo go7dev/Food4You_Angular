@@ -161,15 +161,6 @@
     // margin-left: -10px;
 }
 
-.cardMidMod{
-
-     .restaurantInfo{
-
-        &:hover{
-            cursor: pointer;  
-        }
-    }
-}
 
 // #popoverTitle {
     
@@ -188,7 +179,7 @@
         z-index: 500;// Parent Element to PopOver: This is the only way to make the popover element appear above the card element!
         height: 47px; // // Parent Element to PopOver: Specify "height" is the only way to prevent the popover element distorting the card element!
         
-        margin-bottom: 35px !important;
+        margin-bottom: 35px;
 
         .btnMod {
             position: absolute;
@@ -224,8 +215,11 @@
        align-items: flex-start;
 
        .stars {
-        width: 250px;
-        display: inline-block; 
+        // width: 250px;
+        width: 100%;
+        // display: inline-block;
+        display: inline-flex;
+        justify-content: flex-start; 
     
         }
      
@@ -354,20 +348,29 @@
         }
     }
 
-    .time{
+    .cardBottomSub{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        width: 52%;
 
-        img{
-            object-fit: cover;
-            height: 30px;
-            width: 30px;
-          
+        .time{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            img{
+                object-fit: cover;
+                height: 30px;
+                width: 30px;
+              
+            }
+    
         }
-
     }
+
+    
 }
 
 
@@ -849,7 +852,7 @@
 //  !---- RESPONSIVE DESIGN ----!
 
 
-@media (min-width: 1126px) and (max-width: 1400px) {
+@media (min-width: 1026px) and (max-width: 1400px) {
 
     .orderContent {
         width: 60%;
@@ -866,7 +869,8 @@
 
 }
 
-@media (min-width: 70px) and (max-width: 1025px) {
+
+@media (min-width: 430px) and (max-width: 1025px) {
 
     .basketSupra {
         display: none;
@@ -894,9 +898,7 @@
 
     .hideAndSee{
         display: flex;
-        // justify-content: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
-        // background: linear-gradient(180deg, rgba(56,229,77,1) 24%, rgba(0,212,255,1) 43%, rgba(156,255,46,1) 87%);
         padding-top: 10px;
         padding-bottom: 10px;
     }
@@ -921,6 +923,203 @@
     //     font-size: 20px;
     // }
 
+}
+
+
+@media (min-width: 380px) and (max-width: 429px) {
+
+    .basketSupra {
+        display: none;
+    }
+
+    .orderContent {
+        display: none; 
+    }
+
+    .facilitatesStickyLeft{
+        display: none;
+    }
+
+    .OrderContentDontKnowYet{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+    }
+
+    .ifEnabledDisabled{
+        width: 100%;
+    }
+
+    .hideAndSee{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .searchField{
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: none;
+        }
+    }
+
+    .restaurant{
+        height: 97px !important;
+        margin-bottom: 0 !important;
+
+        a{
+            margin-top: 40px;
+            // position: unset;
+            max-width: 100% !important; 
+        //    width: 100%;
+            // right: auto;
+            left: 0;
+        }
+    }
+}
+
+
+@media (min-width: 327px) and (max-width: 379px) {
+
+    .basketSupra {
+        display: none;
+    }
+
+    .orderContent {
+        display: none; 
+    }
+
+    .facilitatesStickyLeft{
+        display: none;
+    }
+
+    .OrderContentDontKnowYet{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+    }
+
+    .ifEnabledDisabled{
+        width: 100%;
+    }
+
+    .hideAndSee{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .searchField{
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: none;
+        }
+    }
+
+    .restaurant{
+        height: 97px !important;
+        margin-bottom: 0 !important;
+
+        a{
+            margin-top: 40px;
+            max-width: 100% !important; 
+            left: 0;
+        }
+    }
+
+    .cardBottom{
+        flex-direction: column-reverse;
+
+        .cardBottomSub{
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+    }
+}
+
+
+@media (min-width: 250px) and (max-width: 326px) {
+
+    .basketSupra {
+        display: none;
+    }
+
+    .orderContent {
+        display: none; 
+    }
+
+    .facilitatesStickyLeft{
+        display: none;
+    }
+
+    .OrderContentDontKnowYet{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+    }
+
+    .ifEnabledDisabled{
+        width: 100%;
+    }
+
+    .hideAndSee{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .searchField{
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: none;
+        }
+    }
+
+    .restaurant{
+        height: 127px !important;
+        margin-bottom: 0 !important;
+
+        a{
+            margin-top: 40px;
+            max-width: 100% !important; 
+            left: 0;
+        }
+    }
+
+    .stars{
+
+        form{
+
+            label{
+                padding: 1px !important;
+            }
+        }
+    }
+
+    .cardBottom{
+        flex-direction: column-reverse;
+
+        .cardBottomSub{
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+    }
 }
 
 // @media (min-width: 481px) and (max-width: 699px) {

@@ -64,7 +64,7 @@
 
                       <div class="dropdown">
                         
-                        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dropdownMenuButton"
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dropdownMenuButton"
                         data-mdb-toggle="dropdown" aria-expanded="false">
                           Filters:
                         </button>
@@ -161,11 +161,13 @@
                                   </div>
                                   <div class="cardBottom">
                                     <button (click)="addMenuToBasket(dontKnowMealIndex, dontKnowYetArray)" class="btn btn-primary btn-lg"><img src="./assets/img/icons/plus4_icon_48x48_white.png"><span>Buy</span></button>
-                                    <div class="time">
-                                      <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
-                                      {{ dontKnowMeal.deliverTime }} min.
+                                    <div class="cardBottomSub">
+                                      <div class="time">
+                                        <img src="../assets/img/icons/icon_clock_timer_SVG.svg">
+                                        {{ dontKnowMeal.deliverTime }} min.
+                                      </div>
+                                      <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
                                     </div>
-                                    <span class="menu_description_price">€ {{dontKnowMeal.price.toFixed(2)}}</span>
                                   </div>
                               </div>
                           </div>

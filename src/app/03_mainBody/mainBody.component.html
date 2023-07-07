@@ -105,7 +105,7 @@
          
                  
                    
-                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled && selectedItems.length === 0  ">
+                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled && searchText === '' ">
                           <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
                               <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
                               <div class="card-body cardBodyMod">
@@ -171,7 +171,7 @@
                           </div>
                         </div>
 
-                      <div class="ifEnabledDisabled" *ngIf="!areCheckboxesDisabled || selectedItems.length !== 0 ">
+                      <div class="ifEnabledDisabled" *ngIf="!areCheckboxesDisabled || searchText !== ''">
                         <div class="card cardMod" *ngFor="let filteredMeal of selectedItems; let filteredIndex = index" style="width: 18rem;">
                             <img src="{{filteredMeal.img}}" class="card-img-top" alt="...">
                             <div class="card-body cardBodyMod">

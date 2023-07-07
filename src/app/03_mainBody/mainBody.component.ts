@@ -769,8 +769,12 @@ filterDontKnowYet() {
       (obj.dish.toLowerCase().includes(this.searchText.toLowerCase())) ||
       (obj.restaurant.toLowerCase().includes(this.searchText.toLowerCase())) ||
       (obj.ingredients.toLowerCase().includes(this.searchText.toLowerCase()))
-    )
-  };
+    ); } 
+    
+  else {
+      this.selectedItems = this.dontKnowYetArray;
+    }
+  
   this.sortFiltered();
 }
 

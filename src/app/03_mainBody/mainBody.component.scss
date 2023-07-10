@@ -27,6 +27,10 @@
 
 }
 
+.d-none{
+    display: none !important;
+}
+
 .ifEnabledDisabled{
     width: calc(100% - 240px);
     display: flex;
@@ -447,128 +451,6 @@
     }
   }
 
-  
-// .order_restaurant {
-
-// }
-
-// .order_restaurant img {
-//     height: 30px;
-//     width: auto;
-// }
-
-// .order_restaurant h3 {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     font-family: 'Montserrat', sans-serif;;
-// }
-
-// .order_restaurant_icons {
-//     width: 100%;
-//     font-size: 20px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
-
-// .order_restaurant_icons img {
-//     margin-right: 5px;
-// }
-
-// .order_restaurant_icons_1 {
-//     display: flex;
-
-// }
-
-// .order_restaurant_icons_2 {
-//     display: flex;
-    
-// }
-
-// .order_restaurant_icons_3 {
-//     display: flex;
-    
-// }
-
-// .menus{
-//     width: 800px;
-//     height: 800px;
-// }
-
-
-
-// .food_picture {
-//     width: 100%;
-
-// }
-
-// .food_picture img {
-//     height: 200px;
-//     width: 100%;
-//     object-fit: cover;
-// }
-
-// .order_restaurant {
-//     height: auto;
-//     width:90%;
-//     background-color:white;
-//     margin-top: 20px;
-//     margin-bottom: 30px;
-//     margin-right: 2%;
-//     margin-left: 3%;
-//     padding-left: 5%;
-//     font-family: 'Open Sans', sans-serif;
-//     font-size:xx-large;
-// }
-
-// .menu_description {
-//     height: auto;
-//     width:90%;
-//     display: flex;
-//     align-items: flex-start;
-//     flex-direction: column;
-//     justify-content: center;
-//     position: relative;
-//     background-color:whitesmoke;
-//     box-shadow: 0px 5px 0px 5px #E5E4E2;
-//     margin-top: 0px;
-//     margin-bottom: 40px;
-//     margin-right: 2%;
-//     margin-left: 3%;
-//     padding-left: 5%;
-//     font-family: 'Open Sans', sans-serif;
-//     font-size: 20px;
-
-// }
-
-// .menu_description img {
-//     height: 100px;
-//     max-width: 150px;
-//     object-fit: cover;
-
-// }
-
-// .menu_description_head {
-//     display: flex;
-//     justify-content: space-between;
-//     width: 60%;
-// }
-
-// .menu_description_food {
-    
-// }
-
-// .menu_description_pic img {
-//     margin-left: 200px;
-// }
-
-// .menu_description_food h3 {
-//     margin-bottom: 0px;
-//     margin-top: 0px;
-//     font-family: 'Montserrat', sans-serif;
-//     color: black;
-// }
-
 .menu_description_price {
     color: #38E54D;
     // margin-top: 20px;
@@ -576,29 +458,9 @@
     // margin: none !important;
 }
 
-// .menu_description button {
-//     position: absolute;
-//     top: 0px;
-//     right: 0px;
-//     height:70px;
-//     width: 70px;
-//     background-color:whitesmoke;
-//     border: 1px solid black;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;   
 
-//     :hover {
-//         cursor: pointer;
-//         background-color: #9CFF2E;
-//         border: 1px solid black;
-//     }
-// }
+// ----- Shopping Basket -----
 
-// .order_button img {
-//     height: 60px;
-
-// }
 
 .basketSupra{
     width: 30% !important;
@@ -654,17 +516,18 @@
     justify-content: center;
 
     img {
-        height: 0%;
+        height: 64px;
+        width: 64px;
         margin-top: 10px;
     }
 }
 
 
-// .basketMeals{
-//     display: flex;
-//     // flex-direction: column;
+.basketMeals{
+    display: flex;
+    flex-direction: column;
 
-// }
+}
 
 .basketTable {
     display: flex;
@@ -809,12 +672,13 @@
 
 }
 
-// Media Cart
+// ----- Media Cart ------
 
 .mediaCart {
     height: 80px;
-    width: calc(100% - 2px);
-    background-color: #9CFF2E;
+    // width: calc(100% - 2px);
+    width: 100%;
+    background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
     color: black;
     position: sticky;
     bottom: 0;
@@ -822,20 +686,29 @@
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 501;
 
-    button {
+    img {
+        height: 100%;
+        width: auto;
+    }
+
+    .btnCustom {
         height: 50px;
         width: 70%;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        background-color: #38E54D;
+        border: 1px solid black;
+        background-color: transparent;
         color: white;
+        font-size: clamp(20px, 6vw, 43px);
         display: flex;
         justify-content: space-between;
         align-items: center;
-    
+  
+
         &:hover{
             background-color: #9CFF2E;
             cursor: pointer;
@@ -902,25 +775,25 @@
         padding-bottom: 10px;
     }
 
+    .emptyBasket {
+        
+        img {
+            height: auto;
+            width: 50%;
+        }
+    }
 
+    .mediaCart {
+        display: flex;
+        z-index: 502;
+    }
 
-    // .mediaCart {
-    //     display: flex;
-    // }
+    .basketSupraDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 320px);
+        display: flex;
 
-    // .basket_supra_display{
-    //     width: 100%;
-    //     display: flex;
-    //     justify-content: flex-start;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     position: sticky;
-    //     top: 0;
-    //     background-color: white;
-    //     font-family: 'Open Sans', sans-serif;
-    //     font-weight: bold;
-    //     font-size: 20px;
-    // }
+    }
 
 }
 
@@ -964,6 +837,26 @@
             width: 80%;
             max-width: none;
         }
+    }
+
+    .emptyBasket {
+        
+        img {
+            height: auto;
+            width: 50%;
+        }
+    }
+
+    .mediaCart {
+        display: flex;
+        z-index: 502;
+    }
+
+    .basketSupraDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 260px);
+        display: flex;
+
     }
 
     .restaurant{
@@ -1021,6 +914,26 @@
             width: 80%;
             max-width: none;
         }
+    }
+
+    .emptyBasket {
+        
+        img {
+            height: auto;
+            width: 50%;
+        }
+    }
+
+    .mediaCart {
+        display: flex;
+        z-index: 502;
+    }
+
+    .basketSupraDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 260px);
+        display: flex;
+
     }
 
     .restaurant{
@@ -1086,6 +999,26 @@
             width: 80%;
             max-width: none;
         }
+    }
+
+    .emptyBasket {
+        
+        img {
+            height: auto;
+            width: 50%;
+        }
+    }
+
+    .mediaCart {
+        display: flex;
+        z-index: 502;
+    }
+
+    .basketSupraDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 260px);
+        display: flex;
+
     }
 
     .restaurant{

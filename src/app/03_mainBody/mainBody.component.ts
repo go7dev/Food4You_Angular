@@ -988,14 +988,19 @@ deleteOrder(i : number) {
   }         
 }
 
-// shoppingCart() {
-//   let foodlist = document.getElementById('order_content');
-//   let shoppingCart = document.getElementById('basket_supra');
+shoppingCart() {
+  let foodlist: HTMLElement | null = document.getElementById('orderContent');
+  let shoppingCart: HTMLElement | null = document.getElementById('basketSupra');
 
-//   foodlist.classList.toggle('order_content_d-none');
-//   shoppingCart.classList.toggle('basket_supra_display');
+  // foodlist.classList.toggle('order_content_d-none');
+  // shoppingCart.classList.toggle('basket_supra_display');
   
-// }
+
+  if (foodlist && shoppingCart) {
+    foodlist.classList.toggle('d-none');
+    shoppingCart.classList.toggle('basketSupraDisplay');
+  }
+}
 
 
 }

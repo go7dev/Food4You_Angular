@@ -333,8 +333,6 @@
 
 
 
-
-
 .cardBottom {
     margin-top: 20px;
     display: flex;
@@ -461,10 +459,14 @@
 
 // ----- Shopping Basket -----
 
+.basketTab{
+    width: 30% !important;
+    position: relative;
+    box-shadow: -2px 0px 2px 1px rgba(0, 0, 0, 0.1);
+}
 
 .basketSupra{
-    width: 30% !important;
-    height: 50%;
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -475,6 +477,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     font-size: 20px;
+
 }
 
 .basketSupraHead {
@@ -492,6 +495,7 @@
 .basket {
     width: 100%;
     height: auto;
+
 }
 
 .emptyBasket {
@@ -526,75 +530,88 @@
 .basketMeals{
     display: flex;
     flex-direction: column;
-
+    max-height: 600px;
+    width: 100%;
+    overflow-y: auto;
 }
 
 .basketTable {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    width: 96%;
+    flex-direction: column;
+    width: 98%;
     padding-left: 2%;
-    padding-right: 2%;
-    position: relative;
+    // padding-right: 2%;
 
-    // hr{
-    //     width: 80%;
-    //     height: 2px;
-    // }
+    hr{
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
 }
 
-.tableTd_1_MenuDescription {
-    display: block;
-    max-width: 35%;
+.tableTd_1_MenuDescriptionAndPrice {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .order{
+        max-width: 75% !important;
+    }
+
+    span{
+        display: block;
+    }
 }
 
 
 .tableTd_2_BasketButtons {
     display: flex;
-    justify-content: center;
-    // position: absolute;
-    // right: 30%;
-
-    button {
-        height: 35px;
-        width: 35px;
-        margin-left: 5px;
-        margin-right: 5px;
-        border-radius: 8px;
-        background-color:white;
-        border: 1px solid black;
-
-        &:hover{
-            cursor: pointer;
-            background-color: lightgray;
-        }
-    }
-}
-
-.tableTd_3_deleteBin {
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 35%;
+    margin-top: 15px;
+    margin-bottom: 10px;
 
-    button {
+    .moreOrLess{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        object-fit: contain;
-        height: 35px;
-        width: 35px;
-        background-color:white;
-        border: 1px solid white;
+        justify-content: space-between;
+        margin-left: 40%;
+
+        button {
+            height: 45px;
+            width: 45px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 360px;
+            background-color: #f5f3f1;
+            border: none;
     
-        &:hover {
-            cursor: pointer;
-            border: 1px solid black;
-        
+            &:hover{
+                cursor: pointer;
+                background-color: #E5E4E2;
+            }
         }
     }
+
+    .trashBin{
+
+        button {
+            height: 38px;
+            width: 38px;
+            background-color:white;
+            background-image: url("/assets/img/icons/delete2_icon_BootstrapBlue_48x48.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+                background-image: url("/assets/img/icons/delete3open_icon_BootstrapBlue.svg");
+            }
+        }
+    }
+
 }
 
 .sums {
@@ -602,9 +619,14 @@
 }
 
 .tableRowSum {
-    width: 96%;
-    padding-left: 2%;
-    padding-right: 2%;
+    width: 99%;
+    padding-left: 1%;
+    // padding-right: 2%;
+    padding-top: 10px;
+
+    hr{
+        margin-top: -10px;
+    }
     
 }
 
@@ -731,7 +753,7 @@
         width: 60%;
     }
 
-    .basketSupra{
+    .basketTab{
         width: 40%;
     }
 
@@ -744,7 +766,7 @@
 
 @media (min-width: 430px) and (max-width: 1025px) {
 
-    .basketSupra {
+    .basketTab{
         display: none;
     }
 
@@ -788,9 +810,9 @@
         z-index: 502;
     }
 
-    .basketSupraDisplay{
+    .basketTabDisplay{
         width: 100vw !important;
-        height: calc(100vh - 320px);
+        min-height: calc(100vh - 120px - 120px);
         display: flex;
 
     }
@@ -800,7 +822,7 @@
 
 @media (min-width: 380px) and (max-width: 429px) {
 
-    .basketSupra {
+    .basketTab {
         display: none;
     }
 
@@ -852,9 +874,9 @@
         z-index: 502;
     }
 
-    .basketSupraDisplay{
+    .basketTabDisplay{
         width: 100vw !important;
-        height: calc(100vh - 260px);
+        min-height: calc(100vh - 120px - 120px);
         display: flex;
 
     }
@@ -877,7 +899,7 @@
 
 @media (min-width: 327px) and (max-width: 379px) {
 
-    .basketSupra {
+    .basketTab {
         display: none;
     }
 
@@ -929,9 +951,9 @@
         z-index: 502;
     }
 
-    .basketSupraDisplay{
+    .basketTabDisplay{
         width: 100vw !important;
-        height: calc(100vh - 260px);
+        min-height: calc(100vh - 120px - 120px);
         display: flex;
 
     }
@@ -962,7 +984,7 @@
 
 @media (min-width: 250px) and (max-width: 326px) {
 
-    .basketSupra {
+    .basketTab {
         display: none;
     }
 
@@ -1009,14 +1031,30 @@
         }
     }
 
+    .tableTd_1_MenuDescriptionAndPrice{
+
+        .order{
+            max-width: 70% !important;
+        }
+    }
+
+    .tableTd_2_BasketButtons{
+        
+        justify-content: space-evenly;
+
+        .moreOrLess{
+            margin-left: 0;
+        }
+    }
+
     .mediaCart {
         display: flex;
         z-index: 502;
     }
 
-    .basketSupraDisplay{
+    .basketTabDisplay{
         width: 100vw !important;
-        height: calc(100vh - 260px);
+        min-height: calc(100vh - 120px - 120px);
         display: flex;
 
     }
@@ -1053,360 +1091,3 @@
 
     }
 }
-
-// @media (min-width: 481px) and (max-width: 699px) {
-
-//     header h2 {
-//         display: none;
-//     }
-
-//     .order_restaurant_icons {
-//         width: 100%;
-//         font-size: 20px;
-//         display: flex;
-//         align-items: flex-start;
-//         justify-content: center;
-//         flex-direction: column;
-//     }
-    
-//     .order_restaurant_icons_1 {
-//         display: flex;
-//         margin-bottom: 1%;
-    
-//     }
-    
-//     .order_restaurant_icons_2 {
-//         display: flex;
-//         margin-bottom: 1%;
-//     }
-    
-//     .order_restaurant_icons_3 {
-//         display: flex;
-//         margin-bottom: 1%;
-//     }
-
-//     .menu_description_head {
-//         width: auto;
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .menu_description_pic img {
-//         margin-top: 20px;
-//     }
-
-//     .order_content {
-//         width:100%; 
-//     }
-
-//     .order_content_d-none {
-//         display: none;       
-//     }
-
-//     .basket_supra {
-//         display: none;
-//     }
-
-//     .basket_supra_display{
-//         width: 100%;
-//         display: flex;
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         align-items: center;
-//         position: sticky;
-//         top: 0;
-//         background-color: white;
-//         font-family: 'Open Sans', sans-serif;
-//         font-weight: bold;
-//         font-size: 20px;
-//     }
-
-//     .mediaCart {
-//         display: flex;
-//     }
-// }
-
-// @media (min-width: 290px) and (max-width: 480px) {
-
-//     .order_restaurant_icons {
-//         width: 100%;
-//         font-size: 20px;
-//         display: flex;
-//         align-items: flex-start;
-//         justify-content: center;
-//         flex-direction: column;
-//     }
-    
-//     .order_restaurant_icons_1 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;
-    
-//     }
-    
-//     .order_restaurant_icons_2 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;
-//     }
-    
-//     .order_restaurant_icons_3 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;
-//     }
-
-//     header h2 {
-//         display: none;
-//     }
-
-//     .Logo4You img {
-//         height: 60px;
-//         width: auto;
-//         padding-left: 30px; 
-//     }
-
-//     .menu_bar img{
-//         height: 20px;
-//         padding-left: 0px;
-//         width: auto;  
-//     }
-
-//     .menu_description_head {
-//         width: 100%;
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .menu_description_food h3 {
-//         padding-top: 70px;
-
-//     }
-
-//     .menu_description_pic img {
-//         margin-top: 20px;
-//     }
-
-//     .order_content {
-//         width:100%;       
-//     }
-
-//     .order_content_d-none {
-//         display: none;       
-//     }
-
-//     .basket_supra {
-//         display: none;
-//     }
-
-//     .basket_supra_display{
-//         width: 100%;
-//         display: flex;
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         align-items: center;
-//         position: sticky;
-//         top: 0;
-//         background-color: white;
-//         font-family: 'Open Sans', sans-serif;
-//         font-weight: bold;
-//         font-size: 20px;
-//     }
-
-//     .basket_table {
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .table_td_2_basket_buttons {
-//         display: flex;
-//         justify-content: center;
-//         position: relative;
-//         right: 0;
-//         margin-top: 5px;
-//         margin-bottom: 5px; 
-//     }
-
-//     .mediaCart {
-//         display: flex;
-//     }
-
-//     .mediaCart button {
-//         height: 80px;
-//         width: 90%;
-//         border-top-right-radius: 5px;
-//         border-top-left-radius: 5px;
-//         border-bottom-left-radius: 5px;
-//         border-bottom-right-radius: 5px;
-//         background-color: #38E54D;
-//         color: white;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//     }
-
-// }
-
-// @media (min-width: 220px) and (max-width: 290px) {
-
-//     .order_restaurant h3 {
-//         font-size: 25px;
-//     }
-
-//     .recommendations img {
-//         width: 60%;
-//         height: auto;
-//     }
-
-//     .order_restaurant_icons {
-//         width: 100%;
-//         font-size: 20px;
-//         display: flex;
-//         align-items: flex-start;
-//         justify-content: center;
-//         flex-direction: column;
-//     }
-    
-//     .order_restaurant_icons_1 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;  
-//     }
-    
-//     .order_restaurant_icons_2 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;
-//     }
-    
-//     .order_restaurant_icons_3 {
-//         display: flex;
-//         margin-bottom: 1%;
-//         word-break: break-all;
-//     }
-
-//     header h2 {
-//         display: none;
-//     }
-
-//     .Logo4You img {
-//         height: 40px;
-//         width: auto;
-//         padding-left: 15px; 
-//     }
-
-//     .menu_bar img{
-//         height: 15px;
-//         padding-left: 0px;
-//         width: auto; 
-//     }
-
-//     .menu_description_head {
-//         width: 100%;
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .menu_description_food h3 {
-//         padding-top: 70px;
-
-//     }
-
-//     .menu_description_pic img {
-//         margin-top: 20px;
-//     }
-
-//     .order_content {
-//         width:100%;   
-//     }
-
-//     .order_content_d-none {
-//         display: none; 
-//     }
-
-//     .basket_supra {
-//         display: none;
-//     }
-
-//     .basket_supra_display{
-//         width: 100%;
-//         display: flex;
-//         justify-content: flex-start;
-//         flex-direction: column;
-//         align-items: center;
-//         position: sticky;
-//         top: 0;
-//         background-color: white;
-//         font-family: 'Open Sans', sans-serif;
-//         font-weight: bold;
-//         font-size: 20px;
-//     }
-
-//     .basket_table {
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .table_td_2_basket_buttons {
-//         display: flex;
-//         justify-content: center;
-//         position: relative;
-//         right: 0;
-//         margin-top: 5px;
-//         margin-bottom: 5px; 
-//     }
-
-
-//     .table_row_sum {
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .orders_subtotal_supra {
-//         display: flex;
-//         flex-direction: column;
-//     }
-
-//     .mediaCart {
-//         display: flex;
-//     }
-
-//     .mediaCart button {
-//         height: 80px;
-//         width: 90%;
-//         border-top-right-radius: 5px;
-//         border-top-left-radius: 5px;
-//         border-bottom-left-radius: 5px;
-//         border-bottom-right-radius: 5px;
-//         background-color: #38E54D;
-//         color: white;
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//     }
-
-// }
-
-// @media (min-width: 0px) and (max-width: 219px) {
-
-//     header h2 {
-//         display: none;
-//     }
-
-//     .Logo4You img {
-//         height: 40px;
-//         width: auto;
-//         padding-left: 15px; 
-//     }
-
-//     .menu_bar img{
-//         height: 15px;
-//         padding-left: 0px;
-//         width: auto;
-//     }
-
-//     .content {
-//         display: none;
-//     }
-
-// }

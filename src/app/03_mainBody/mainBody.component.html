@@ -643,7 +643,7 @@
             <!-- ----- Non-Bootstrap Syntax ----- -->
 
         
-
+      <div class="basketTab" id="basketTab">
         <div class="basketSupra" id="basketSupra">  
           <div class="basketSupraHead"><h2>Shopping Cart</h2></div>
             <div id="basket" class="basket" >
@@ -656,20 +656,26 @@
 
                 <div class="basketMeals" *ngIf="this.basket.length > 0">
                     <div class="basketTable"  *ngFor="let order of basket; let i = index" >
-                        
-                        <div class="tableTd_1_MenuDescription" id="table_td_1_menu_description"
-                        >{{order.amount}} x {{order.food}}
+                     
+                      <div class="tableTd_1_MenuDescriptionAndPrice">
+                          <div class="order" id="table_td_1_menu_description"
+                          >{{order.amount}} x {{order.food}}
+                          </div>
+                     
+                          <!-- <div class="tableTd_3_deleteBin" id="table_td_3_delete_bin"> -->
+                          <span>€ {{order.price.toFixed(2)}}</span>
+                          <!-- </div> -->
                         </div>
                         <div class="tableTd_2_BasketButtons" id="table_td_2_basket_buttons">
-                            <button id="basket_minus" (click)="basketMinus(i)">-</button>
-                            <button id="basket_plus" (click)="basketPlus(i)">+</button>
-                        </div>
-                        <div class="tableTd_3_deleteBin" id="table_td_3_delete_bin">
-                
-                            <span>€ {{order.price.toFixed(2)}}</span>
-                            <button (click)="deleteOrder(i)"><img src="../assets/img/icons/delete2_icon_blue_24x24.png"></button>
-                        </div>
-                       
+                          <div class="moreOrLess">
+                            <button id="basket_minus" (click)="basketMinus(i)"><img src="./assets/img/icons/minus_1_24x24.png"></button>
+                            <button id="basket_plus" (click)="basketPlus(i)"><img src="./assets/img/icons/plus3_icon_24x24.png"></button>
+                          </div>
+                          <div class="trashBin">
+                            <button (click)="deleteOrder(i)"></button>
+                          </div>
+                      </div>
+                      <hr *ngIf="this.basket.length > 1">  
                     </div>
                     
                 </div>
@@ -707,7 +713,7 @@
             
             
         </div>
-
+      </div>
   
     </div>
 
@@ -715,4 +721,4 @@
 
   <!----- Media Cart ----->
 
-  <div class="mediaCart" id="mediaCart"><button class="btn btnCustom" (click)="shoppingCart()"><img src="./assets/img/icons/cart_white_64x64.svg"> <b>€ &#32; {{resultSubtotal.toFixed(2)}}</b> <img src="./assets/img/icons/touchFinger2_64x64.svg"></button></div>
+  <div class="mediaCart" id="mediaCart"><button class="btn btnCustom" (click)="shoppingCart()"><img src="./assets/img/icons/cart_white_64x64.svg"> <div *ngIf="this.basket.length > 0"><b>€ &#32; {{resultSubtotal.toFixed(2)}}</b></div> <img src="./assets/img/icons/touchFinger2_64x64.svg"></button></div>

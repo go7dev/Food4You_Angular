@@ -990,7 +990,7 @@ deleteOrder(i : number) {
 
 shoppingCart() {
   let foodlist: HTMLElement | null = document.getElementById('orderContent');
-  let shoppingCart: HTMLElement | null = document.getElementById('basketSupra');
+  let shoppingCart: HTMLElement | null = document.getElementById('basketTab');
 
   // foodlist.classList.toggle('order_content_d-none');
   // shoppingCart.classList.toggle('basket_supra_display');
@@ -998,7 +998,7 @@ shoppingCart() {
 
   if (foodlist && shoppingCart) {
     foodlist.classList.toggle('d-none');
-    shoppingCart.classList.toggle('basketSupraDisplay');
+    shoppingCart.classList.toggle('basketTabDisplay');
   }
 }
 

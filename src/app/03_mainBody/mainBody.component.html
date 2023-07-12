@@ -116,7 +116,7 @@
                                        <b>Restaurant:</b>
                                        
                                         <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" data-container="#popoverContainer" (click)="$event.preventDefault();"  
-                                        data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
+                                        data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
                                        
                                       </div>
                                       <div class="superStar">
@@ -128,7 +128,8 @@
                                                                                            
                                               <input class="star star-{{i}}" id="star-{{dontKnowMealIndex}}-{{i}}" type="radio" name="star-{{dontKnowMealIndex}}" [value]="i" [checked]="dontKnowMeal.selectedStar === i" />
                                           
-                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}" data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"></label>
+                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}"
+                                               data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"></label>
                                               </ng-container>                                              
                                             </form>
                                             
@@ -171,7 +172,7 @@
                                   <div class="restaurant">
                                     <b>Restaurant:</b>
                                     <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                                    data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
+                                    data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ filteredMeal.restaurant }}</a>   
                                   </div>
                                   <div class="superStar">
                                     <span><b>Customers' Rating:</b></span>   
@@ -230,7 +231,7 @@
                               <div class="restaurant">
                                 <b>Restaurant:</b>
                                 <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                                data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
+                                data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pizza.restaurant }}</a>   
                               </div>
                               <div class="superStar">
                                 <span><b>Customers' Rating:</b></span>   
@@ -287,7 +288,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ salad.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -343,7 +344,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ asia.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -399,7 +400,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ pasta.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -455,7 +456,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ india.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -511,7 +512,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ herman.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   
@@ -567,7 +568,7 @@
                         <div class="restaurant">
                           <b>Restaurant:</b>
                           <a role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" (click)="$event.preventDefault();" 
-                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
+                          data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ hamburger.restaurant }}</a>   
                         </div>
                         <div class="superStar">
                           <span><b>Customers' Rating:</b></span>   

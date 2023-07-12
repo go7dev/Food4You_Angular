@@ -810,6 +810,9 @@ sortFiltered(){
     return 0;
   });
   // console.log('dontKnowYetArray is sorted alphatecially now.');
+  setTimeout(() => {
+    this.initBootstrapTooltips();
+  }, 100);
 }
 
 

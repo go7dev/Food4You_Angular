@@ -201,81 +201,73 @@
         }
         
     }
+}
 
 
-    // ToolTip
+    // ---- STARS - Customer Rating ---- 
 
-    $border-radius: 5px;
-    $tooltip-arrow-width: .8rem;
-    $tooltip-arrow-height: .4rem;
-    // $tooltip-bg: $black;
-    // $tooltip-arrow-color: $tooltip-bg;
+.superStar{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
 
-    //Stars - Customer Rating 
+   .stars {
+    // width: 250px;
+    width: 100%;
+    // display: inline-block;
+    display: inline-flex;
+    justify-content: flex-start; 
 
-    .superStar{
-       display: flex;
-       flex-direction: column;
-       align-items: flex-start;
+    }
+ 
+    input.star { 
+        display: none;
+    }
+  
+    label.star {
+        float: right;
+        padding: 6px;
+        font-size: 28px;
+        color: #38E54D;
+        transition: all .2s;
 
-       .stars {
-        // width: 250px;
-        width: 100%;
-        // display: inline-block;
-        display: inline-flex;
-        justify-content: flex-start; 
-    
-        }
-     
-        input.star { display: none; }
-      
-      
-        label.star {
-            float: right;
-            padding: 6px;
-            font-size: 28px;
-            color: #38E54D;
-            transition: all .2s;
-
-            &:before {
-                content: '\f005'; /* use Font Awesome icon */
-                font-family: 'Font Awesome 5 Free';
-                font-weight: 900;
-              }
-        }
-        
-        
-        
-        input.star:checked ~ label.star:before {
-            content: '\f005';
-            color: #FD4;
-            transition: all .25s;
-        
-        }
-        
-        
-        input.star-5:checked ~ label.star:before {
-            color: #FE7;
-            text-shadow: 0 0 20px #952;
-        
-        }
-
-        input.star-1:checked ~ label.star:before {
-            color: #F62;
-        }
-
-        label.star:hover {
-            transform: rotate(-15deg) scale(1.3);
-        }
-
-        label.star:before {
-
-            content: '\f006';
-          
-            font-family: FontAwesome;
-          
+        &:before {
+            content: '\f005'; /* use Font Awesome icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
           }
     }
+    
+    
+    
+    input.star:checked ~ label.star:before {
+        content: '\f005';
+        color: #FD4;
+        transition: all .25s;
+    
+    }
+    
+    input.star-5:checked ~ label.star:before {
+        color: #FE7;
+        text-shadow: 0 0 20px #952;
+    
+    }
+
+    input.star-1:checked ~ label.star:before {
+        color: #F62;
+    }
+
+    label.star:hover {
+        transform: rotate(-15deg) scale(1.3);
+    }
+
+    label.star:before {
+        content: '\f006';
+      
+        font-family: FontAwesome;
+      
+    }
+}
     
       
 }

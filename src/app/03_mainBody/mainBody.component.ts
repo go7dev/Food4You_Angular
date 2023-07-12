@@ -70,22 +70,25 @@ constructor (private sanitizer: DomSanitizer) {
 
 ngOnInit(): void {
   this.dontKnowYet();
-  this.initBootstrapTooltips();
+
+  //initialize bootstrap tooltips
+
+  window.addEventListener('load', () => {
+    this.initBootstrapTooltips();
+  });
+  
   // this.initPopovers();
 }
-
-// ngAfterViewChecked(): void {
-//   jQuery('[data-bs-toggle="tooltip"]').tooltip();
-// }
-
-// @ViewChild('popoverContent') popoverContent: any;
-
 
 
 // catches the value from the variable "activatedCategory: number", see mainBody.component.html, code-line 4; Here renamed as tabIndex 
 tabChange(tabIndex: number){
   // debugger;
+  // console.log('Tab changed to index:', tabIndex);
   this.activatedTabIndex = tabIndex;
+  setTimeout(() => {
+    this.initBootstrapTooltips();
+  }, 100);
 }
 
 
@@ -831,36 +834,21 @@ searchText: string = '';
 
 searchQuery(enteredSearchValue: string){
   this.searchText = this.enteredSearchValue;
-  console.log('this.searchText: ', this.searchText);
+  // console.log('this.searchText: ', this.searchText);
   this.filterDontKnowYet();
 }
 
 
 // Initialize Bootstrap Tooltips
 
-initBootstrapTooltips() {
-  console.log('initBootstrapTooltips()');
-  // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) as HTMLElement[];
-  // tooltipTriggerList.map(function (tooltipTriggerEl) {
-  //     const tooltip = new bootstrap.Tooltip(tooltipTriggerEl)
-  //     if (tooltipTriggerEl.innerText?.includes('top')) {
-  //         tooltip.enable()
-  //     } else {
-  //         tooltip.disable()
-  //     }
-  //     return tooltip;
-  // })
+initBootstrapTooltips(): void {
+  // console.log('initBootstrapTooltips()');
+      // ('body [data-bs-toggle="tooltip"]') - search for elements with the data-bs-toggle="tooltip" attribute within the entire body of the document, instead of just within the current tab
+  const tooltipTriggerList = document.querySelectorAll<HTMLElement>('body [data-bs-toggle="tooltip"]'); 
+  // console.log('tooltipTriggerList:', tooltipTriggerList);
+  //creates a new array from the NodeList returned by document.querySelectorAll
+  Array.from(tooltipTriggerList).map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
-  // const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) as HTMLElement[];
-  // const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  //     const tooltip = new bootstrap.Tooltip(tooltipTriggerEl)
-  //     if (tooltipTriggerEl.innerText?.includes('top')) {
-  //         tooltip.enable()
-  //     } else {
-  //         tooltip.disable()
-  //     }
-  //     return tooltip;
-  // })
 }
 
 // Initialize Bootstrap Popovers
@@ -877,12 +865,10 @@ sanitizeHTML(html: string): any {
 }
 
 
-
-
 //addMenuToBasket gets TWO parameters as input from mainBody.component.html; 
 addMenuToBasket(menu_position_from_btn_onclick: number, categories: FoodItem[]) {
-  console.log('menu_position_from_btn_onclick: ', menu_position_from_btn_onclick);
-  console.log('categories: ', categories );
+  // console.log('menu_position_from_btn_onclick: ', menu_position_from_btn_onclick);
+  // console.log('categories: ', categories );
 
   let entry_menu =  categories[menu_position_from_btn_onclick]?.dish || 
                     this.Pizzas[menu_position_from_btn_onclick]?.dish ||  //does an element exist on the specified position of the array? - if 'yes', then pass it as value to the entry_menu variable 

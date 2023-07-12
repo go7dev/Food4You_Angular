@@ -742,7 +742,10 @@ areCheckboxesDisabled: boolean = true;
 updateCheckboxStatus(): void {
   this.areCheckboxesDisabled = !(this.btncheck1 || this.btncheck2 || this.btncheck3 || this.btncheck4 || this.btncheck5 || this.btncheck6 || this.btncheck7);
   // console.log('areCheckboxesDisabled2: ', this.areCheckboxesDisabled);
-
+  setTimeout(() => {
+    this.initBootstrapTooltips();
+  }, 100);
+  
   if (this.areCheckboxesDisabled === false) {
     
     this.filterDontKnowYet();
@@ -795,6 +798,9 @@ sort(){
     return 0;
   });
   // console.log('dontKnowYetArray is sorted alphatecially now.');
+  setTimeout(() => {
+    this.initBootstrapTooltips();
+  }, 100);
 }
 
 // Alphebetical sorting of selectedItems Array

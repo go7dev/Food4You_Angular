@@ -33,6 +33,7 @@
 
 .ifEnabledDisabled{
     width: calc(100% - 240px);
+    min-height: calc(100vh - 120px - 52px - 120px);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap ;
@@ -126,17 +127,27 @@
 
 .filterMenu{
     width: 85% !important;
+    font-family: 'Major Mono Display', monospace; 
+    font-style: normal;
+
 }
 
 
 .filterHeader{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    font-family: 'Lobster';
+    font-weight:400;
+    font-size:large;
 
     .filterHeaderInside {
         display:flex;
         justify-content: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+    }
+
+    input{
+        font-family: 'Courier New', Courier, monospace;
     }
 }
 
@@ -163,6 +174,10 @@
     justify-content: space-between;
     // margin-right: -10px;
     // margin-left: -10px;
+    h5{
+        font-family: 'Lobster';
+        font-size: x-large;
+    }
 }
 
 
@@ -187,10 +202,10 @@
 
         .btnMod {
             position: absolute;
-            right: -3px;
+            right: -5px;
             // z-index: 0;
             // word-break: keep-all;
-            max-width: 67%;
+            max-width: 63%;
            
 
             img {
@@ -211,6 +226,9 @@
         position: relative;
         display: inline-block;
         
+        button{
+            font-family: 'Share Tech Mono', monospace;
+        }
       }
       
       /* Dropdown Content (Hidden by Default) */
@@ -222,6 +240,11 @@
         // min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 502;
+
+        label{
+            font-family: 'Major Mono Display', monospace; 
+            font-style: normal;
+        }
       }
       
       /* Links inside the dropdown */
@@ -501,9 +524,9 @@
     position: sticky !important;
     top: 0;
     background-color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 20px;
+    // font-family: 'Open Sans', sans-serif;
+    // font-weight: bold;
+    font-size: 26px;
 
 }
 
@@ -515,7 +538,7 @@
     margin-bottom: 10px;
 
     h2 {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Lobster';
     }
 }
 
@@ -581,9 +604,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    font-family: 'VT323', monospace;
+    font-size: clamp(20px, 2.0vw, 24px); 
 
     .order{
-        max-width: 75% !important;
+        max-width: 70% !important;
     }
 
     span{
@@ -650,6 +675,7 @@
     padding-left: 1%;
     // padding-right: 2%;
     padding-top: 10px;
+    font-family: 'VT323', monospace;
 
     hr{
         margin-top: -10px;
@@ -693,6 +719,7 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
 
     p{
         margin-top: 20px;
@@ -774,7 +801,7 @@
 //  !---- RESPONSIVE DESIGN ----!
 
 
-@media (min-width: 1026px) and (max-width: 1400px) {
+@media (min-width: 1090px) and (max-width: 1400px) {
 
     .orderContent {
         width: 60%;
@@ -791,7 +818,7 @@
 }
 
 
-@media (min-width: 430px) and (max-width: 1025px) {
+@media (min-width: 430px) and (max-width: 1089px) {
 
     .basketTab{
         display: none;
@@ -815,6 +842,7 @@
 
     .ifEnabledDisabled{
         width: 100%;
+        min-height: calc(100vh - 120px - 67px - 80px - 120px);
     }
 
     .hideAndSee{
@@ -925,6 +953,8 @@
             margin-top: 40px;
             // position: unset;
             max-width: 100% !important; 
+            display: flex;
+            justify-content: center;
         //    width: 100%;
             // right: auto;
             left: 0;

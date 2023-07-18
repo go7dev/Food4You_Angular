@@ -14,7 +14,7 @@
                           <div class="card-header filterHeaderInside"><b>Search For:</b></div>
                             <div class="sideBarLeftsearchField">
                               <img src="./assets/img/icons/magnifier.svg">
-                              <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()">
+                              <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()" spellcheck="false">
                             </div>
                       </div>
 
@@ -92,7 +92,7 @@
 
                         <div class="searchField">
                           <img src="./assets/img/icons/magnifier.svg">
-                          <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()">
+                          <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()" spellcheck="false">
                         </div>
 
                    
@@ -619,9 +619,9 @@
             <div id="basket" class="basket" >
                 <div class="emptyBasket" *ngIf="this.basket.length == 0"> 
                     <img src="../assets/img/shopping car_lemon_CC00_svg.svg">
-                    <span>Yummy....super delicious!!!</span>
+                    <span><b>Yummy....super delicious!!!</b></span>
                     <div class="basketSmiley"><img src="../assets/img/delicious 2_smiley_64x64.png"><br><br></div>
-                    <span>Add your favourite menu to your shopping cart!!!</span>
+                    <span><b>Add your favourite menu to your shopping cart!!!</b></span>
                 </div>
 
                 <div class="basketMeals" *ngIf="this.basket.length > 0">
@@ -629,7 +629,7 @@
                      
                       <div class="tableTd_1_MenuDescriptionAndPrice">
                           <div class="order" id="table_td_1_menu_description"
-                          >{{order.amount}} x {{order.food}}
+                          ><b>{{order.amount}} x {{order.food}}</b>
                           </div>
                      
                          
@@ -669,7 +669,7 @@
 
                         <div *ngIf="resultSubtotal < 20" class="buy" id="buy">
                           <button class="btn btn-primary disabled">Buy!</button>
-                          <p class="text-center">Sorry,<br>You haven't reached our <b>Minimum Order Value</b> of at least <b>€ 20.00</b> yet.<br>(Delivery Costs are Excluded)</p>
+                          <p class="text-center">Sorry,<br>You haven't reached our <b>Minimum Order Value</b> of at least <b>€ 20.00</b> yet.<br>(delivery costs excluded)</p>
                           <img src="../assets/img/icons/courier-deliver_CC00_green.png">
                         </div>
                         

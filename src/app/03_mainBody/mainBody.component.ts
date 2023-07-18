@@ -838,13 +838,13 @@ searchQuery(enteredSearchValue: string){
   this.filterDontKnowYet();
 }
 
+
 // ----- Dropdown Menu -----
 
 isDropdownOpen: boolean = false;
 
 toggleDropDownMenu() {
   this.isDropdownOpen = !this.isDropdownOpen;
-  // console.log('Dropdown open:', this.isDropdownOpen);
 
 }
 

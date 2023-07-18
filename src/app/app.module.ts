@@ -8,13 +8,9 @@ import { TabMenuComponent } from './02_TabMenu/TabMenu.component';
 import { MainBodyComponent } from './03_mainBody/mainBody.component';
 import { FooterComponent } from './04_footer/footer.component';
 import { PopoverModule } from 'ngx-bootstrap/popover';
-
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { createPopper } from '@popperjs/core';
-// import { Tooltip } from 'bootstrap';
-
-
 
 
 @NgModule({
@@ -31,7 +27,7 @@ import { createPopper } from '@popperjs/core';
     FormsModule,
     PopoverModule.forRoot(),
     TooltipModule.forRoot(),
-    // TooltipModule,
+
     BrowserAnimationsModule
 
   ],

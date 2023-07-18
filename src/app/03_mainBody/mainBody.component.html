@@ -56,55 +56,51 @@
                     </div>
                   </div>
                  <div class="hideAndSee">
+                         <!--BOOTSTRAP DropDown is conflicting with bootstrap Tolltip initialising function from component.ts-->
+                        <div class="dropdown" (mouseleave)="closeDropDownMenu()">
+                          <button class="btn btn-primary" (click)="toggleDropDownMenu()">Filters</button>
+                          <div id="dropdownContent" class="dropdown-content" [ngClass]="{ 'show': isDropdownOpen }" >
+                        
+                              <div class="btn-group-vertical btn-group-lg" role="group" aria-label="Basic checkbox toggle Large button group">
+                      
+                                <!-- Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
+                          
+                                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck1">Pizzas</label>
+                            
+                                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
+                            
+                                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
+        
+                                <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
+        
+                                <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
+        
+                                <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
+        
+                                <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
+                                <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
+        
+                              </div>
+                          </div>
+                        </div>
 
                         <div class="searchField">
                           <img src="./assets/img/icons/magnifier.svg">
                           <input type="text" id="searchField" [(ngModel)]="enteredSearchValue" (input)="raiseSearchQueryEvent()">
                         </div>
 
-                      <div class="dropdown">
-                        
-                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" id="dropdownMenuButton"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                          Filters:
-                        </button>
-                      
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <div class="btn-group-vertical btn-group-lg" role="group" aria-label="Basic checkbox toggle Large button group">
-                      
-                            <!--Checkboxes triggered by [(ngModel)], herefore FormsModule in app.module.ts + mainBody.component.ts imported -->
-                        
-                              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" [(ngModel)]="btncheck1" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck1">Pizzas</label>
-                          
-                              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" [(ngModel)]="btncheck2" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck2">Salads</label>
-                          
-                              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" [(ngModel)]="btncheck3" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck3">Asian</label>
-      
-                              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" [(ngModel)]="btncheck4" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck4">Pasta</label>
-      
-                              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off" [(ngModel)]="btncheck5" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck5">Indian</label>
-      
-                              <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off" [(ngModel)]="btncheck6" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck6">HermanTheGerman</label>
-      
-                              <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off" [(ngModel)]="btncheck7" (change)="updateCheckboxStatus()">
-                              <label class="btn btn-outline-primary" for="btncheck7">Hamburgers</label>
-      
-                            </div>
-                        </ul>
-
-                        
-                      </div>
+                   
                 </div>
                     <!-- ------MAIN TABS------ -->
          
                    
-                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled && searchText === '' ">
+                      <div class="ifEnabledDisabled" *ngIf="areCheckboxesDisabled && searchText === ''" >
                           <div class="card cardMod" *ngFor="let dontKnowMeal of dontKnowYetArray; let dontKnowMealIndex = index" style="width: 18rem;">
                               <img src="{{dontKnowMeal.img}}" class="card-img-top" alt="...">
                               <div class="card-body cardBodyMod">
@@ -116,7 +112,7 @@
                                        <b>Restaurant:</b>
                                        
                                         <a href="#" role="button" class="btn btn-info btnMod" tabindex="0" [popover]="popoverContent" triggers="focus" placement="top" data-container="#popoverContainer" (click)="$event.preventDefault();"  
-                                        data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
+                                        data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="bottom" id="restaurantInfo"><img src="../assets/img/logos/LogoMakr-2BdIB5.png">&#32; {{ dontKnowMeal.restaurant }}</a>   
                                        
                                       </div>
                                       <div class="superStar">
@@ -128,7 +124,7 @@
                                                                                            
                                               <input class="star star-{{i}}" id="star-{{dontKnowMealIndex}}-{{i}}" type="radio" name="star-{{dontKnowMealIndex}}" [value]="i" [checked]="dontKnowMeal.selectedStar === i" />
                                           
-                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}"
+                                              <label class="star star-{{i}}" for="star-{{dontKnowMealIndex}}-{{i}}" 
                                                data-bs-toggle="tooltip" title="Click Me!" data-bs-placement="top"></label>
                                               </ng-container>                                              
                                             </form>

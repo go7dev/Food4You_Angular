@@ -5,10 +5,14 @@ import * as bootstrap from 'bootstrap';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { tooltip } from 'ng-bootstrap';
+
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { createPopper } from '@popperjs/core';
-// import { Tooltip } from 'bootstrap';
+import { query } from '@angular/animations';
+
+// import { dropdown } from 'ng-bootstrap';
+
+
 
 
 
@@ -65,16 +69,16 @@ activatedTabIndex: number = 0;
 
 // initialize private sanitizer: DomSanitizer for bypassing security trust on dynamically rendered html code
 constructor (private sanitizer: DomSanitizer) {
-  
+
 }
 
 ngOnInit(): void {
   this.dontKnowYet();
 
-  //initialize bootstrap tooltips
+  //initialize bootstrap tooltips -  function is called when the page has finished loading
 
   window.addEventListener('load', () => {
-    this.initBootstrapTooltips();
+      this.initBootstrapTooltips();
   });
   
   // this.initPopovers();
@@ -663,35 +667,22 @@ Hamburgers: FoodItem[] = [
 
 //                           !----- Other Arrays -----!
 
-// cuisineArray : cuisineType [] = [];
 
 selectedItems: FoodItem[] = [];
 
 dontKnowYetArray : FoodItem [] = [];  
 
-// Stars
+// ----- Stars -----
 
 numStars: number[] = [5, 4, 3, 2, 1];
 
-// Basket
+// ----- Basket -----
 
 basket : any[] = [];  
 
 //                          !----- Major Functions -----!
 
 // in TypeScript we not not need to write 'function' in front of a function
-
-
-// cuisines() {
-//   this.cuisineArray.push({ Pizzas: this.Pizzas });
-//   this.cuisineArray.push({ Salads: this.Salads });
-//   this.cuisineArray.push({ Asian: this.Asian });
-//   this.cuisineArray.push({ Pastas: this.Pastas });
-//   this.cuisineArray.push({ Indian: this.Indian });
-//   this.cuisineArray.push({ HermanTheGerman: this.HermanTheGerman });
-//   this.cuisineArray.push({ Hamburgers: this.Hamburgers });
-//   console.log('cuisineArray', this.cuisineArray);
-// }
 
 
 dontKnowYet(){
@@ -845,6 +836,23 @@ searchQuery(enteredSearchValue: string){
   this.searchText = this.enteredSearchValue;
   // console.log('this.searchText: ', this.searchText);
   this.filterDontKnowYet();
+}
+
+// ----- Dropdown Menu -----
+
+isDropdownOpen: boolean = false;
+
+toggleDropDownMenu() {
+  this.isDropdownOpen = !this.isDropdownOpen;
+  // console.log('Dropdown open:', this.isDropdownOpen);
+
+}
+
+
+closeDropDownMenu() {
+  if (this.isDropdownOpen){
+    this.isDropdownOpen = false;
+  }
 }
 
 

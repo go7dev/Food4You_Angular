@@ -204,6 +204,43 @@
 }
 
 
+    // ----- DropDown Menu -----
+     
+      /* The container <div> - needed to position the dropdown content */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        
+      }
+      
+      /* Dropdown Content (Hidden by Default) */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border-radius: 8px;
+        // min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 502;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* Change color of dropdown links on hover */
+      .dropdown-content a:hover {background-color: #ddd;}
+      
+      /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+      .show {
+        display:block;
+        }
+
+
     // ---- STARS - Customer Rating ---- 
 
 .superStar{
@@ -785,6 +822,7 @@
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
         padding-top: 10px;
         padding-bottom: 10px;
+
     }
 
     .emptyBasket {
@@ -838,16 +876,24 @@
 
     .hideAndSee{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
         padding-top: 10px;
         padding-bottom: 10px;
 
         .searchField{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             width: 80%;
             max-width: none;
+        }
+
+        .dropdown{
+            margin-bottom: 10px;
+            
+            .dropdown-content{
+                left: -90px;
+            }
         }
     }
 
@@ -915,16 +961,24 @@
 
     .hideAndSee{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
         padding-top: 10px;
         padding-bottom: 10px;
 
         .searchField{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             width: 80%;
             max-width: none;
+        }
+
+        .dropdown{
+            margin-bottom: 10px;
+            
+            .dropdown-content{
+                left: -90px;
+            }
         }
     }
 
@@ -1000,16 +1054,24 @@
 
     .hideAndSee{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
         padding-top: 10px;
         padding-bottom: 10px;
 
         .searchField{
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             width: 80%;
             max-width: none;
+        }
+
+        .dropdown{
+            margin-bottom: 10px;
+            
+            .dropdown-content{
+                left: -87px;
+            }
         }
     }
 

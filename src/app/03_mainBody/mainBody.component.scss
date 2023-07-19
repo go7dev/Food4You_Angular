@@ -1,14 +1,21 @@
+// import of CSS for Stars animations
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 .mainBody{
     display: flex;
     flex-direction: column;
+    margin: 0;
+
+    background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
+    background-repeat: repeat;
+    background-position: center;
 }
 
 .content {
     display: flex;
     position: relative;
     width: 100%;
+
 }
 
 .orderContent {
@@ -17,6 +24,9 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    // background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
+    // background-repeat: repeat;
+    // background-position: center;
 
 }
 
@@ -24,6 +34,9 @@
     width: 70%;
     display: flex;
     position: relative;
+    // background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
+    // background-repeat: repeat;
+    // background-position: center;
 
 }
 
@@ -37,6 +50,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap ;
+
 }
 
 .facilitatesStickyLeft{
@@ -106,6 +120,7 @@
             width: calc(100% - 37px);
             border: none;
             border-radius: 8px;
+
          
             &:focus{
                 outline: none;
@@ -129,6 +144,9 @@
     width: 85% !important;
     font-family: 'Major Mono Display', monospace; 
     font-style: normal;
+    background-color: #ffffff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 
 }
 
@@ -227,7 +245,7 @@
         display: inline-block;
         
         button{
-            font-family: 'Share Tech Mono', monospace;
+             font-family: 'ShareTechMono-Regular';
         }
       }
       
@@ -801,7 +819,7 @@
 //  !---- RESPONSIVE DESIGN ----!
 
 
-@media (min-width: 1090px) and (max-width: 1400px) {
+@media (min-width: 1078px) and (max-width: 1400px) {
 
     .orderContent {
         width: 60%;
@@ -818,7 +836,7 @@
 }
 
 
-@media (min-width: 430px) and (max-width: 1089px) {
+@media (min-width: 430px) and (max-width: 1077px) {
 
     .basketTab{
         display: none;
@@ -847,7 +865,7 @@
 
     .hideAndSee{
         display: flex;
-        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        background-color: rgba(19,4,21,0.5);
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -906,7 +924,7 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        background-color: rgba(19,4,21,0.5);
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -993,7 +1011,7 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        background-color: rgba(19,4,21,0.5);
         padding-top: 10px;
         padding-bottom: 10px;
 
@@ -1086,7 +1104,7 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
+        background-color: rgba(19,4,21,0.5);
         padding-top: 10px;
         padding-bottom: 10px;
 

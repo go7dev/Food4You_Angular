@@ -22,6 +22,7 @@ constructor(){
 activatedCategory: number = 0;
 
 ngOnInit(): void {
+  this.addFlickerCSSEffects();
 }
 
 
@@ -30,6 +31,16 @@ setTab(index: number){
   this.activatedCategory = index;
   // debugger;
   this.onTabChange.emit(this.activatedCategory);
+}
+
+addFlickerCSSEffects(){
+  document.querySelectorAll('a').forEach((item: HTMLElement, index: number) => {
+    if (index !== this.activatedCategory) {
+      item.classList.add('flicker');
+    } else {
+      item.classList.remove('flicker');
+    }
+  });
 }
 
 

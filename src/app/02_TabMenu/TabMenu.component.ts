@@ -44,13 +44,6 @@ addFlickerCSSEffects(){
 }
 
 
-// categories : string [] = ["Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburger"];
-
-
-
-
-
-
 }
 
 

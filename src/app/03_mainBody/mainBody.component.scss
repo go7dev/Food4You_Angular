@@ -4,8 +4,6 @@
 .mainBody{
     display: flex;
     flex-direction: column;
-    margin: 0;
-
     background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
     background-repeat: repeat;
     background-position: center;
@@ -20,13 +18,9 @@
 
 .orderContent {
     width: 70%;
-    // height:auto;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    // background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
-    // background-repeat: repeat;
-    // background-position: center;
 
 }
 
@@ -34,10 +28,6 @@
     width: 70%;
     display: flex;
     position: relative;
-    // background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
-    // background-repeat: repeat;
-    // background-position: center;
-
 }
 
 .d-none{
@@ -73,7 +63,6 @@
         height: 47px;
         width: 100%;
         border: 1px solid black;
-        // border-radius: 8px;
 
         img{
             height: 37px;
@@ -177,8 +166,6 @@
 
 .cardMod {
     margin: 25px;
-    // min-width: 350px !important;
-    // max-height: 750px;
 
     img {
         height: 300px;
@@ -190,8 +177,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // margin-right: -10px;
-    // margin-left: -10px;
+
     h5{
         font-family: 'Lobster';
         font-size: x-large;
@@ -519,9 +505,7 @@
 
 .menu_description_price {
     color: #38E54D;
-    // margin-top: 20px;
     font-weight: bold;
-    // margin: none !important;
 }
 
 
@@ -531,6 +515,8 @@
     width: 30% !important;
     position: relative;
     box-shadow: -2px 0px 2px 1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(19,4,21,0.5);
+
 }
 
 .basketSupra{
@@ -541,59 +527,83 @@
     align-items: center;
     position: sticky !important;
     top: 0;
-    background-color: white;
-    // font-family: 'Open Sans', sans-serif;
-    // font-weight: bold;
     font-size: 26px;
-
+    background-color: white;
 }
 
 .basketSupraHead {
-    background-color: whitesmoke;
+    background-color: #f5f5dc;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    border-bottom: 1px solid black;
 
-    h2 {
+    span {
         font-family: 'Lobster';
+        font-weight: 400;
+        font-size: xx-large;
+        margin-top: 10px;
     }
 }
 
 .basket {
     width: 100%;
-    height: auto;
 
+    .basketSubBg{
+        height: 60px;
+        width: 100%;
+        background-color: #f5f5dc;
+        border-top: 1px solid black;
+    }
 }
 
 .emptyBasket {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 96%;
-    padding-left: 2%;
-    padding-right: 2%;
-    text-align: center;
-    
-    img {
-        height: auto;
+    background-image: url('/../assets/img/backgrounds/wintery_sunburst.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    .emptyBasketMain{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
         width: 100%;
-        margin-bottom: 20px;
+        padding-left: 2%;
+        padding-right: 2%;
+        text-align: center;
+
+        img {
+            height: auto;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .basketSmiley {
+            display: flex;
+            justify-content: center;
+        
+            img {
+                height: 64px;
+                width: 64px !important;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .emptyBasketSubBg{
+        height: 60px;
+        width: 100%;
+        background-color: #f5f5dc;
+        border-top: 1px solid black;
     }
 }
-
-.basketSmiley {
-    display: flex;
-    justify-content: center;
-
-    img {
-        height: 64px;
-        width: 64px;
-        margin-top: 10px;
-    }
-}
-
 
 .basketMeals{
     display: flex;
@@ -601,132 +611,140 @@
     max-height: 600px;
     width: 100%;
     overflow-y: auto;
-}
+    background-color: #ffffff;
 
-.basketTable {
-    display: flex;
-    flex-direction: column;
-    width: 98%;
-    padding-left: 2%;
-    // padding-right: 2%;
-
-    hr{
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-    }
-}
-
-.tableTd_1_MenuDescriptionAndPrice {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-family: 'VT323', monospace;
-    font-size: clamp(20px, 2.0vw, 24px); 
-
-    .order{
-        max-width: 70% !important;
-    }
-
-    span{
-        display: block;
-    }
-}
-
-
-.tableTd_2_BasketButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-
-    .moreOrLess{
+    .basketTable {
         display: flex;
-        justify-content: space-between;
-        margin-left: 40%;
-
-        button {
-            height: 45px;
-            width: 45px;
-            margin-left: 5px;
-            margin-right: 5px;
-            border-radius: 360px;
-            background-color: #f5f3f1;
-            border: none;
+        flex-direction: column;
+        width: 98%;
+        padding-left: 2%;
+        // padding-right: 2%;
     
-            &:hover{
-                cursor: pointer;
-                background-color: #E5E4E2;
+        hr{
+            margin-top: 10px;
+            margin-bottom: 10px;
+    
+        }
+
+        .tableTd_1_MenuDescriptionAndPrice {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: 'VT323', monospace;
+            font-size: clamp(20px, 2.0vw, 24px); 
+        
+            .order{
+                max-width: 70% !important;
+            }
+        
+            span{
+                display: block;
+            }
+        }
+        
+        
+        .tableTd_2_BasketButtons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        
+            .moreOrLess{
+                display: flex;
+                justify-content: space-between;
+                margin-left: 40%;
+        
+                button {
+                    height: 45px;
+                    width: 45px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    border-radius: 360px;
+                    background-color: #f5f3f1;
+                    border: none;
+            
+                    &:hover{
+                        cursor: pointer;
+                        background-color: #E5E4E2;
+                    }
+                }
+            }
+        
+            .trashBin{
+        
+                button {
+                    height: 38px;
+                    width: 38px;
+                    background-color:white;
+                    background-image: url("/assets/img/icons/delete2_icon_BootstrapBlue_48x48.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    border: none;
+        
+                    &:hover {
+                        cursor: pointer;
+                        background-image: url("/assets/img/icons/delete3open_icon_BootstrapBlue.svg");
+                    }
+                }
             }
         }
     }
-
-    .trashBin{
-
-        button {
-            height: 38px;
-            width: 38px;
-            background-color:white;
-            background-image: url("/assets/img/icons/delete2_icon_BootstrapBlue_48x48.png");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            border: none;
-
-            &:hover {
-                cursor: pointer;
-                background-image: url("/assets/img/icons/delete3open_icon_BootstrapBlue.svg");
-            }
-        }
-    }
-
 }
 
 .sums {
     width: 100%;
-}
+    background-color: #ffffff;
 
-.tableRowSum {
-    width: 99%;
-    padding-left: 1%;
-    // padding-right: 2%;
-    padding-top: 10px;
-    font-family: 'VT323', monospace;
-
-    hr{
-        margin-top: -10px;
-    }
+    .tableRowSum {
+        width: 99%;
+        padding-left: 1%;
+        // padding-right: 2%;
+        padding-top: 10px;
+        font-family: 'VT323', monospace;
+        font-size: clamp(20px, 2.0vw, 24px);
     
-}
+        hr{
+            margin-top: -10px;
+        }
 
-.ordersSubtotalSupra{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    color: grey;
-    font-weight: 400;
-}
+        .ordersSubtotalSupra{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            color: grey;
+            font-weight: 400;
+        
+        }
+        
+        .ordersDeliveryCostsSupra {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            color: grey;
+            font-weight: 400;
 
-.tableRowSum button {
-    height: 50px;
-    width: 200px;
-    background-color: #38E54D;
-    color: white;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: 22px;
+            .orders_delivery_costs_left{
+                max-width: 60% !important;
+            }
 
-    &:hover {
-        height: 50px;
-        width: 200px;
-        background-color: #9CFF2E;
-        cursor: pointer;
-        color: white;
+            .orders_delivery_costs_right{
+                display: block;
+            }
+        }
+        
+        .ordersTotalSupra{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        
+        }
+       
     }
 }
 
@@ -737,7 +755,27 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+
+    button {
+        height: 50px;
+        width: 200px;
+        background-color: #38E54D;
+        color: white;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-family: 'Montserrat';
+        font-size: 22px;
+    
+        &:hover {
+            height: 50px;
+            width: 200px;
+            background-color: #9CFF2E;
+            cursor: pointer;
+            color: white;
+        }
+    }
 
     p{
         margin-top: 20px;
@@ -749,28 +787,11 @@
     }
 }
 
-.ordersDeliveryCostsSupra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    color: grey;
-    font-weight: 400;
-}
-
-.ordersTotalSupra{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-
-}
 
 // ----- Media Cart ------
 
 .mediaCart {
     height: 80px;
-    // width: calc(100% - 2px);
     width: 100%;
     background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
     color: black;
@@ -819,27 +840,16 @@
 //  !---- RESPONSIVE DESIGN ----!
 
 
-@media (min-width: 1078px) and (max-width: 1400px) {
-
-    .orderContent {
-        width: 60%;
-    }
-
-    .basketTab{
-        width: 40%;
-    }
-
-    .emptyBasket {
-        height: auto;
-    }
-
-}
-
-
-@media (min-width: 430px) and (max-width: 1077px) {
+@media (min-width: 840px) and (max-width: 1077px) {
 
     .basketTab{
         display: none;
+    }
+    
+    .basketTabDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 120px - 120px - 80px);
+        display: flex;
     }
 
     .orderContent {
@@ -871,11 +881,37 @@
 
     }
 
-    .emptyBasket {
-        
-        img {
-            height: auto;
-            width: 50%;
+    .basketSupra{
+        height: 100%;
+
+        .basketSupraHead {
+            border-top: 1px solid black;
+        }
+
+        .basket{
+            height: calc(100% - 72px);
+
+            .emptyBasket {
+                height: 100%;
+                
+                img {
+                    max-height: 400px;
+                    width: auto;
+                }
+
+                .emptyBasketSubBg{
+                    display: none;
+                }
+
+            }
+
+            .basketMeals{
+                max-height: 400px;
+            }
+
+            .basketSubBg{
+                display: none;
+            }
         }
     }
 
@@ -884,11 +920,87 @@
         z-index: 502;
     }
 
+}
+
+
+@media (min-width: 430px) and (max-width: 839px) {
+
+    .basketTab{
+        display: none;
+    }
+    
     .basketTabDisplay{
         width: 100vw !important;
-        min-height: calc(100vh - 120px - 120px);
+        height: calc(100vh - 80px - 120px - 80px);
         display: flex;
+    }
 
+    .orderContent {
+        display: none; 
+    }
+
+    .facilitatesStickyLeft{
+        display: none;
+    }
+
+    .OrderContentDontKnowYet{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        position: relative;
+    }
+
+    .ifEnabledDisabled{
+        width: 100%;
+        min-height: calc(100vh - 80px - 67px - 80px - 120px);
+    }
+
+    .hideAndSee{
+        display: flex;
+        background-color: rgba(19,4,21,0.5);
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+
+    .basketSupra{
+        height: 100%;
+
+        .basketSupraHead {
+            border-top: 1px solid black;
+        }
+
+        .basket{
+            height: calc(100% - 72px);
+
+            .emptyBasket {
+                height: 100%;
+                
+                img {
+                    max-height: 400px;
+                    width: auto;
+                }
+
+                .emptyBasketSubBg{
+                    display: none;
+                }
+
+            }
+
+            .basketMeals{
+                max-height: 400px;
+            }
+
+            .basketSubBg{
+                display: none;
+            }
+        }
+    }
+
+    .mediaCart {
+        display: flex;
+        z-index: 502;
     }
 
 }
@@ -900,6 +1012,12 @@
         display: none;
     }
 
+    .basketTabDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 60px - 120px - 80px);
+        display: flex;
+    }
+
     .orderContent {
         display: none; 
     }
@@ -918,6 +1036,7 @@
 
     .ifEnabledDisabled{
         width: 100%;
+        min-height: calc(100vh - 60px - 134px - 80px - 120px);
     }
 
     .hideAndSee{
@@ -943,11 +1062,42 @@
         }
     }
 
-    .emptyBasket {
-        
-        img {
-            height: auto;
-            width: 50%;
+    .basketSupra{
+        height: 100%;
+
+        .basketSupraHead {
+            border-top: 1px solid black;
+
+            span{
+                margin-top: 0;
+            }
+        }
+
+        .basket{
+            height: calc(100% - 62px);
+            overflow: auto;
+
+            .emptyBasket {
+                height: 100%;
+                
+                img {
+                    max-height: 300px;
+                    width: auto;
+                }
+
+                .emptyBasketSubBg{
+                    display: none;
+                }
+
+            }
+
+            .basketMeals{
+                max-height: 242px;
+            }
+
+            .basketSubBg{
+                display: none;
+            }
         }
     }
 
@@ -956,25 +1106,18 @@
         z-index: 502;
     }
 
-    .basketTabDisplay{
-        width: 100vw !important;
-        min-height: calc(100vh - 120px - 120px);
-        display: flex;
-
-    }
-
     .restaurant{
         height: 97px !important;
         margin-bottom: 0 !important;
 
         a{
-            margin-top: 40px;
+            margin-top: 0;
             // position: unset;
             max-width: 100% !important; 
+            // width: 100%;
             display: flex;
             justify-content: center;
-        //    width: 100%;
-            // right: auto;
+
             left: 0;
         }
     }
@@ -986,6 +1129,12 @@
     .basketTab {
         display: none;
     }
+    
+    .basketTabDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 60px - 120px - 80px);
+        display: flex;
+    }
 
     .orderContent {
         display: none; 
@@ -1005,6 +1154,7 @@
 
     .ifEnabledDisabled{
         width: 100%;
+        min-height: calc(100vh - 60px - 134px - 80px - 120px);
     }
 
     .hideAndSee{
@@ -1030,11 +1180,57 @@
         }
     }
 
-    .emptyBasket {
-        
-        img {
-            height: auto;
-            width: 50%;
+    .basketSupra{
+        height: 100%;
+
+        .basketSupraHead {
+            border-top: 1px solid black;
+
+            span{
+                margin-top: 0;
+                font-size: large;
+            }
+        }
+
+        .basket{
+            height: calc(100% - 38px);
+            overflow: auto;
+
+            .emptyBasket {
+                height: 100%;
+                overflow: auto;
+                
+                img {
+                    max-height: 150px;
+                    width: auto;
+                }
+
+                span{
+                    font-size: 26px;
+                }
+
+                .basketSmiley {
+
+                    img {
+                        height: 44px;
+                        width: 44px !important;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .emptyBasketSubBg{
+                    display: none;
+                }
+
+            }
+
+            .basketMeals{
+                max-height: 200px;
+            }
+
+            .basketSubBg{
+                display: none;
+            }
         }
     }
 
@@ -1043,19 +1239,12 @@
         z-index: 502;
     }
 
-    .basketTabDisplay{
-        width: 100vw !important;
-        min-height: calc(100vh - 120px - 120px);
-        display: flex;
-
-    }
-
     .restaurant{
         height: 97px !important;
         margin-bottom: 0 !important;
 
         a{
-            margin-top: 40px;
+            margin-top: 0px;
             max-width: 100% !important; 
             left: 0;
         }
@@ -1076,8 +1265,18 @@
 
 @media (min-width: 250px) and (max-width: 326px) {
 
+    .mainBody{
+        background-size: contain;
+    }
+
     .basketTab {
         display: none;
+    }
+
+    .basketTabDisplay{
+        width: 100vw !important;
+        height: calc(100vh - 60px - 120px - 80px);
+        display: flex;
     }
 
     .orderContent {
@@ -1098,6 +1297,7 @@
 
     .ifEnabledDisabled{
         width: 100%;
+        min-height: calc(100vh - 60px - 134px - 80px - 120px);
     }
 
     .hideAndSee{
@@ -1123,11 +1323,57 @@
         }
     }
 
-    .emptyBasket {
-        
-        img {
-            height: auto;
-            width: 50%;
+    .basketSupra{
+        height: 100%;
+
+        .basketSupraHead {
+            border-top: 1px solid black;
+
+            span{
+                margin-top: 0;
+                font-size: large;
+            }
+        }
+
+        .basket{
+            height: calc(100% - 38px);
+            overflow: auto;
+
+            .emptyBasket {
+                height: 100%;
+                overflow: auto;
+                
+                img {
+                    max-height: 150px;
+                    width: auto;
+                }
+
+                span{
+                    font-size: 26px;
+                }
+
+                .basketSmiley {
+
+                    img {
+                        height: 44px;
+                        width: 44px !important;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .emptyBasketSubBg{
+                    display: none;
+                }
+
+            }
+
+            .basketMeals{
+                max-height: 200px;
+            }
+
+            .basketSubBg{
+                display: none;
+            }
         }
     }
 
@@ -1152,19 +1398,12 @@
         z-index: 502;
     }
 
-    .basketTabDisplay{
-        width: 100vw !important;
-        min-height: calc(100vh - 120px - 120px);
-        display: flex;
-
-    }
-
     .restaurant{
         height: 127px !important;
         margin-bottom: 0 !important;
 
         a{
-            margin-top: 40px;
+            margin-top: 0px;
             max-width: 100% !important; 
             left: 0;
         }

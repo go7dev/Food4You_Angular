@@ -1,7 +1,6 @@
 footer {
     height: 120px;
     width: 100%;
-    // background-color: #38E54D;
     background: linear-gradient(135deg, rgba(56,229,77,1) 7%, rgba(0,212,255,1) 46%, rgba(156,255,46,1) 84%);
 
     display: flex;
@@ -30,11 +29,4 @@ footer {
         font-family: 'Lobster';
         font-size: large;
     }
-}
-
-@media (min-width: 250px) and (max-width: 839px) {
-    
-    // footer{
-    //     height: calc(100vh - 881.64px - 60px);
-    // }
 }

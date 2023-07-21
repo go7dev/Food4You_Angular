@@ -12,7 +12,6 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { createPopper } from '@popperjs/core';
 
-
 @NgModule({
   declarations: [
     AppComponent,

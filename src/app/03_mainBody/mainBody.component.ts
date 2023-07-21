@@ -7,12 +7,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { createPopper } from '@popperjs/core';
-import { query } from '@angular/animations';
-
-// import { dropdown } from 'ng-bootstrap';
-
-
+// import { createPopper } from '@popperjs/core';
+// import { query } from '@angular/animations';
 
 
 
@@ -61,6 +57,8 @@ interface FoodItem {
 export class MainBodyComponent implements OnInit{
 
 
+
+
 // defines tabs Array
 tabs : string [] = ["Don't Know Yet?", "Pizzas", "Salads", "Asia", "Pasta", "Indian", "HermanTheGerman", "Hamburgers"];
 
@@ -75,11 +73,10 @@ constructor (private sanitizer: DomSanitizer) {
 ngOnInit(): void {
   this.dontKnowYet();
 
-  //initialize bootstrap tooltips -  function is called when the page has finished loading
-
   window.addEventListener('load', () => {
       this.initBootstrapTooltips();
   });
+
   
   // this.initPopovers();
 }

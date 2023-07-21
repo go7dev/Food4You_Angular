@@ -4,7 +4,7 @@
 .mainBody{
     display: flex;
     flex-direction: column;
-    background-image: url('/../assets/img/backgrounds/bg_brickWall1_Cm.jpg');
+    background-image: url('/../assets/img/backgrounds/compressed/bg_brickWall1_original_pxhere_Cm40_optim.jpg');
     background-repeat: repeat;
     background-position: top;
     // background-position: left;
@@ -523,8 +523,8 @@
 .basketSupra{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     position: sticky !important;
     top: 0;
@@ -976,7 +976,7 @@
             height: calc(100% - 72px);
 
             .emptyBasket {
-                height: 100%;
+                height: 100% !important;
                 
                 img {
                     max-height: 400px;
@@ -1079,7 +1079,7 @@
             overflow: auto;
 
             .emptyBasket {
-                height: 100%;
+                height: 100% !important;
                 
                 img {
                     max-height: 300px;
@@ -1198,7 +1198,7 @@
             overflow: auto;
 
             .emptyBasket {
-                height: 100%;
+                height: 100% !important;
                 overflow: auto;
                 
                 img {
@@ -1341,7 +1341,7 @@
             overflow: auto;
 
             .emptyBasket {
-                height: 100%;
+                height: 100% !important;
                 overflow: auto;
                 
                 img {

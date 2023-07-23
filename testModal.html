@@ -6,9 +6,9 @@
     <title>Document</title>
 
     <style>
-.main{
-    display: flex;
-}
+        .main{
+            display: flex;
+        }
 
         #one {
             animation-duration: 9s;
@@ -18,12 +18,14 @@
         #two {
         animation-duration: 3s;
         animation-name: slidein;
+        z-index: 1;
         }
 
         @keyframes slideout{
         from {
             /* margin-right: 100%; */
             margin-left: 0%;
+            margin-right: 0%;
             width: 100%;
         }
 

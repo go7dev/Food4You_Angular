@@ -13,7 +13,7 @@ ul{
     }
 }
 
-// Neon flickering effects of TabMenu Component
+// Neon flickering effects of TabMenu Navigation - disadvantage, slows down the page
 
 .flicker {
     animation: flicker 3s linear infinite 3s;
@@ -52,7 +52,8 @@ ul{
     }
   }
 
-// RESPONSIVE DESIGN
+
+//  !---- RESPONSIVE DESIGN ----!
 
 @media (max-width: 1077px) {
     

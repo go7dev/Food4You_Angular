@@ -7,9 +7,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-// import { createPopper } from '@popperjs/core';
-// import { query } from '@angular/animations';
-
 
 
 // interface FoodJSON {
@@ -38,14 +35,6 @@ interface FoodItem {
   price: number;
   amount: number;
 }
-
-// interface cuisineType {
-//   [cuisineCategory: string]: FoodItem[];
-// }
-
-// interface selection {
-//   cuisineCategory: string;
-// }
 
 
 @Component({
@@ -842,7 +831,6 @@ isDropdownOpen: boolean = false;
 
 toggleDropDownMenu() {
   this.isDropdownOpen = !this.isDropdownOpen;
-
 }
 
 
@@ -877,6 +865,9 @@ initBootstrapTooltips(): void {
 sanitizeHTML(html: string): any {
   return this.sanitizer.bypassSecurityTrustHtml(html);
 }
+
+
+//          !----- BASKET -----!
 
 
 //addMenuToBasket gets TWO parameters as input from mainBody.component.html; 
@@ -987,6 +978,9 @@ deleteOrder(i : number) {
  
   }         
 }
+
+
+// ---- Media Cart in Responsive Mode -----
 
 shoppingCart() {
   let foodlist: HTMLElement | null = document.getElementById('orderContent');

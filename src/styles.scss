@@ -1,9 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-/* Importing Bootstrap SCSS file. */
-// @import "./node_modules/bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
-// @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+// ---- Font for Headings ----
 
 @font-face {
     font-family: 'Lobster';
@@ -12,12 +7,16 @@
     src: url('../src/assets/fonts/Lobster-Regular.ttf') format('truetype');
 }
 
+// ---- Font for Standard Texts----
+
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     src: url('../src/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
 }
+
+// ---- Font for FilterMenu ----
 
 @font-face {
     font-family: 'Major Mono Display', monospace;
@@ -26,12 +25,16 @@
     src: url('../src/assets/fonts/MajorMonoDisplay-Regular.ttf') format('truetype');
 }
 
+// ---- Font for TabMenu Navigation ----
+
 @font-face {
     font-family: 'ShareTechMono-Regular';
     font-style: normal;
     font-weight: 400;
     src: url('../src/assets/fonts/ShareTechMono-Regular.ttf') format('truetype');
 }
+
+// ---- Font for the Shopping Cart ----
 
 @font-face {
     font-family: 'VT323', monospace;

@@ -56,7 +56,7 @@
                     </div>
                   </div>
                  <div class="hideAndSee">
-                         <!--BOOTSTRAP DropDown is conflicting with bootstrap Tolltip initialising function from component.ts-->
+                         <!--BOOTSTRAP DropDown is conflicting with bootstrap Tolltip initialising function from component.ts. Hence no BOOTSTRAP DropDown is used.-->
                         <div class="dropdown" (mouseleave)="closeDropDownMenu()">
                           <button class="btn btn-primary" (click)="toggleDropDownMenu()">Filters</button>
                           <div id="dropdownContent" class="dropdown-content" [ngClass]="{ 'show': isDropdownOpen }" >
@@ -691,7 +691,7 @@
   
     </div>
 
-</div>
+  </div>
 
   <!----- Media Cart ----->
 

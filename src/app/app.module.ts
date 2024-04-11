@@ -10,7 +10,6 @@ import { FooterComponent } from './04_footer/footer.component';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { createPopper } from '@popperjs/core';
 
 @NgModule({
   declarations: [

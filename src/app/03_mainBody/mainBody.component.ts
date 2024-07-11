@@ -2,11 +2,7 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
-import { PopoverModule } from 'ngx-bootstrap/popover';
 import { DomSanitizer } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 
 // interface FoodJSON {

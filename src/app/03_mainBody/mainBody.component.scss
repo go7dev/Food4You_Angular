@@ -1,5 +1,5 @@
 // import of CSS for Stars animations
-@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 .mainBody{
     display: flex;
@@ -236,7 +236,7 @@
     border-radius: 8px;
     // min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 502
+    z-index: 502;
 
         label{
             font-family: 'Major Mono Display', monospace; 
@@ -364,7 +364,7 @@
         text-shadow: 2px 0px 5px black;
         text-align: center;
         width: 100%;
-        margin-top: -18px;
+        // margin-top: -12px;  // in bootstrap 5.3.0 was needed to adjust position
         
     }
 
